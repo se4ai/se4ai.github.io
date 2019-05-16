@@ -3,8 +3,10 @@ title: About Us
 layout: default
 ---
 
+![](http://gobeyondseo.com/wp-content/uploads/2011/11/AboutUs.jpg){: class="img-responsive img-rounded"}
 
-## The goal
+## What is this site about?
+
 
 ### In the age of AI, what are the "12 steps" for Software?
 
