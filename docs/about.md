@@ -36,8 +36,10 @@ of code interview questions (the second
 last point) is is a matter of some debate[^1] but (and here we can assess
 the impact of this list) those interviews are now standard practice[^2].
 
-But you cannot argue with success. So we asked ourselves,
-for  SE in the age of AI, what are the 12 checks for testing in a
+But you cannot argue with success. Software engineers (and their managers)
+are busy people. Such busy people appreciate the value of (not too many)
+heuristics to giude their work? So we asked ourselves,
+for  SE in the age of AI, what are the 12 (or more) checks for testing in a
 software team is successfully using/used-by  AI?
 
 ### Why? Refactoring AI for SE
