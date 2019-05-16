@@ -80,6 +80,9 @@ said that "X" was not really softwae engineering:
     - “Analysis and allocation of the system requirements is NOT the responsibility of the SE group but is a prerequisite for their work”
 - SE was not about deployment (before CI)
 
+Our point here is that even though AI is not a standard tool 
+used and studied by 
+software engineers, it will soon be. If you agree, then this site is for you.
 
 ## Our Solutions
 
@@ -89,7 +92,14 @@ said that "X" was not really softwae engineering:
 - want the code. want the code to be short
 - not as hard as you might think.
 - management needs mantras (so we will deliver)
+- not a textbook (a comprehensive coverage of all topics). 
+  There are enough of those[^1]. And SE people can't/don't use all the details. Instead, what they need are hints, samplers, code snippets of useful
+thngs that can suggest ways that they might add in useful ideas
+for their local problems.
 
 
+## Notes
 
+[^1]: For the record, our favorite AI textbook 
+      is from [Russell and Norvig's "AI: A Modern Approach"](http://aima.cs.berkeley.edu/)
 
