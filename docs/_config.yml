@@ -1,9 +1,9 @@
-url: se4ai.info
+xurl: se4ai.info
 about:
  title: "SE 4 AI"
  who: Tim Menzies 
  when: 2019
- what: 'Software Engineering<br>in the age of AI'
+ what: 'Software Engineering in the age of AI'
  email: 'timm@ieee.org'
  bold: '006666'
 markdown: kramdown
