@@ -6,25 +6,26 @@ layout: default
 <img width=400 align=right src="https://divergentmba.files.wordpress.com/2010/04/knowledge-funnel-762867.png">
 
 - Your words are most useful when they let me cut my code
-    - yes, this is all "just reinforcement learning" and "just bayesian parameter
-      optimization" and "just search-based SE" and "just optimzation"
-    - but the devil is in the detail. if we lean in to how to write wokrable systems for
-      all the above then 
+   - yes, this is all "just reinforcement learning" and "just bayesian parameter
+     optimization" and "just search-based SE" and "just optimzation"
+   - but the devil is in the detail. if we lean in to how to write wokrable systems for
+     all the above then 
 
 - Beliefs are sticky things
    - hang around much longer than they should
    - need to always be revising
 
 - The technology that will most improve data science is.. science
-      - Science =
-      - Most data science is not science
+   - Science = a cache of concepts curated by a community, doing each
+     other the courtesy of (re)checking and improving each other's ideas.
+   - Most data science is not science
 
 - Not general models, but general methods for local models.
 
 - Tom (Zimmermann)'s first law: data has answers, for the questions you aren't asking (yet)
 
 - Tom's second law:
-      - projects mature from "many one-off" queries to a "just a few repeated"  ones
+   - projects mature from "many one-off" queries to a "just a few repeated"  ones
 
 - Tim's first law: ask a lot of questions, expect a few answers
 
@@ -33,20 +34,20 @@ layout: default
 - Wei's second law: One data scientists per two (or three) data engineers
 
 - David (Wolpert)'s law: no such thing as a free lunch (no learner or optimzier is always best).
-    - So your going to have to look around some
+   - So your going to have to look around some
 
 - George's law: better learners/optimizer are rare, so better better is even rarer rarer.
-    - So you don't have to look around forever
+   - So you don't have to look around forever
 
 - Fisher's Law: "Fast iteration is key"
 
 - Timm's law: AI should be agile and often it aint
 
 - Dave (Binkley)'s rule: Your learners ain't my learners
-     - Software specific inference
+   - Software specific inference
 
 - Dieter's Law: Less, But Better
-     - Particularly when exploring options
+   - Particularly when exploring options
 
 - Most data is crap data PCA, 1901
 Narrows: Amarel 1960s
@@ -66,8 +67,8 @@ Active learning: many people (2000+)
   As complexity rises, precise statements lose meaning and meaningful statements lose precision.
 
 - Ken's law: I want to read symbols. 
-     - Qualitative representations—symbolic representations that carve continuous phenomena into meaningful units—are central to human cognition.
-     -  They provide a foundation for expert reasoning in science and engineering by making explicit the broad categories of things that might happen and enabling causal models that help guide the application of more quantitative knowledge as needed. 
+   - Qualitative representations—symbolic representations that carve continuous phenomena into meaningful units—are central to human cognition.
+   -  They provide a foundation for expert reasoning in science and engineering by making explicit the broad categories of things that might happen and enabling causal models that help guide the application of more quantitative knowledge as needed. 
 
 - Zach's law: start as you mean to go on
 
@@ -85,8 +86,8 @@ Active learning: many people (2000+)
 - Tim's third law: too much theory is a very very bad.
 
 - Tim's fourth law: step away from the trivial
-     - not tiny effects, bit ones
-     - coarse grained states
+   - not tiny effects, bit ones
+   - coarse grained states
 
 - Tim's fifth law: pictures for intuitions, stats for sanity
 
@@ -111,4 +112,4 @@ Active learning: many people (2000+)
 ## Design Choices for Systems
 
 - Speed of model
-- Speed f constraints
+- Speed of constraints
