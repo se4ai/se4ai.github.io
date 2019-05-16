@@ -1,9 +1,9 @@
 url: se4ai.info
 about:
- title: "Jane's Web site"
- who: Jane Donaldson
+ title: "SE 4 AI"
+ who: Tim Menzies 
  when: 2019
- what: 'Purpose, details'
+ what: 'SE in the age of AI'
  email: 'timm@ieee.org'
  bold: '006666'
 markdown: kramdown

@@ -3,4 +3,4 @@ title: Contact
 layout: default
 ---
 
-Contact us! 
+<a href="mailto:timm@ieee.org">timm@ieee.org</a>
