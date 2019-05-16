@@ -50,8 +50,8 @@ layout: default
    - Particularly when exploring options
 
 - Most data is crap data PCA, 1901
-Narrows: Amarel 1960s
-Prototypes: Chen 1975
+    - Narrows: Amarel 1960s
+ rototypes: Chen 1975
 Frames: Minsky, 1975
 Min environments: DeKleer, 1986
 Saturation: Horgan & Mathur: 1980
