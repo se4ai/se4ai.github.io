@@ -5,7 +5,7 @@ about:
  when: 2019
  what: 'SE in the age of AI'
  email: 'timm@ieee.org'
- bold: 'CC0000'
+ bold: '800000'
  xbold: '006666'
 markdown: kramdown
 kramdown:
