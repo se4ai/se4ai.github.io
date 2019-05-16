@@ -3,14 +3,14 @@ title: About Us
 layout: default
 ---
 
-![](http://gobeyondseo.com/wp-content/uploads/2011/11/AboutUs.jpg){{: align="right" width="350px"}
+![](http://gobeyondseo.com/wp-content/uploads/2011/11/AboutUs.jpg){: align="right" width="350px"}
 
 ## What is this site about?
 
 
 ### In the age of AI, what are the "12 steps" for Software?
 
-In 2002 Joel Spolsky (CEO (and co-founder) of Stack Overflow)
+In 2002 Joel Spolsky (CEO and co-founder of Stack Overflow)
 
 published 12 checks for
  measuring how good a software team is. 
