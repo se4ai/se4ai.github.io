@@ -5,7 +5,20 @@ layout: default
 
 ![](https://divergentmba.files.wordpress.com/2010/04/knowledge-funnel-762867.png){: align="right" width="350px"}
 
-- Your words are most useful when they let me cut my code
+basis of this work:
+
+- favor symbolic representations
+- healthy skecptims (want to read, reflect, doubt, revise, improve)
+- want the code. want the code to be short
+- not as hard as you might think.
+- management needs mantras (so we will deliver)
+
+  
+- Andres's law: Show me the code
+   - We will seek to operationalize all the deas of theis book. 
+   - RAISE0: a baseline system, deisnged to inspire, to irritate, to make you wrote better systems.
+
+- But can you cut my code base in half?
    - yes, this is all "just reinforcement learning" and "just bayesian parameter
      optimization" and "just search-based SE" and "just optimzation"
    - but the devil is in the detail. if we lean in to how to write wokrable systems for
@@ -15,14 +28,51 @@ layout: default
    - hang around much longer than they should
    - need to always be revising
 
+- George's law: all models are wrong (but some are useful)
+    - In a complex system of only a modest number of variables and interconnections, any attempt to describe the system completely and measure the magnitude of all the links would be the work of many people over a lifetime ([207], p5).
+    - As complexity rises, precise statements lose meaning and meaningful statements lose precision.
+
+
+- Mary's law: "Insisting on (perfection) is for people who don’t have the b\lls to live in the real world.”
+   - Mary Shafer, SR-71 Flying Qualities Lead Engineer, NASA Dryden
+   - We don't live in a certain world. 
+   - [maryrisk](There's no way to make life perfectly safe; you can't get out of it alive.)
+   - Youse payz your money and youse take your choice. There's no other way, no backsies (second
+     law of thermodynamics)
+
+- Xenophane's law: for all is but a woven web of guesses
+   - Despite all the maths and amchnery, all conclusions are based on their assumptions. No way to
+     avoid that. Karl Popper here.
+   - [Devabux ICSE'16]
+   - [Cognitive biases](cognitivebias)
+   - Best we can do is to state our conclusions, and those assumptions; 
+
+- Accuracy ain't, precision isn't
+
+- Conclusions need certification
+   - a second oracle that can screams wehn you ask a question that i should not answer
+     (the challenger disaster lesson)
+   - whenever you find something unfair, incorrect, write a little scrtipt to check for 
+     that problem in future
+
+- Fairness is a choice and not choosing is unfair
+
 - The technology that will most improve data science is.. science
    - Science = a cache of concepts curated by a community, doing each
      other the courtesy of (re)checking and improving each other's ideas.
    - Most data science is not science
 
+- Ken's law: I want to read symbols. 
+   - Qualitative representations—symbolic representations that carve continuous phenomena into meaningful units—are central to human cognition.
+   -  They provide a foundation for expert reasoning in science and engineering by making explicit the broad categories of things that might happen and enabling causal models that help guide the application of more quantitative knowledge as needed. 
+
+- I want to argue with you.
+    - why have symbolix represnetations
+
 - Not general models, but general methods for local models.
 
-- Tom (Zimmermann)'s first law: data has answers, for the questions you aren't asking (yet)
+- Tom (Zimmermann)'s first law:  Live with the data you have
+    - data has answers, for the questions you aren't asking (yet)
 
 - Tom's second law:
    - projects mature from "many one-off" queries to a "just a few repeated"  ones
@@ -62,28 +112,22 @@ layout: default
    - Back doors, Williams, 2002
    - Active learning: many people (2000+)
 
-
-- Lofti's Law:
-  As complexity rises, precise statements lose meaning and meaningful statements lose precision.
-
-- Ken's law: I want to read symbols. 
-   - Qualitative representations—symbolic representations that carve continuous phenomena into meaningful units—are central to human cognition.
-   -  They provide a foundation for expert reasoning in science and engineering by making explicit the broad categories of things that might happen and enabling causal models that help guide the application of more quantitative knowledge as needed. 
-
 - Zach's law: start as you mean to go on
 
 - Vivek's law:  guess is faster than knowing (surrogates)
 
 - Jack's law: a couple of darts beats smarts
 
-
 - Amrit's law : most differences, aren't
 
 - Tim's first law: not studying theory is bad
 
 - Tim's second law: too little theory is a very bad.
+    - Talk to the users . build the hypothesis matrix
 
 - Tim's third law: too much theory is a very very bad.
+    - Just because someone else argues that it won't work, they might be wrong
+    - E.g. bias/variance trade off
 
 - Tim's fourth law: step away from the trivial
    - not tiny effects, bit ones
