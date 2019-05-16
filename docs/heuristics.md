@@ -3,8 +3,7 @@ title: Heuristics
 layout: default
 ---
 
-![](https://divergentmba.files.wordpress.com/2010/04/knowledge-funnel-762867.png)
-{: align="right" width="350px"}
+![](https://divergentmba.files.wordpress.com/2010/04/knowledge-funnel-762867.png){: align="right" width="350px"}
 
 - Your words are most useful when they let me cut my code
    - yes, this is all "just reinforcement learning" and "just bayesian parameter
