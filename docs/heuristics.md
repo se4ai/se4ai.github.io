@@ -4,14 +4,14 @@ layout: default
 ---
 
 - Your words are most useful when they let me cut my code
-      - yes, this is all "just reinforcement learning" and "just bayesian parameter
-        optimization" and "just search-based SE" and "just optimzation"
-      - but the devil is in the detail. if we lean in to how to write wokrable systems for
-        all the above then 
+    - yes, this is all "just reinforcement learning" and "just bayesian parameter
+      optimization" and "just search-based SE" and "just optimzation"
+    - but the devil is in the detail. if we lean in to how to write wokrable systems for
+      all the above then 
 
 - Beliefs are sticky things
-      - hang around much longer than they should
-      - need to always be revising
+   - hang around much longer than they should
+   - need to always be revising
 
 - The technology that will most improve data science is.. science
       - Science =
