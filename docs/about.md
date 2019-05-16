@@ -84,7 +84,7 @@ Our point here is that even though AI is not a standard tool
 used and studied by 
 software engineers, it will soon be. If you agree, then this site is for you.
 
-## Our Solutions
+## Our Solution
 
 
 - favor symbolic representations

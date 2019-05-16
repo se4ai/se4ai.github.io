@@ -5,13 +5,6 @@ layout: default
 
 ![](https://divergentmba.files.wordpress.com/2010/04/knowledge-funnel-762867.png){: align="right" width="350px"}
 
-basis of this work:
-
-- favor symbolic representations
-- healthy skecptims (want to read, reflect, doubt, revise, improve)
-- want the code. want the code to be short
-- not as hard as you might think.
-- management needs mantras (so we will deliver)
 
   
 - Andres's law: Show me the code
