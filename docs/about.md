@@ -11,7 +11,6 @@ layout: default
 ### In the age of AI, what are the "12 steps" for Software?
 
 In 2002 Joel Spolsky (CEO and co-founder of Stack Overflow)
-
 published 12 checks for
  measuring how good a software team is. 
 For the record, that list is:
