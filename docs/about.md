@@ -3,7 +3,7 @@ title: About Us
 layout: default
 ---
 
-![](http://gobeyondseo.com/wp-content/uploads/2011/11/AboutUs.jpg){: class="img-responsive img-rounded"}
+![](http://gobeyondseo.com/wp-content/uploads/2011/11/AboutUs.jpg){{: align="right" width="350px"}
 
 ## What is this site about?
 
