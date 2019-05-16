@@ -3,6 +3,14 @@ title: About Us
 layout: default
 ---
 
+## Why? Refactoring AI for SE
+
+AI software is still software; i.e. is something
+that has to be
+maintained and extended by software engineers.
+
+## How (are we)?
+
 We are university researchers from NC State Unviversity who work extensively
 with  industrial on industrial applications of AI.
 

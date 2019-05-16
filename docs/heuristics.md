@@ -19,9 +19,6 @@ layout: default
 
 - Not general models, but general methods for local models.
 
-- Everything is an exmple of everything else
- 
-
 - Tom (Zimmermann)'s first law: data has answers, for the questions you aren't asking (yet)
 
 - Tom's second law:
@@ -41,7 +38,13 @@ layout: default
 
 - Fisher's Law: "Fast iteration is key"
 
+- Timm's law: AI should be agile and often it aint
+
+- Dave (Binkley)'s rule: Your learners ain't my learners
+     - Software specific inference
+
 - Dieter's Law: Less, But Better
+     - Particularly when exploring options
 
 - Most data is crap data PCA, 1901
 Narrows: Amarel 1960s
@@ -58,8 +61,7 @@ Active learning: many people (2000+)
 
 
 - Lofti's Law:
-  As complexity rises, precise statements lose meaning and meaningful statements lose precision."
-
+  As complexity rises, precise statements lose meaning and meaningful statements lose precision.
 
 - Ken's law: I want to read symbols. 
      - Qualitative representations—symbolic representations that carve continuous phenomena into meaningful units—are central to human cognition.
@@ -67,7 +69,10 @@ Active learning: many people (2000+)
 
 - Zach's law: start as you mean to go on
 
+- Vivek's law:  guess is faster than knowing (surrogates)
+
 - Jack's law: a couple of darts beats smarts
+
 
 - Amrit's law : most differences, aren't
 
@@ -99,4 +104,9 @@ Active learning: many people (2000+)
 
 
 
+----
 
+## Design Choices for Systems
+
+- Speed of model
+- Speed f constraints
