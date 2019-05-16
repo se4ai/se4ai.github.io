@@ -8,7 +8,7 @@ layout: default
 ## What is this site about?
 
 
-### In the age of AI, what are the "12 steps" for Software?
+### In the age of AI, what are the "12 steps" for Software Engineering?
 
 In 2002 Joel Spolsky (CEO and co-founder of Stack Overflow)
 published 12 checks for
