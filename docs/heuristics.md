@@ -3,7 +3,7 @@ title: Heuristics
 layout: default
 ---
 
-<img width=400 align=right src="https://divergentmba.files.wordpress.com/2010/04/knowledge-funnel-762867.png">
+![](https://divergentmba.files.wordpress.com/2010/04/knowledge-funnel-762867.png){:wwidth 400 :align right}
 
 - Your words are most useful when they let me cut my code
    - yes, this is all "just reinforcement learning" and "just bayesian parameter
