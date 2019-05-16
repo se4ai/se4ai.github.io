@@ -1,18 +1,24 @@
 ---
-title: About Us
+title: What is this site about?
 layout: default
 ---
 
 ![](http://gobeyondseo.com/wp-content/uploads/2011/11/AboutUs.jpg){: align="right" width="350px"}
 
-## What is this site about?
 
 
 ### In the age of AI, what are the "12 steps" for Software Engineering?
 
-In 2002 Joel Spolsky (CEO and co-founder of Stack Overflow)
+Software engineers (and their managers)
+are busy people. Such busy people appreciate the value of some
+(but not too many)
+heuristics to giude their work.
+
+For example,
+in 2002 Joel Spolsky (CEO and co-founder of Stack Overflow)
 published 12 checks for
  measuring how good a software team is. 
+This list was (is) incredibly  influential.
 For the record, that list is:
 
 
@@ -30,24 +36,23 @@ For the record, that list is:
 -   Do you do hallway usability testing?
 
 
-This list was (is) very influential even though
- some of its advise is  questionable.
-The value
-of code interview questions (the second
-last point) is is a matter of some debate[^1] but (and here we can assess
-the impact of this list) those interviews are now standard practice[^2].
-
-But you cannot argue with success. Software engineers (and their managers)
-are busy people. Such busy people appreciate the value of (not too many)
-heuristics to giude their work? So we asked ourselves,
-for  SE in the age of AI, what are the 12 (or more) checks for testing in a
+So we asked ourselves,
+for  SE in the age of AI, what are the 12 (or more) checks for testing if a
 software team is successfully using/used-by  AI?
+To answer that question, we turned to our own experience.
+
+Since 2014, this team has written five Ph.D.s on SE for AI and AI for SE.
+That work has been published extensively and has lead to
+applciations that have significantly extended the prior state-of-the-art.
+
+This web site was written by refactoring that work into a single framework,
+then listing all the heuristics that select different parts of that framework.
+
 
 ### Why? Refactoring AI for SE
 
-So what should SE people need to know to best use AI?
 
-Nevertheless, when discussing this work with colleagues,we are still sometimes asked if 
+When discussing this work with colleagues,we are still sometimes asked if 
 SE has any business mucking around with AI.
 After all, it might be said, AI is a huge industy.
 Can't software just use, off the shelf, the tools being geneated by the AI industry?
@@ -87,19 +92,4 @@ said that "X" was not really softwae engineering:
 
 
 
-### Who (are we)?
 
-We are university researchers from NC State Unviversity who work extensively
-with  industrial on industrial applications of AI.
-
-Since 2014, this team has written five Ph.D.s and published extensively on
-applciations that have significantly extended the prior state-of-the-art.
-
-This web site was written by refactoring that work into a single framework,
-then listing all the heuristics that select different parts of that framework.
-
-
-## Notes
-
-[^1]: https://daedtech.com/my-candidate-description/
-[^2]: [Cracking Coding Interview Programming Questions](http://tinyurl.com/hlevbsd)
