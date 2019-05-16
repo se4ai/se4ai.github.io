@@ -1,7 +1,8 @@
 ---
-title: Cognitive Biase
+title: Cognitive Bias
 layout: default
 ---
+![](http://2oqz471sa19h3vbwa53m33yj-wpengine.netdna-ssl.com/wp-content/uploads/2017/09/cognitive-bias-1070.jpg){: class="img-responsive img-rounded"}
 
 
 The Wikipedia page on “List of cognitive biases”1 lists nearly two hundreds ways that human reasoning is systematically biased. That list includes:
