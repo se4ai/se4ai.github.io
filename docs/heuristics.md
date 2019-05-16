@@ -79,6 +79,9 @@ basis of this work:
 
 - Tim's first law: ask a lot of questions, expect a few answers
 
+- Your configuration is wrong (probably)
+   - Major area, previously under explored
+
 - Wei's Law: It will take 3+ months.
 
 - Wei's second law: One data scientists per two (or three) data engineers
