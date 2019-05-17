@@ -82,7 +82,7 @@ layout: default
 - David (Wolpert)'s law: no such thing as a free lunch (no learner or optimzier is always best).
    - So your going to have to look around some
 
-- George's law: better learners/optimizer are rare, so better better is even rarer rarer.
+- George's law: better learners/optimizer are rare, [so better better is even rarer rarer](http://www.cs.cmu.edu/~gmontane/pdfs/montanez-2013-bounding.pdf).
    - So you don't have to look around forever
 
 - Fisher's Law: "Fast iteration is key"
@@ -107,6 +107,12 @@ layout: default
    - Feature subset section, Kohavi, 1997,
    - Back doors, Williams, 2002
    - Active learning: many people (2000+)
+
+The best thing to do with most data is to throw it away
+   - Ignore small trivial differences in numerics (discretiation).
+   - Ignore dull columns (feature selection)
+   - Ignore dull ranges (range selection)
+   - Ignore repeated rows (instance selection)
 
 - Zach's law: start as you mean to go on
 
