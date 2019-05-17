@@ -33,6 +33,9 @@ layout: default
    - Youse payz your money and youse take your choice. There's no other way, no backsies (second
      law of thermodynamics)
 
+- Accuracy ain't, precision isn't
+   - Which means, as a side-effect, that the way we look at the world can cause systematic errors in what we see
+   
 - Xenophane's law: for all is but a woven web of guesses
    - Despite all the maths and amchnery, all conclusions are based on their assumptions. No way to
      avoid that. Karl Popper here.
@@ -40,7 +43,6 @@ layout: default
    - [Cognitive biases](cognitivebias)
    - Best we can do is to state our conclusions, and those assumptions; 
 
-- Accuracy ain't, precision isn't
 
 - Conclusions need certification
    - a second oracle that can screams wehn you ask a question that i should not answer
@@ -82,6 +84,10 @@ layout: default
 - David (Wolpert)'s law: no such thing as a free lunch (no learner or optimzier is always best).
    - So your going to have to look around some
 
+- A foolish consistency is the hobgoblin of little minds
+   - Just because it works tehre don't mean it works here
+   - SE data is different (may nit correspond to known bias/variance effects;  binkely's agrument, amrit's study)
+
 - George's law: better learners/optimizer are rare, [so better better is even rarer rarer](http://www.cs.cmu.edu/~gmontane/pdfs/montanez-2013-bounding.pdf).
    - So you don't have to look around forever
 
@@ -108,11 +114,16 @@ layout: default
    - Back doors, Williams, 2002
    - Active learning: many people (2000+)
 
-The best thing to do with most data is to throw it away
+Vasil's Law: The best thing to do with most (SE) data is to throw it away
    - Ignore small trivial differences in numerics (discretiation).
    - Ignore dull columns (feature selection)
    - Ignore dull ranges (range selection)
-   - Ignore repeated rows (instance selection)
+   - Ignore rows with dull ranges (instance selection)
+
+Fayola's Law: only share the interesting bits
+   - What's left after vasil's stuff
+
+Repeat all conclusions, 10 times, using 90\% of the data.
 
 - Zach's law: start as you mean to go on
 
