@@ -80,7 +80,4 @@ to better manage _Plan_ and _Study_.
 
 ## Notes
 
-[^1]: Aguayo, Rafael (1990). Dr. Deming: the American who taught
-the Japanese about quality. A Lyle Stuart book. Secaucus, NJ: Carol
-Pub. Group. p. 76. ISBN 978-0818405198. OCLC 22347078. Also published
-by Simon & Schuster, 1991.
+[^1]: Aguayo, Rafael (1990). Dr. Deming: the American who taught the Japanese about quality. A Lyle Stuart book. Secaucus, NJ: Carol Pub. Group. p. 76. ISBN 978-0818405198. OCLC 22347078. Also published by Simon & Schuster, 1991.
