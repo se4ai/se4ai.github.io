@@ -126,7 +126,7 @@ Otherwise, send us your email and we'll check back in with you in 2020.
 [^2]: Aguayo, Rafael (1990). Dr. Deming: the American who taught the Japanese about quality. A Lyle Stuart book. Secaucus, NJ: Carol Pub. Group. p. 76. ISBN 978-0818405198. OCLC 22347078. Also published by Simon & Schuster, 1991.
 [^10]: https://www.noguchi.org/noguchi/timeline
 [^11]: https://readymag.com/shuffle/dieter-rams/
-[^12]  https://franklloydwright.org
+[^12]:  https://franklloydwright.org
 [^3]: B. Boehm (2004) [Keynote address to the ASE'04 conference](http://ase-conferences.org/ase/past/ase2004/download/KeynoteBoehm.pdf), Boehm reports that at ICSE'4 (1979), Edker Dijkstra commented that "The notion of ‘user’ cannot be precisely defined, and therefore has no place in CS or SE." • “Analysis and allocation of the system requirements is not the responsibility of the SE group but is a prerequisite for their work”
 [^4]: H. Muils et al. (1987) [iA cleanroom approach to software development](https://en.wikipedia.org/wiki/Cleanroom_software_engineering).  Here, the task of programmers was to  deleivered proably correct code to a seperate testing team.
 [^5]: M. Paulk at al. (1993)  SEI Software CMM\* manual (v.1.1). "Analysis and allocation of the system requirements is not the responsibility of the SE group but is a prerequisite for their work."
