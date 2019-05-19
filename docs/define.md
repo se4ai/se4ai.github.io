@@ -50,8 +50,10 @@ currently, software engineering is very, very good at _Do_ and _Act_ but not _Pl
   Which is a problem since humans are talented, but flawed, people.
   When they get
   it right, they can really think up some 
-  amazing things [^7] [^8] [^9] [^10] [^11] [^12] [^13] [^14] [^15] [^16] [^17] [^18] [^19] [^20]
-  But there are so many ways humans routinely can get it [wrong wrong wrong](cognitivebias). 
+  amazing things [^7] [^8] [^9] [^10] [^11] [^12] [^13] [^14] [^15] [^16] [^17] [^18] [^19] [^20].
+  Nevertheless there are so many ways humans routinely get it
+   wrong wrong wrong wrong wrong
+  (e.g. see the list of [over 100 cognitive biases](cognitivebias)). 
 
 Enter artifical intelligence. AI
 is the designing and building of intelligent agents
