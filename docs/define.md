@@ -78,6 +78,38 @@ Next, we offer examples from software engineering where
 data miners and optimizers have been mixed-and-matched in order
 to better manage _Plan_ and _Study_.
 
+### "No, no, that isn't SE"
+
+To say the obvious, the above is just an opinion. And its an opinion that some people might disagree with.
+For exampel:
+
+"That's not SE. I know since I am a software engineer and the above says very little about my day to day work." 
+
+To which we reply, that it might not characterize your day to day work... yet. But it will soon. SE keeps
+redefining itself. There is a long history of people saying "X is not about" and yet, a decade later,
+SE is all about X. Consider:
+
+
+- SE is not about  users (Dijkstra, 79)[^2]
+- SE is not about testing (Mills, 1985)[^3]
+- SE is not about requirements (Paulk, 1993)[^4]
+    - “Analysis and allocation of the system requirements is NOT the responsibility of the SE group but is a prerequisite for their work”
+- SE is not about deployment (before CI)
+- SE is not about AI... yet
+
+Our point here is that even though AI is not a standard tool 
+used and studied by 
+software engineers, it will soon be. 
+
+If you agree, then this site is for you.
+
+Otherwise, send us your email and we'll check back in with you in 2020.
+
 ## Notes
 
 [^1]: Aguayo, Rafael (1990). Dr. Deming: the American who taught the Japanese about quality. A Lyle Stuart book. Secaucus, NJ: Carol Pub. Group. p. 76. ISBN 978-0818405198. OCLC 22347078. Also published by Simon & Schuster, 1991.
+
+[^2]: asdas
+[^3]: asdas
+[^4]: asdas
+
