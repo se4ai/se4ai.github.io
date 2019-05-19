@@ -28,13 +28,15 @@ currently, software engineering is very, very good at _Do_ and _Act_ but not _Pl
    build and deploy new versions of complex systems, several times per day.
    Any number of other texts explore _Doing_ and _Acting_.  
 
-- Here, we explore _Plan_ and _Study_. Currently, this is mostly a manual
+- But here, we explore _Plan_ and _Study_. Currently, this is mostly a manual
   task done in the heads of human software engineers.
-  Which is a problem since humans are talented, but quirky. When they get
-  it right, they can really think up some amazing things [^10][^11][^12].
+  Which is a problem since humans are talented, but flawed, people.
+  When they get
+  it right, they can really think up some amazing things [^7][^8][^9][^10][^11][^12][^13][^14][^15][^16][^17][^18]^19][^20]
   But there are so many ways humans routinely can get it [wrong wrong wrong](cognitivebias). 
 
-Enter AI, which is the designing and building of intelligent agents
+Enter artifical intelligence. AI
+is the designing and building of intelligent agents
 that receive percepts from the environment and take actions that affect
 that environment[^1].  More specifically, this is the process of:
 
@@ -124,9 +126,21 @@ Otherwise, send us your email and we'll check back in with you in 2020.
 [^0]: Not sure who said this first. But we first heard it from Bojan Cukic.
 [^1]: S. Russll and P. Norvig (2009) [Artificial Intelligence: A Modern Approach](https://dl.acm.org/citation.cfm?id=1671238),  Prentice Hall.
 [^2]: Aguayo, Rafael (1990). Dr. Deming: the American who taught the Japanese about quality. A Lyle Stuart book. Secaucus, NJ: Carol Pub. Group. p. 76. ISBN 978-0818405198. OCLC 22347078. Also published by Simon & Schuster, 1991.
-[^10]: https://www.noguchi.org/noguchi/timeline
-[^11]: https://readymag.com/shuffle/dieter-rams/
-[^12]:  https://franklloydwright.org
+[^7]: e.g. The [green revolution](https://en.wikipedia.org/wiki/Green_Revolution] that feed billions).
+[^9]: e.g. [Walking on the moon](https://en.wikipedia.org/wiki/List_of_missions_to_the_Moon)
+[^17]: e.g. [Abstraction](https://en.wikipedia.org/wiki/Abstraction)
+[^20] e.g. [Mathematics](https://en.wikipedia.org/wiki/Mathematics) and the invention of zero.
+[^19]: e.g. Newton's  realization that certain physical laws hold on eather, and in stars.
+[^21]: e.g. [Conservation Laws](https://en.wikipedia.org/wiki/Conservation_law#Exact_laws)
+[^18]: e.g. The unification of fundamental forces in the universe [light, electic, magnetic](https://en.wikipedia.org/wiki/Electromagnetic_radiation)
+[^16]: e.g. [Crispr](https://en.wikipedia.org/wiki/CRISPR)
+[^8]: e.g. [Invention of perspective in art](https://en.wikipedia.org/wiki/Perspectivity)
+[^13]: e.g. [UNIX](https://en.wikipedia.org/wiki/History_of_Unix)
+[^14]: e.g. [GCC](https://en.wikipedia.org/wiki/GNU_Compiler_Collection)
+[^15]: e.g. [LINUX](https://en.wikipedia.org/wiki/Linux)
+[^10]: e.g. the work of [Isamu Noguchi](https://www.noguchi.org/noguchi/timeline)
+[^12]: e.g. the work of [Frank Lloyd Wright](https://franklloydwright.org)
+[^11]: e.g. the work of [Dieter Rams](https://readymag.com/shuffle/dieter-rams/)
 [^3]: B. Boehm (2004) [Keynote address to the ASE'04 conference](http://ase-conferences.org/ase/past/ase2004/download/KeynoteBoehm.pdf), Boehm reports that at ICSE'4 (1979), Edker Dijkstra commented that "The notion of ‘user’ cannot be precisely defined, and therefore has no place in CS or SE." • “Analysis and allocation of the system requirements is not the responsibility of the SE group but is a prerequisite for their work”
 [^4]: H. Muils et al. (1987) [iA cleanroom approach to software development](https://en.wikipedia.org/wiki/Cleanroom_software_engineering).  Here, the task of programmers was to  deleivered proably correct code to a seperate testing team.
 [^5]: M. Paulk at al. (1993)  SEI Software CMM\* manual (v.1.1). "Analysis and allocation of the system requirements is not the responsibility of the SE group but is a prerequisite for their work."
