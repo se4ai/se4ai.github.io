@@ -10,6 +10,8 @@ what do we mean  by SE? By AI?
 ### What is SE?
 
 
+![](https://hub.packtpub.com/wp-content/uploads/2018/08/software-dev.png){:class="img-responsive img-rounded"}
+
 Software is everyware and does everything.
 We once challenged a class of students to come
 up with one thing that is _not_ mediated, organized,
