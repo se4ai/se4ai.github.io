@@ -10,38 +10,40 @@ what do we mean  by SE? By AI?
 
 ### What is SE?
 
+
 Software is everyware and does everything.
 We once challenged a class of students to come
 up with one thing that is _not_ mediated, organized,
 controlled by software. One student waved a shoe
 in the air and said "look! no software!". But when
 pressed, the student confessed the shoe was bought on-line
-using a digitial credit card transaction after they saw
+using a digital credit card transaction after they saw
 someone else wearing the same shoes on a social media
 platform. So in a very real sense, software created
-the shoes on her feed.
+the shoes on her feet.
 
-
-Software engineering is the creation/ maintainance of some software
+Software engineering is the creation/ maintenance of some software
 product of an acceptable standard, given the available resources (time,
 people, tools, etc)[^0].
 
 
+
+
 Software engineering should be (and often isn't) a process of looking
 at current software so we can make it better.  
-We want to make softare better since if we ever we do it again,
+We want to make software better since if we ever we do it again,
 we want to do it easier. Also, if we want to scale up the use
 of a software solution, then we want  to know how to run
 that software faster, with fewer resources.
 
 Sometimes making software better  means
 adjusting it and sometimes that means burning it down and starting afresh.
-Accroding to W. Edwards Deming[^2] (a promient writer on quality control),
+According to W. Edwards Deming[^2] (a prominent writer on quality control),
 this process is called _Plan, Do, Study, Act_.
 SE needs AI since,
 currently, software engineering is very, very good at _Do_ and _Act_ but not _Plan,Study_
 
--  Many software teams use practice continous integration. Such CI-teams can
+-  Many software teams use practice continuous integration. Such CI-teams can
    build and deploy new versions of complex systems, several times per day.
    Any number of other texts explore _Doing_ and _Acting_.  
 
@@ -55,33 +57,33 @@ currently, software engineering is very, very good at _Do_ and _Act_ but not _Pl
    wrong wrong wrong wrong wrong
   (e.g. see the list of [over 100 cognitive biases](cognitivebias)). 
 
-Enter artifical intelligence. AI
+Enter artificial intelligence. AI
 is the designing and building of intelligent agents
-that receive percepts from the environment and take actions that affect
+that receive precepts from the environment and take actions that affect
 that environment[^1].  More specifically, this is the process of:
 
-- collecting and analying the data that lets us understand:
+- collecting and analyzing the data that lets us understand:
      - what the users want (the objectives);
      - what are the current options;
      - what are the constraints around those options.
 - then making choices that:
      - reach as many objectives as we can;
      - as easily as possible;
-     - while satisfying most of the contraints.
+     - while satisfying most of the constraints.
 
 This means that SE in the age of AI
-can use some combiantion of data mining and optimization:
+can use some combination of data mining and optimization:
 
 - _Optimizers_ are algorithms
 that take some model (or something)
 and then try to learn inputs that lead to better results.
-- Sometimes (often) there is no model in which
+Sometimes (often) there is no model in which
 case they can be built via _data mining_.
 - Whereas data miners usually explore a fixed
 set of data, optimizers can generate more data by re-running the model 
 many times,
 using different inputs.
-- Data miners, on the other hand,
+Data miners, on the other hand,
 reflect over data to return a
 summary of that data.
 
@@ -101,7 +103,7 @@ in useful ways.
 For example:
 
 - When the optimizer is running too slowly, we might apply data mining
-  to divide up and simpigy the problem, then run optimizers on 
+  to divide up and simply the problem, then run optimizers on 
   the simplified bits.
 - Data miners are configured by many magic parameters. When we do not know
   what choices to apply, we ask optimizers to automatically
@@ -115,7 +117,7 @@ data miners and optimizers have been mixed-and-matched in order
 to better manage _Plan_ and _Study_.
 
 But before going on, we make the obvious comment that 
-the above is just an opinion. And its an opinion that some people might dispuate saying (e.g.)
+the above is just an opinion. And its an opinion that some people might dispute saying (e.g.)
 
 "That's not SE. I know since I am a software engineer and the above says very little about my day to day work." 
 
@@ -130,7 +132,7 @@ SE is all about X. Consider:
 - SE is not about testing (Mills, 1985)[^4]
 - SE is not about requirements (Paulk, 1993)[^5]
     - “Analysis and allocation of the system requirements is NOT the responsibility of the SE group but is a prerequisite for their work”
-- SE is not about deployment (before the advent of continuous integation)
+- SE is not about deployment (before the advent of continuous integration)
 - SE is not about AI... yet
 
 Our point here is that even though AI is not a standard tool 
@@ -150,9 +152,9 @@ Otherwise, send us your email and we'll check back in with you in 2020.
 [^9]: e.g. [Walking on the moon](https://en.wikipedia.org/wiki/List_of_missions_to_the_Moon)
 [^17]: e.g. [Abstraction](https://en.wikipedia.org/wiki/Abstraction)
 [^20]: e.g. [Mathematics](https://en.wikipedia.org/wiki/Mathematics) and the invention of zero.
-[^19]: e.g. Newton's  realization that certain physical laws hold on eather, and in stars.
+[^19]: e.g. Newton's  realization that certain physical laws hold on earth, and in stars.
 [^21]: e.g. [Conservation Laws](https://en.wikipedia.org/wiki/Conservation_law#Exact_laws)
-[^18]: e.g. The unification of fundamental forces in the universe [light, electic, magnetic](https://en.wikipedia.org/wiki/Electromagnetic_radiation)
+[^18]: e.g. The unification of fundamental forces in the universe [light, eclectic, magnetic](https://en.wikipedia.org/wiki/Electromagnetic_radiation)
 [^16]: e.g. [Crispr](https://en.wikipedia.org/wiki/CRISPR)
 [^8]: e.g. [Invention of perspective in art](https://en.wikipedia.org/wiki/Perspectivity)
 [^13]: e.g. [UNIX](https://en.wikipedia.org/wiki/History_of_Unix)
@@ -161,8 +163,8 @@ Otherwise, send us your email and we'll check back in with you in 2020.
 [^10]: e.g. the work of [Isamu Noguchi](https://www.noguchi.org/noguchi/timeline)
 [^12]: e.g. the work of [Frank Lloyd Wright](https://franklloydwright.org)
 [^11]: e.g. the work of [Dieter Rams](https://readymag.com/shuffle/dieter-rams/)
-[^3]: B. Boehm (2004) [Keynote address to the ASE'04 conference](http://ase-conferences.org/ase/past/ase2004/download/KeynoteBoehm.pdf), Boehm reports that at ICSE'4 (1979), Edker Dijkstra commented that "The notion of ‘user’ cannot be precisely defined, and therefore has no place in CS or SE." • “Analysis and allocation of the system requirements is not the responsibility of the SE group but is a prerequisite for their work”
-[^4]: H. Muils et al. (1987) [iA cleanroom approach to software development](https://en.wikipedia.org/wiki/Cleanroom_software_engineering).  Here, the task of programmers was to  deleivered proably correct code to a seperate testing team.
+[^3]: B. Boehm (2004) [Keynote address to the ASE'04 conference](http://ase-conferences.org/ase/past/ase2004/download/KeynoteBoehm.pdf), Boehm reports that at ICSE'4 (1979), ‎Edsger Dijkstra commented that "The notion of ‘user’ cannot be precisely defined, and therefore has no place in CS or SE." • “Analysis and allocation of the system requirements is not the responsibility of the SE group but is a prerequisite for their work”
+[^4]: H. Mills et al. (1987) [A cleanroom approach to software development](https://en.wikipedia.org/wiki/Cleanroom_software_engineering).  Here, the task of programmers was to  delivered probably correct code to a separate testing team.
 [^5]: M. Paulk at al. (1993)  SEI Software CMM\* manual (v.1.1). "Analysis and allocation of the system requirements is not the responsibility of the SE group but is a prerequisite for their work."
 
 
