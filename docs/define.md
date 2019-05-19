@@ -7,7 +7,6 @@ layout: default
 Before going any further, we'll need some preliminaries. For example,
 what do we mean  by SE? By AI?
 
-![](https://i.ytimg.com/vi/E46LYc4JpYM/maxresdefault.jpg){: align="right" width="350px"}
 
 ### What is SE?
 
@@ -58,6 +57,8 @@ currently, software engineering is very, very good at _Do_ and _Act_ but not _Pl
   Nevertheless there are so many ways humans routinely get it
    wrong wrong wrong wrong wrong
   (e.g. see the list of [over 100 cognitive biases](cognitivebias)). 
+
+![](https://i.ytimg.com/vi/E46LYc4JpYM/maxresdefault.jpg){: align="right" width="350px"}
 
 Enter artificial intelligence. AI
 is the designing and building of intelligent agents
