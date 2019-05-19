@@ -7,10 +7,11 @@ layout: default
 Before going any further, we'll need some preliminaries. For example,
 what do we mean  by SE? By AI?
 
+![](https://i.ytimg.com/vi/E46LYc4JpYM/maxresdefault.jpg){: align="right" width="350px"}
+
 ### What is SE?
 
 
-![](https://hub.packtpub.com/wp-content/uploads/2018/08/software-dev.png){:class="img-responsive img-rounded"}
 
 Software is everyware and does everything.
 We once challenged a class of students to come
