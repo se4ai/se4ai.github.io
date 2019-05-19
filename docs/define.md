@@ -146,7 +146,7 @@ Otherwise, send us your email and we'll check back in with you in 2020.
 [^7]: e.g. The [green revolution](https://en.wikipedia.org/wiki/Green_Revolution] that feed billions).
 [^9]: e.g. [Walking on the moon](https://en.wikipedia.org/wiki/List_of_missions_to_the_Moon)
 [^17]: e.g. [Abstraction](https://en.wikipedia.org/wiki/Abstraction)
-[^20]:e.g. [Mathematics](https://en.wikipedia.org/wiki/Mathematics) and the invention of zero.
+[^20]: e.g. [Mathematics](https://en.wikipedia.org/wiki/Mathematics) and the invention of zero.
 [^19]: e.g. Newton's  realization that certain physical laws hold on eather, and in stars.
 [^21]: e.g. [Conservation Laws](https://en.wikipedia.org/wiki/Conservation_law#Exact_laws)
 [^18]: e.g. The unification of fundamental forces in the universe [light, electic, magnetic](https://en.wikipedia.org/wiki/Electromagnetic_radiation)
