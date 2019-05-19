@@ -131,7 +131,6 @@ SE is all about X. Consider:
 - SE is not about  users (Dijkstra, 79)[^3]
 - SE is not about testing (Mills, 1985)[^4]
 - SE is not about requirements (Paulk, 1993)[^5]
-    - “Analysis and allocation of the system requirements is NOT the responsibility of the SE group but is a prerequisite for their work”
 - SE is not about deployment (before the advent of continuous integration)
 - SE is not about AI... yet
 
@@ -141,7 +140,7 @@ software engineers, it will soon be.
 
 If you agree, then read on.
 
-Otherwise, send us your email and we'll check back in with you in 2020.
+Otherwise, send along your email and we'll check back in with you in 2020.
 
 ## Notes
 
