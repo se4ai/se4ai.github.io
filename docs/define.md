@@ -10,17 +10,34 @@ what do we mean  by SE? By AI?
 
 ### What is SE?
 
+Software is everyware and does everything.
+We once challenged a class of students to come
+up with one thing that is _not_ mediated, organized,
+controlled by software. One student waved a shoe
+in the air and said "look! no software!". But when
+pressed, the student confessed the shoe was bought on-line
+using a digitial credit card transaction after they saw
+someone else wearing the same shoes on a social media
+platform. So in a very real sense, software created
+the shoes on her feed.
+
+
 Software engineering is the creation/ maintainance of some software
 product of an acceptable standard, given the available resources (time,
 people, tools, etc)[^0].
 
 
 Software engineering should be (and often isn't) a process of looking
-at current software so we can make it better.  Sometimes that means
+at current software so we can make it better.  
+We want to make softare better since if we ever we do it again,
+we want to do it easier. Also, if we want to scale up the use
+of a software solution, then we want  to know how to run
+that software faster, with fewer resources.
+
+Sometimes making software better  means
 adjusting it and sometimes that means burning it down and starting afresh.
 Accroding to W. Edwards Deming[^2] (a promient writer on quality control),
 this process is called _Plan, Do, Study, Act_.
-
 SE needs AI since,
 currently, software engineering is very, very good at _Do_ and _Act_ but not _Plan,Study_
 
