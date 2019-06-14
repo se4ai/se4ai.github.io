@@ -1,4 +1,5 @@
 ---
+
 title: Assumes
 layout: default
 ---
@@ -11,7 +12,12 @@ Code is written by teams. Teams have processes. Some processes are bad (like the
 (like agile sprints[^2]). So while _show me the code_ is important, for those who have to manage teams of people working on SE for AI
 systems, then it is also important to _show me the process_.
 
-## Let me Innovate
+## Show me Examples
+
+Where possible, show concrete examples of how AI technology
+applies to SE (and vice versa). 
+
+## Show me How to Innovate
 
 Not black boxes. Here, current tools are seen as  mixes of methods that can be pulled apart and recombined and improved.
 Data miners/optimizers are not black box devices that should be not explored or extended.
