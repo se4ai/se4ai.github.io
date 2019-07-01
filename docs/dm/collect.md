@@ -1,6 +1,6 @@
 ---
 title: Data Collection
-layout: default
+layout: dm
 ---
 
 <a href="mailto:timm@ieee.org">timm@ieee.org</a>
