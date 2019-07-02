@@ -1,7 +1,13 @@
+
 ---
-title: Data Collection
+title: Feature Engineering
 layout: dm
 ---
+
+test to LDA
+
+
+feature reductuins (FSS)
 
 ## Cheats gude to data (from the recommendaation book)
 
