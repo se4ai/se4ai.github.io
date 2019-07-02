@@ -12,3 +12,6 @@ layout: dm
 
 
 ## REspect Priacy during colelction
+
+
+{% include email_link.html user=site.users.erik %}
