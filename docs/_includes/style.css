@@ -28,7 +28,7 @@ code {
 a:link,
 a:visited,
 a:hover,
-a:active { color:#{{site.about.bold}}; }
+a:active { text-decoration: underline; color:#{{site.about.bold}}; }
 a:hover  { background-color: #EEE; }
 
 table.center {
