@@ -11,4 +11,4 @@ layout: dm
 
 # Diverse Staff
 
-[Mirying Kim and others](/refs*Kim17) have explored, we haveTom's Menergaie of pe
+[Mirying Kim and others](/refs#Kim17) have explored, we haveTom's Menergaie of pe
