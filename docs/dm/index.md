@@ -17,3 +17,6 @@ loops
 sub-rountines
 
 Most of AI software isn't (about AI).
+
+chart of time spent: it s very rarey about the optimzier
+
