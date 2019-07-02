@@ -8,6 +8,8 @@ reality, these steps are more like inner-city train stations that people visit i
 
 AI is an  agile, not rigid, process.
 
+Plan for early feedback (the cicles)
+
 a wat, tnot the way
 
 loops

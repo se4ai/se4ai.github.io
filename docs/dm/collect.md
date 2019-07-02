@@ -3,4 +3,7 @@ title: Data Collection
 layout: dm
 ---
 
-<a href="mailto:timm@ieee.org">timm@ieee.org</a>
+## Suspect your data
+
+
+## Live with the data yu have
