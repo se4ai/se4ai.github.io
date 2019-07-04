@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# usage: sh ell
+
+Here=${Here:=$(pwd)}
+bash --init-file $Here/z.bashrc  -i
