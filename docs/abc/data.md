@@ -19,7 +19,7 @@ When we read we begin with a-b-c. When we mine we begin with... data.
 
 ## Unstructured Data
 
-Most data does not arrive in a well-structured form (like that discussed below).
+Reader beware: Most data does not arrive in a well-structured form (like that discussed below).
 For example, when mining text we have to handle
 spelling mistakes,
 tables in inconstist formats,  the same words taking on different meanings, etc etc.
@@ -49,17 +49,23 @@ of data. For structured data, that  data may be views as _tables_ of examples:
     - Optimizing algirthms seek changes to the independent values
       that predict for _changes_ in the dependent values.
 
-That is, data miners learn models of the form
+Many data miners learn models of the form
 
 $$
 y = f(x)
 $$
 
-and optimizers learn models the explore changes (deltas) to variables:
+where $x$ are the indepedent variabes and $y$ are the depedennt variables.
+
+Optimiers, on the other hand
+learn models the explore changes (deltas) to variables:
 
 $$
-{\Delta}y = g({\Delta}x)
+{\Delta}y = f'({\Delta}x)
 $$
+
+In the above $f'$ is some function learned from $f$ that shows us how changes in the independent variables effects the dependent ones.
+When all the data is numeric and conforms to a simple distribution, then simple mathematic tools are enough to learn $f'$.
 
 For example, in _text mining_, where there is one column per
 word and one row per document, the columns contain many missing values
