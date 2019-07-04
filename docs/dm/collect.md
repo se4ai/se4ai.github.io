@@ -15,7 +15,7 @@ layout: dm
 
 111
 
-ounce of knowldge ugudies colelction the spike example of how to focust ehe data colelction
+ounce of knowldge ugudies colelction the spike example of how to focust ehe data colelction  
 
 
 {% include email_link.html user=site.users.erik %}
