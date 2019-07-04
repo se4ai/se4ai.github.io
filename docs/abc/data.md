@@ -6,27 +6,24 @@ title: About Data
 
 ## Summary
 
-- _Stuctured_ or _unstructured_ data;
-- _Tables_ with  _columns_ (also called  _features_ or _attributes_);
+- Data can be _stuctured_ or _unstructured_;
+- _Tables_ are one way to structure data. Tables have  _columns_ (also called  _features_ or _attributes_ or _variables_);
++ The columns may be _numeric_ (has numbers) or _symbolic_ (contain symbols).
 - Features can be _independent_ or _dependnet_
 - Dependent features (also called _goals_)  can be _classes_ or _objectives_
-- Supervised learners  seek combiantions of indepdnent features that predict for depednent features.
-- Classifiers  predict for a single symbolic goal called the class.
-- Regression predict for a single numeric  goal.
-- Assoication rule learners called the class.
 
 ## About Data
 
 Lets start at the very beginning-- its a very good place to start.
-When we read we begin with a-b-c. When we mine we begin with... other stuff.
+When we read we begin with a-b-c. When we mine we begin with... data.
 
 ## Unstructured Data
 
-Most data does not arrive in pretty little structures (like that discussed below).
+Most data does not arrive in a well-structured form (like that discussed below).
 For example, when mining text we have to handle
 spelling mistakes,
 tables in inconstist formats,  the same words taking on different meanings, etc etc.
-Its not even clear in text mining where one cencept ends  and another begins.
+In fact, in text mining, it is not even clear where one cencept ends  and another begins.
 For those reasons, text mining is so much fun.
 
 In any case, when  data does not come in an unstructured form (and it usually does not) it is the task of the data scientist
@@ -37,16 +34,32 @@ For now, we'll assume some magician has waved a magic wand over the data to prod
 
 ## Structured Data
 
-
 Different kinds of data miners work best of different kinds
-of data. For structured data, that  data may be views as tables of examples:
+of data. For structured data, that  data may be views as _tables_ of examples:
 
-+ Tables have one column per feature and one row per example. 
-+ The columns may be numeric (has numbers) or discrete (contain
-  symbols).
++ Tables have _columns_, also know as features or attributes or variables.
++ The columns may be _numeric_ (has numbers) or _symbolic_ (contain symbols).
++ Columns may contain missing values.
++ Tables have one _column_ per feature and one _row_ per example. 
 + Also, some columns are goals (things we want to predict using the
   other columns).
-+ Finally, columns may contain missing values.
+    - Goals are often called _dependent_ variables and the other columns ar called _independent_.
+    -  Data mining algorithms seek combinations of the independent
+       values that predict for the dependent values. 
+    - Optimizing algirthms seek changes to the independent values
+      that predict for _changes_ in the dependent values.
+
+That is, data miners learn models of the form
+
+$$
+y = f(x)
+$$
+
+and optimizers learn models the explore changes (deltas) to variables:
+
+$$
+{\Delta}y = g({\Delta}x)
+$$
 
 For example, in _text mining_, where there is one column per
 word and one row per document, the columns contain many missing values

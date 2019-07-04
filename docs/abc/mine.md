@@ -3,6 +3,13 @@ layout: abc
 title: About Data Miners
 ---
 
+## Summary
+
+- Supervised learners  seek combiantions of indepdnent features that predict for depednent features.
+- Classifiers  predict for a single symbolic goal called the class.
+- Regression predict for a single numeric  goal.
+- Assoication rule learners called the class.
+
 
 ## About Data Miners
 
