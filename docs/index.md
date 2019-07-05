@@ -14,13 +14,8 @@ The more SE people know about AI, the better they can apply this exciting new te
 
 So, do you know enough about AI?
 
-
+999
 
 ```python
 {% include src/bb.py %}
 ```
-
-111
-{% highlight python linenos %}
-{% include src/bb.py %}
-{% endhighlight %}
