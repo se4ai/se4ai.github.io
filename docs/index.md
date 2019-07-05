@@ -16,10 +16,11 @@ So, do you know enough about AI?
 
 
 
-{% include p.html content="aa" %}
-
 ```python
 {% include src/bb.py %}
 ```
 
-
+111
+{% highlight python linenos %}
+{% include src/bb.py %}
+{% endhighlight %}
