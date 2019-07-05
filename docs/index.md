@@ -18,6 +18,3 @@ So, do you know enough about AI?
 
 {% include p.html content="aa.py" %}
 
-```python
-{% include_relative aa.py %}
-```
