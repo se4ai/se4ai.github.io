@@ -55,4 +55,3 @@ class Sample(Col):
     elif random.random() <= now/i.n:
       i.all[ int(r() * now) ]= x
     return i
-  
