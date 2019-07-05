@@ -119,7 +119,7 @@ sunny    |     81 |        90             |   TRUE |     no
 overcast |     83 |        75             |  FALSE |    yes
 overcast |     85 |        86             |  FALSE |    yes
 sunny    |     85 |        85             |  FALSE |     no
-{:.table-striped}
+{:class="table table-bordered table-striped"}
 
 ## Ranges
 
