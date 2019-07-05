@@ -17,4 +17,4 @@ So, do you know enough about AI?
 {% gist 63c7e6ca2af7ee849bc189968b436a44  %}
 
 
-{% include src.html content="aa.py" %}
+{% include p.html content="aa.py" %}
