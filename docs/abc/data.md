@@ -136,3 +136,8 @@ its ranges are _overcast_, _rainy_, and _sunny_.
 
 
 ![](/img/abcdatatemp.png)
+
+
+The process of converting the numbers into a column into
+a small number of ranges is called _discretization_ (and we will
+disucss it later).
