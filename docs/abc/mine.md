@@ -63,17 +63,52 @@ subtrees by requiring less further splitting to sort out the subsets.
 
 Various schemes for finding good splits:
 
+- A good split minimizes the diversity of the splits. This is useful
+  since such splits would have least further splits.
 - The diversity of the examples within each split can be measured 
 via standard deviation, or entropy.
 - Given examples with numeric goals $$x_1, x_2,..$$, 
   their standard devation is  
    $$\sigma=\sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2}$$
-   where $$\overline{x} = \frac{\sum_ix_i}{n}$$.
+   where $$\overline{x}$$ is the mean of these values;
+   i.e. $$\overline{x} = \frac{\sum_ix_i}{n}$$.
 - Given $$n$$ examples with symbolic goals at frequency $$n_1, n_2,...$$,
   the probability of those symbols are $$p_i=\frac{n_i}{n}$$ and
   their entropy is $$e=-\sum_ip_ilog_2(p_i)$$.
-  
 
+
+To illustrate that, suppose we were considering
+spliting the data on _lines of code_. If we split at _loc&lt;100_
+then that would produce two splits of very similar _efforts_: 
+
+- _(10,10,9,15)_ which has a standard deviation of $$\sigma_1=2.3$$
+- and _(88,92,98)_ which has a standard deviation of $$\sigma_2=4.1$$
+- The expected value of these two values is sum of these numbers
+  divided by their frequency; i.e. 
+  $$\frac{n_1}{n}\sigma_1 + \frac{n_2}{n}\sigma_2$$ 
+  which equals
+  $$\frac{4}{7}2.3 + \frac{3}{7}4.1=3.1$$. 
+- 3.1 is  much less than the
+  than the  
+  $\sigma_0$ of all the effort numbers of 40.5; i.e. _loc&lt;100_
+  is a very good split.
+
+
+
+$$
+\begin{array}{rr}
+\mathcal{lines of code}& \mathcal{effort} \\\hline
+       10              & 10 \\
+       11              & 10 \\
+       13              & 9 \\
+       20              & 15 \\
+      100              & 88\
+      110              & 92\\
+      130              & 98\\\cline{2-2}
+      \mathcal{stdev}=\sigma_0  & 40.5
+\end{array}
+$$
+ the examples have 
 
 This part introduces some terminology that we'll need as we go along.
 
