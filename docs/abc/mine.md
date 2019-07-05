@@ -3,6 +3,8 @@ layout: abc
 title: About Data Miners
 ---
 
+https://link-springer-com.prox.lib.ncsu.edu/chapter/10.1007/978-3-642-45135-5\_3
+
 ## Summary
 
 - Supervised learners  seek combiantions of indepdnent features that predict for depednent features.
