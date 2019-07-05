@@ -18,3 +18,7 @@ So, do you know enough about AI?
 
 {% include p.html content="aa" %}
 
+```python
+888
+{% include src/bb.py %}
+```
