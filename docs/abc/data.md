@@ -52,20 +52,34 @@ of data. For structured data, that  data may be views as _tables_ of examples:
 Many data miners learn models of the form
 
 $$
-y = f(x)
+Y = f(X)
 $$
 
-where $x$ are the indepedent variabes and $y$ are the depedennt variables.
+where $$X$$ are the indepedent variabes and $$Y$$ are the depedent variables.
+
 
 Optimiers, on the other hand
-learn models the explore changes (deltas) to variables:
+learn models the explore changes (deltas, or $$\Delta$$) to variables:
 
 $$
-{\Delta}y = f'({\Delta}x)
+{\Delta}Y = f'({\Delta}X)
 $$
 
-In the above $$ f' $$ is some function learned from $f$ that shows us how changes in the independent variables effects the dependent ones.
-When all the data is numeric and conforms to a simple distribution, then simple mathematic tools are enough to learn $$ f' $$.
+Sometimes $$Y$$ is not one feature, but a whole set ($$Y=y_1,y_2,...$$),
+some of which might compete with each other
+(e.g. improving $$y_1$$
+might hurt $$y_2$$). 
+Later in this book, we will spend much time
+exploring trade-offs between
+competing goals for such _multi-objective optimization_ problems.
+
+
+When all the data is numeric and conforms to a simple distribution, then simple 
+mathematcs is enough to learn $$f$$ and $$f'$$.
+But when data is a mixture of symbols and numbers, then we need to beyond standard
+maths. This is particularly true for ~Data extracted from software
+since every `if` statement divides 
+a program  into a different region needing its own $$f$$ and $$f'$$.
 
 For example, in _text mining_, where there is one column per
 word and one row per document, the columns contain many missing values
