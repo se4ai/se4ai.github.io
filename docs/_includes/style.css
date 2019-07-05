@@ -32,7 +32,7 @@ a:active { text-decoration: underline; color:#{{site.about.bold}}; }
 a:hover  { background-color: #EEE; }
 
 td {
-  padding: 5px 0;
+  padding: 30px 0;
 }
 
 table.center {
