@@ -130,4 +130,4 @@ its ranges are _overcast_, _rainy_, and _sunny_.
 _ For numeric columns, ranges can be inferred. 
 
 
-<img align=center src="/img/abcdatatemp.png">
+![](/img/abcdatatemp.png)
