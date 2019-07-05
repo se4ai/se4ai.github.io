@@ -16,5 +16,5 @@ So, do you know enough about AI?
 
 
 
-{% include p.html content="aa" %}
+{% include p.html py="aa" %}
 
