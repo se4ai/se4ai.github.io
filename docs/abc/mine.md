@@ -109,7 +109,7 @@ $$
 \end{array}
 $$
 
- the examples have 
+e examples have 
 
 This part introduces some terminology that we'll need as we go along.
 
