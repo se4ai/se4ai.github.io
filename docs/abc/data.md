@@ -105,20 +105,29 @@ there are no missing values).
 
  outlook |   temp |  humidity |  windy |   play?
 -------- |   ---- |  -------- |  ----- |  -----
-overcast |     64 |        65 |   TRUE |    yes
-overcast |     72 |        90 |   TRUE |    yes
-overcast |     81 |        75 |  FALSE |    yes
-overcast |     83 |        86 |  FALSE |    yes
-rainy    |     65 |        70 |   TRUE |     no
-rainy    |     71 |        91 |   TRUE |     no
-rainy    |     68 |        80 |  FALSE |    yes
-rainy    |     70 |        96 |  FALSE |    yes
-rainy    |     75 |        80 |  FALSE |    yes
-sunny    |     69 |        70 |  FALSE |    yes
-sunny    |     72 |        95 |  FALSE |     no
-sunny    |     75 |        70 |   TRUE |    yes
-sunny    |     80 |        90 |   TRUE |     no
+overcast |     54 |        65 |   TRUE |    yes
+rainy    |     58 |        70 |   TRUE |     no
+rainy    |     59 |        80 |  FALSE |    yes
+sunny    |     59 |        70 |  FALSE |    yes
+rainy    |     68 |        96 |  FALSE |    yes
+rainy    |     70 |        91 |   TRUE |     no
+overcast |     70 |        90 |   TRUE |    yes
+sunny    |     70 |        95 |  FALSE |     no
+rainy    |     71 |        80 |  FALSE |    yes
+sunny    |     72 |        70 |   TRUE |    yes
+sunny    |     81 |        90 |   TRUE |     no
+overcast |     83 |        75 |  FALSE |    yes
+overcast |     85 |        86 |  FALSE |    yes
 sunny    |     85 |        85 |  FALSE |     no
 
 
+## Ranges
 
+An important concept in a column are _ranges_ of values.
+
+- Symbolic column have one range per symbolic value; eg.. for _outlook_,
+its ranges are _overcast_, _rainy_, and _sunny_.
+_ For numeric columns, ranges can be inferred. 
+
+
+<img align=center src="/img/abcdatatemp.png">

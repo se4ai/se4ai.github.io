@@ -55,11 +55,21 @@ subtree root.
 further splitting is superfluous or a subset contains examples with
 a very clear single outcome.
 
-#### "_argbest&nbsp;goal"
+#### "_argbest&nbsp;goal_"
+
+One scheme for finding good splits is
+to find splits to select for 
+best values of the goal variables. For example:
+
+-  a _best or rest_
+strategy is to divide the depedent  values into (say) the 10%
+best and the 90% rest
+-  then find  indendent ranges that select
+for that best range.
 
 #### "_argmin&nbsp;diversity_"
 
-One scheme for finding good splits is 
+Another scheme for finding good splits is 
 $$\underset{\mathcal{diversity}}{\operatorname{argmax}} $$:
 
 - A good split decreases the percentage of different symbols
@@ -77,8 +87,13 @@ $$\underset{\mathcal{diversity}}{\operatorname{argmax}} $$:
   the probability of those symbols are $$p_i=\frac{n_i}{n}$$ and
   their entropy is $$e=-\sum_ip_ilog_2(p_i)$$.
 
+Sometimes standard deviation is described as _variance_.
+These two quanitites are related as follows: standard deviation
+is the square root of the variance.
+Note that all these values (entropy, standard deviation, and variance)
+are minimal when there is least diversity in the sample.
 
-To illustrate that, suppose we were considering
+To illustrate this kind of splitting, suppose we were considering
 spliting the data on _lines of code_. If we split at _loc&lt;100_
 then that would produce two splits of very similar _efforts_: 
 
@@ -94,8 +109,6 @@ then that would produce two splits of very similar _efforts_:
   $$\sigma_0$$ of all the effort numbers of 40.5; i.e. _loc&lt;100_
   is a very good split.
 
-
-
 $$
 \begin{array}{rr}
 \mathcal{lines~of~code}& \mathcal{effort} \\\hline
@@ -109,6 +122,38 @@ $$
       \mathcal{stdev}=\sigma_0 = & 40.5
 \end{array}
 $$
+
+### Clustering
+
+$$(\sum_i(x_i - y_i)^p)^{1/p}$$
+
+### Association rule learning
+
+Association rule learners such as [Apriori](/refs#Agrawal93) find
+attributes commonly occurring together in a training set. 
+Rules have the form
+
+$$
+\mathcal{LHS} \Rightarrow \mathcal{RHS}
+$$
+
+where $$\mathcal{LHS}$$ and
+
+
+No attribute
+can appear on both sides of the association LHS × RHS—that is, LHS
+× RHS = ∅.  The rule LHS × RHS holds in the exam- ple set with
+confidence c if c percent of the examples containing LHS also contain
+RHS: c = |LHS ∪ RHS| × 100/|LHS|. The rule LHS × RHS has support s
+in the exam- ple set if s percent of the examples contain LHS ∪
+RHS: s = |LHS ∪ RHS| × 100/|D|, where |D| is the number of examples.
+Associ- ation rule learners return rules with high confidence (for
+example, c > 90 percent).  Rejecting associations with low sup-
+port first can cull the search for associations. We can view
+association rule learners as generalizations of decision tree
+learning: Decision tree learners restrict the RHS of rules to one
+class attribute whereas association rule learners can add any number
+of attributes to the RHS.
 
 e examples have 
 
