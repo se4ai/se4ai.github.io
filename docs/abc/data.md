@@ -103,22 +103,22 @@ In this table, we are trying to predict for the goal of
 `play?` (and note that `temp` and `humidity` are numeric columns and
 there are no missing values).
 
- outlook |   temp |  humidity |  windy |   play?
--------- |   ---- |  -------- |  ----- |  -----
-overcast |     54 |        65 |   TRUE |    yes
-rainy    |     58 |        70 |   TRUE |     no
-rainy    |     59 |        80 |  FALSE |    yes
-sunny    |     59 |        70 |  FALSE |    yes
-rainy    |     68 |        96 |  FALSE |    yes
-rainy    |     70 |        91 |   TRUE |     no
-overcast |     70 |        90 |   TRUE |    yes
-sunny    |     70 |        95 |  FALSE |     no
-rainy    |     71 |        80 |  FALSE |    yes
-sunny    |     72 |        70 |   TRUE |    yes
-sunny    |     81 |        90 |   TRUE |     no
-overcast |     83 |        75 |  FALSE |    yes
-overcast |     85 |        86 |  FALSE |    yes
-sunny    |     85 |        85 |  FALSE |     no
+ outlook |   temp |  &nbsp;humidity&nbsp; |  windy |   play?
+-------- |   ---- |  --------             |  ----- |  -----
+overcast |     54 |        65             |   TRUE |    yes
+rainy    |     58 |        70             |   TRUE |     no
+rainy    |     59 |        80             |  FALSE |    yes
+sunny    |     59 |        70             |  FALSE |    yes
+rainy    |     68 |        96             |  FALSE |    yes
+rainy    |     70 |        91             |   TRUE |     no
+overcast |     70 |        90             |   TRUE |    yes
+sunny    |     70 |        95             |  FALSE |     no
+rainy    |     71 |        80             |  FALSE |    yes
+sunny    |     72 |        70             |   TRUE |    yes
+sunny    |     81 |        90             |   TRUE |     no
+overcast |     83 |        75             |  FALSE |    yes
+overcast |     85 |        86             |  FALSE |    yes
+sunny    |     85 |        85             |  FALSE |     no
 {:.table-striped}
 
 ## Ranges
