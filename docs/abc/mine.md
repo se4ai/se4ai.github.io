@@ -66,7 +66,9 @@ Various schemes for finding good splits:
 - The diversity of the examples within each split can be measured 
 via standard deviation, or entropy.
 - Given examples with numeric goals $$x_1, x_2,..$$, 
-  their standard devation is  $$\sigma=\sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2}$$.
+  their standard devation is  
+   $$\sigma=\sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2}$$
+   where $$\overline{x} = \frac{\sum_ix_i}{n}$$.
 - Given $$n$$ examples with symbolic goals at frequency $$n_1, n_2,...$$,
   the probability of those symbols are $$p_i=\frac{n_i}{n}$$ and
   their entropy is $$e=-\sum_ip_ilog_2(p_i)$$.
