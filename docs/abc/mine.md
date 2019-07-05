@@ -97,7 +97,7 @@ then that would produce two splits of very similar _efforts_:
 
 $$
 \begin{array}{rr}
-\mathcal{lines of code}& \mathcal{effort} \\\hline
+\mathcal{lines~of~code}& \mathcal{effort} \\\hline
        10              & 10 \\
        11              & 10 \\
        13              & 9 \\
