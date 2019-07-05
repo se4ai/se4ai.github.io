@@ -127,7 +127,12 @@ An important concept in a column are _ranges_ of values.
 
 - Symbolic column have one range per symbolic value; eg.. for _outlook_,
 its ranges are _overcast_, _rainy_, and _sunny_.
-- For numeric columns, ranges can be inferred. For e
+- For numeric columns, ranges can be inferred. For example,
+  the `temp` column shown above is charted below. Note that
+  this sequence can be approximated by the three ranges
+    - _temp&lt;68_
+    - _temp&lt;81_
+    - _temp&ge;81_
 
 
 ![](/img/abcdatatemp.png)
