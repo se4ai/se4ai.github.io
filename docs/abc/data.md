@@ -119,7 +119,7 @@ sunny    |     81 |        90 |   TRUE |     no
 overcast |     83 |        75 |  FALSE |    yes
 overcast |     85 |        86 |  FALSE |    yes
 sunny    |     85 |        85 |  FALSE |     no
-
+{:.table-striped}
 
 ## Ranges
 
@@ -127,7 +127,7 @@ An important concept in a column are _ranges_ of values.
 
 - Symbolic column have one range per symbolic value; eg.. for _outlook_,
 its ranges are _overcast_, _rainy_, and _sunny_.
-_ For numeric columns, ranges can be inferred. 
+- For numeric columns, ranges can be inferred. For e
 
 
 ![](/img/abcdatatemp.png)
