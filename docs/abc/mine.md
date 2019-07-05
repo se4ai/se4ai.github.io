@@ -40,7 +40,7 @@ where:
 - leaves are classifications (some decision about a 
   symbolic goal)
 - and whose branches are conjunctions of features that lead to those classifications. 
-$$\underset{x}{\operatorname{argmax}} $$
+$$\underset{\mathcal{diversity}}{\operatorname{argmax}} $$
 
 _Regression trees_  are similar but their leaves 
 make a prediction about some numeric goal.
