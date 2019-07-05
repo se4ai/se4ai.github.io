@@ -64,8 +64,8 @@ $$
 {\Delta}y = f'({\Delta}x)
 $$
 
-In the above $ f' $ is some function learned from $f$ that shows us how changes in the independent variables effects the dependent ones.
-When all the data is numeric and conforms to a simple distribution, then simple mathematic tools are enough to learn $ f' $.
+In the above $$ f' $$ is some function learned from $f$ that shows us how changes in the independent variables effects the dependent ones.
+When all the data is numeric and conforms to a simple distribution, then simple mathematic tools are enough to learn $$ f' $$.
 
 For example, in _text mining_, where there is one column per
 word and one row per document, the columns contain many missing values
