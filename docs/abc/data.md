@@ -130,9 +130,9 @@ its ranges are _overcast_, _rainy_, and _sunny_.
 - For numeric columns, ranges can be inferred. For example,
   the `temp` column shown above is charted below. Note that
   this sequence can be approximated by the three ranges
-    - _temp&lt;68_
-    - _temp&lt;81_
-    - _temp&ge;81_
+    - _temp &lt; 68_
+    - _temp &lt; 81_
+    - _temp &ge; 81_
 
 
 ![](/img/abcdatatemp.png)
