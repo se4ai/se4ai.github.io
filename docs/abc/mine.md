@@ -40,7 +40,6 @@ where:
 - leaves are classifications (some decision about a 
   symbolic goal)
 - and whose branches are conjunctions of features that lead to those classifications. 
-$$\underset{\mathcal{diversity}}{\operatorname{argmax}} $$
 
 _Regression trees_  are similar but their leaves 
 make a prediction about some numeric goal.
@@ -56,13 +55,17 @@ subtree root.
 further splitting is superfluous or a subset contains examples with
 a very clear single outcome.
 
-#### _argmin&nbsp;diversity_
+#### "_argbest&nbsp;goal"
+
+
+#### "_argmin&nbsp;diversity_"
 
 One scheme for finding good splits is 
 _argmin&nbsp;diversity_:
 
-- A good split decreases the percentage of different symbols
-  or different numbers
+- A good split on an independent variable
+   decreases the percentage of different symbols
+  or different numbers (of the dependent variable).
   in a subset, ensuring that subsequent learning generates smaller
   subtrees by requiring less further splitting to sort out the subsets.
 - The diversity of the examples within each split can be measured 
