@@ -11,6 +11,8 @@ title: About Data
 + The columns may be _numeric_ (has numbers) or _symbolic_ (contain symbols).
 - Features can be _independent_ or _dependnet_
 - Dependent features (also called _goals_)  can be _classes_ or _objectives_
+- Learners are often used to explore problems with only one dependent variable.
+- Multi-objective optimizers are often used to explore problems with many dependent variables.
 
 ## About Data
 
@@ -49,68 +51,38 @@ of data. For structured data, that  data may be views as _tables_ of examples:
     - Optimizing algirthms seek changes to the independent values
       that predict for _changes_ in the dependent values.
 
-Many data miners learn models of the form
-
-$$
-Y = f(X)
-$$
-
-where $$X$$ are the indepedent variabes and $$Y$$ are the depedent variables.
-
-
-Optimiers, on the other hand
-learn models the explore changes (deltas, or $$\Delta$$) to variables:
-
-$$
-{\Delta}Y = f'({\Delta}X)
-$$
-
-Sometimes $$Y$$ is not one feature, but a whole set ($$Y=y_1,y_2,...$$),
-some of which might compete with each other
-(e.g. improving $$y_1$$
-might hurt $$y_2$$). 
-Later in this book, we will spend much time
-exploring trade-offs between
-competing goals for such _multi-objective optimization_ problems.
-
-
-When all the data is numeric and conforms to a simple distribution, then simple 
-mathematcs is enough to learn $$f$$ and $$f'$$.
-But when data is a mixture of symbols and numbers, then we need to beyond standard
-maths. This is particularly true for ~Data extracted from software
-since every `if` statement divides 
-a program  into a different region needing its own $$f$$ and $$f'$$.
-
 For example, in _text mining_, where there is one column per
 word and one row per document, the columns contain many missing values
 (since not all words appear in all documents) and there may be
 hundreds of thousands of columns.
 
-Text mining applications can have many columns. _Big Data_
-applications can have any number of columns and millions to billions
-of rows.  For such large large data sets, a complete analysis may be
-impossible.  Hence, these must be sampled probabilistically using
-algorithms like [PageRank](/glossary#Pagerank) or [Naive Bayes](#Pagerank).
+Text mining applications can have many columns. 
+Big Data
+applications can have any number of columns and millions to billion
+of rows.  For such very large data sets, a complete analysis may be
+impossible.  Hence, the data must be sub-sampled or treated
+ probabilistically.
   
 On the other hand, when there are very few rows, data mining may fail
 since there are too few examples to support summarization. For such
-spare tables, _k-th nearest neighbors_ ([kNN](/glossary#KNN)) may be best. kNN makes
+sparse tables, nearest neighbors may be best. Such methods make
 conclusions about new examples by looking at their neighborhood in the
-space of old examples. Hence, kNN only needs a few (or even only one)
+space of old examples. Hence, they may only needs a few (or even only one)
 similar examples to make conclusions.
 
 If a table has many goals, then some may be competing; e.g. it may not
 be possible to find a car with the twin goals of low cost and low
 miles per gallon.  Such competing multi-goal problems can be studied
-using a _multi-objective optimizer_ like the genetic algorithms used
-in [NSGA-II](/glossary#Nsgaii).
+using a _multi-objective optimizer_.
 
 If a table has no goal columns, then this is an _unsupervised_
 learning problem that might be addressed by (say) finding clusters of
-similar rows using, say, [K-means](/glossary#Kmeans) or [EM](/glossary#Em).  An alternate approach, taken
-by the [APRORI](/glossary#apriori)  association rule learner, is to assume that ever column
-is a goal and to look for what combinations of any values predict for
-any combination of any other.
+similar rows.
+An alternate approach
+is an 
+association rule learner that  assumes ever column
+is a goal (then it to looks for what combinations of any values predict for
+any combination of any other).
 
 If a table has one goal, the this is a _supervised_ learning problem
 where the task is to find combinations of values from the other
@@ -121,9 +93,9 @@ columns that predict for the goal values.
   
 The following table shows a _simple data mining_ problem. Such problems
 are characterized by tables with just a
-few columns and not many rows (say, dozens to thousands). Traditionally,
-such simple data mining problems have been explored by [C4.5](#C45) and 
-[CART](/glossary#Cart)
+few columns and not many rows (say, dozens to thousands).
+The early machine learners all worked on the
+these simple data mining problem
 (and note that with some clever sampling of the data, it is
 possible to scale these traditional learners to Big Data problems.  
 

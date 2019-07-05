@@ -13,6 +13,66 @@ title: About Data Miners
 
 ## About Data Miners
 
+Many data miners learn models of the form
+
+$$
+Y = f(X)
+$$
+
+where $$X$$ are the indepedent variabes and $$Y$$ are the depedent variables.
+
+
+
+When all the data is numeric and conforms to a simple distribution, then simple 
+mathematcs is enough to learn $$f$$. 
+But when data is a mixture of symbols and numbers, then we need to beyond standard
+maths. This is particularly true foridata extracted from software
+since every `if` statement divides 
+a program  into a different region needing its own $$f$$ and $$f'$$.
+
+
+### Tree learning
+
+Many data mining methods generating trees.  
+For example, decision trees are those
+These are trees
+where:
+
+- leaves are classifications (some decision about a 
+  symbolic goal)
+- and whose branches are conjunctions of features that lead to those classifications. 
+
+_Regression trees_  are similar but their leaves 
+make a prediction about some numeric goal.
+
+One way to learn a tree is to:
+
+- split the example set into
+subsets based on some attribute value test. 
+- The process then repeats
+recursively on the subsets, with each splitter value becoming a
+subtree root.  
+- Splitting stops when a subset gets so small that
+further splitting is superfluous or a subset contains examples with
+a very clear single outcome.
+- A good split decreases the percentage of different symbols
+or different numbers
+in a subset, ensuring that subsequent learning generates smaller
+subtrees by requiring less further splitting to sort out the subsets.
+
+
+Various schemes for finding good splits:
+
+- The diversity of the examples within each split can be measured 
+via standard deviation, or entropy.
+- Given examples with numeric goals $$x_1, x_2,..$$, 
+  their standard devation is  $$\sigma=\sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2}$$.
+- Given $$n$$ examples with symbolic goals at frequency $$n_1, n_2,...$$,
+  the probability of those symbols are $$p_i=\frac{n_i}{n}$$ and
+  their entropy is $$e=-\sum_ip_ilog_2(p_i)$$.
+  
+
+
 This part introduces some terminology that we'll need as we go along.
 
 no way s the following a complete list of methods. kust those we can review quicikly
