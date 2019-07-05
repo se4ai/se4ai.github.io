@@ -90,7 +90,7 @@ then that would produce two splits of very similar _efforts_:
   $$\frac{4}{7}{\times}2.3 + \frac{3}{7}{\times}4.1=3.1$$. 
 - 3.1 is  much less than the
   than the  
-  $\sigma_0$ of all the effort numbers of 40.5; i.e. _loc&lt;100_
+  $$\sigma_0$$ of all the effort numbers of 40.5; i.e. _loc&lt;100_
   is a very good split.
 
 
