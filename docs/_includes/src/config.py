@@ -18,6 +18,7 @@ class Defaults:
     i.cohen  = 0.3 # 0.5 0.4 0.3 0.2
     i.ncohen = 1/7 # 2/9 2/8 1/7 1/6
     i.bins   = 3
+    i.simplerBy = 0.05
     # read data in 'eras' of size i.era
     i.era    = 512
 

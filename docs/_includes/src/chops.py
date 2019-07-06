@@ -1,51 +1,61 @@
 from config import * 
 from sym import Sym
 from num import Num
-from copy import deepcopy as duplicate
+from copy import deepcopy 
 
-Num,[2,3,4]
-def chops(lst, q= my.bins, x= lambda z:z,ys=lambda z:[],
-          epsilon=None, goals=[],ako=Num):
-  "assumes lst is sorted"
-  make  = lambda: [(g,ako()) for g in goals]
-  update= lambda lst,logs: [log+lst[g] for g,log in logs]
-  lst = sorted(lst, key=x)
+# Num,[2,3,4]
+
+def chops(lst, q= my.bins, 
+           getx= lambda z:z,     # for list of numbers
+           gety= lambda g,z: z,  # for lst of numbers
+           #y= lambda g,z: z[g], # for lst of lists
+           epsilon=None, 
+           isa=Num,   # to split on symbols, use Sym
+           goals=[0], # list of gety's first argument
+           ):
+  # these 3 functions let an item have 1 to many goals
+  def create(): 
+    return [(isa(),g) for g in goals]
+  def update(ys,item):
+    for y,g in ys: 
+      val = gety(g,item)
+      if val != my.ignpre: y+ val
+  def simpler(ys0,ys1,ys2):
+    for y0,y1,y2 in zip(ys0,ys1,ys2):
+      if y0.simpler(y1,y2): return True
+  #------
+  lst = sorted(lst, key=getx)
   n   = len(lst)
-  w   = int(n/q)
-  out = []
-  if epsilon=None:
+  w   = int(n/q)   # a chop must be at least w wide
+  if epsilon=None: # set epsilon from value near the median
     epsilion = lst[n*(0.5+my.ncohen)] - lst[n*0.5]
-  b4s, nows = stats(), stats()
+  chop = []
+  y0, y1, y2 = create(), None, None
   for j,item in enumerate(lst):
-    update(item, b4s)
-    update(item, nows)
-    out += [item] 
-    if (len(out) >= w and j <= n-w-1 
-        and x(item) != x(lst[j+1])
-        and x(out[-1]) - x(out[0]) >= epsilon):
-      yield out
-      out = []
-      stats = 
-  if out:
-    yield out
-
-
-def  xyStats(lst, x=lambda z:z,
-                 ys=lambda z:[]):
-  nump = lambda z: instance(z,(float,in))
-  what = lambda z: Num() if nump(z) else Sym()
-  xstat,ystats = None,None
-  for one in lst:
-    if x(one) != my.ignore:
-      xstat  = xstat  or what(x(one))
-      xstat  + x(one)
-    goals  = ys(one)
-    ystats = ystats or [None]*len(goals)
-    for j,goal in enumerate(goals):
-      if goal != my,ignore
-        ystats[j] = ystats[i] or what(goal)
-        ystats[j] + goal
-  return xstat,ystats
+    if getx(item) != my.ignore:
+      chop += [item] 
+      update(y0, item)
+      if y2: update(y2, item)
+      if (len(chop) >= w # enough to chop
+          and j <= n-w-1 # after chop, enough for other chops
+          and getx(item) != getx(lst[j+1])  # dont split same thing       
+          and getx(chop[-1]) - getx(chop[0]) >= epsilon): 
+          good = False
+          if not y1:      # nothing to compare against
+            good = True   # so we can return this
+          else:
+            if not y2:
+              y2 = create()
+              [update(y2,z) for z in chop]
+            good = simpler(y0, y1, y2)
+          if good:
+            y0 = deepcopy(y2)
+            y1 = deepcopy(y2)
+            y2 = None
+            yield chop 
+            chop = []
+  if chop:
+    yield chop
 
 """
     else:

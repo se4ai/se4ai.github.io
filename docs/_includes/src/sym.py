@@ -1,7 +1,8 @@
 import math
 from memo import memo0
+from Thing import Thing
 
-class Sym:
+class Sym(Thing):
   "track symbols seen in a column"
   def __init__(i,inits=[]): 
     i.n,i.most,i.mode,i.bag = 0,0,None,{}

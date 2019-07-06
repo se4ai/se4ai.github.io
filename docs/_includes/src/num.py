@@ -1,6 +1,7 @@
 from config import my
+from thing  import thing
 
-class Num:
+class Num(Thing):
   "track numbers seen in a column"
   def __init__(i,inits=[]):
     i.n,i.mu,i.sd,i.m2 = 0,0,0,0

@@ -10,6 +10,24 @@ Framework
     - [Perils of Reasonings](cognitivebias)
 - [Examples](examples)
 
+- Ethics, Insight, and Explanations
+    - Insight
+        - Our goals is not models, but insight
+        - grease to make the wheels of comprehension turn faster
+        - models are important, but so are features
+        - explanation also matters (needed to certify and debug these systems).
+    - Ethics
+        - What design patterns do we need to support the following?
+        - IEEE ethically aligned design: prioritizing human well being with autonomous and intelligent systems
+        - The microsoft 7
+        - Reasonable1: a set of design patterns that address the IEEE and Microsoft goals
+            - Not **the** way, just **one** way
+            - A baseline implementation, to assist others in creating ethical-by-design AI-enhanced systems.
+            - A way to recruit more people into the ethical army (hopefully, Reason1 will to irritate people into propose other, better,  methods)
+        - Research questions
+            - In the above, what are the common comptuational bottlenecks? ANd what can we do about them?
+            - What's missing from the above? What are the potential pitfalls? how to mitigate that? 
+    
 - Preliminaries (technology briefing)
     - [Maths]
     - [Data mining](dataminers)
