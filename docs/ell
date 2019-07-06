@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 # usage: sh ell
+Here=$(git rev-parse --show-toplevel)/docs/_etc
 
-Here=${Here:=$(pwd)}
 bash --init-file $Here/z.bashrc  -i

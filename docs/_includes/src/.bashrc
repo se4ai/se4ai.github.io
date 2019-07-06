@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-Shel=${Shel:=$(git rev-parse --show-toplevel)/docs/_etc}
 
 pathadd() {
       if  [[ ":$PATH:" != *":$1:"* ]]; then
@@ -30,26 +29,11 @@ _c8="\033[96m"     # magenta
 
 here() { cd $1; basename "$PWD"; }
 
-PROMPT_COMMAND='echo -ne "${_c2}se4ai ${_c0}${_c0}:${_c6}$(git branch 2>/dev/null | grep '^*' | colrm 1 2) \033]0; $(here ..)/$(here .)\007";PS1="${_c1}$_c2$(here ..)/$_c3$(here .) ${_c6}\!>${_c0}\e[m "'
-
-blank() {
-cat<<EOF
-;; vim: ts=2 sw=2 sts=2  et :
-;--------- --------- --------- --------- --------- ---------
-
-EOF
-}
+PROMPT_COMMAND='echo -ne "${_c2}sh ell${_c0}${_c0}:${_c6}$(git branch 2>/dev/null | grep '^*' | colrm 1 2) \033]0; $(here ..)/$(here .)\007";PS1="${_c1}$_c2$(here ..)/$_c3$(here .) ${_c6}\!>${_c0}\e[m "'
 
 gfig() {
   git config --global credential.helper cache
   git config credential.helper 'cache --timeout=3600'
-}
-
-imports() {
-  rm -rf imports.py
-  for i in $(ls *.py | grep -v demo.py); do
-    echo "from $i import *" >> imports.py
-  done
 }
 
 alias egrep='egrep --color=auto'
@@ -57,9 +41,9 @@ alias fgrep='fgrep --color=auto'
 alias get='git pull'
 alias grep='grep --color=auto'
 alias put='git commit -am saving; git push; git status'
-alias vi="vim -u $Shel/z.vimrc "
+alias vi="vim -u $Ell/.vimrc "
+alias tmux="$(which tmux) -f $Ell/.tmuxrc "
 alias py="$(which python3) -B  "
-alias tmux="$(which tmux) -f $Shel/z.tmuxrc "
 case "${uname}" in
       Linux*)     
         alias ls='ls --color=auto';;
@@ -68,5 +52,5 @@ case "${uname}" in
       *) ;;
 esac
 
-alias reload=". $Shel/z.bashrc"
-echo -e "\e[96mse4ai v2.0 (c) 2019 <timm@ieee.org> "
+alias reload=". $Ell/.bashrc"
+echo -e "${_c5}sh ell v2.0 (c) 2019 <timm@ieee.org> "

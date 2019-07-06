@@ -14,12 +14,7 @@ The more SE people know about AI, the better they can apply this exciting new te
 
 So, do you know enough about AI?
 
-22222
-
+32323
 ```python
 {% include src/bb.py %}
 ```
-
-{% highlight python %}
-{% include src/bb.py %}
-{% endhighlight %}

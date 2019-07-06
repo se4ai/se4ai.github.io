@@ -12,9 +12,6 @@ kramdown:
  auto_ids: true
  hard_wrap: false
  highlighter: rouge
- syntax_highligther_opts:
-   block:
-     line_numbers: true
 users:
  erik:
   name: Erik
