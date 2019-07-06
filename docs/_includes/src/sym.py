@@ -1,6 +1,6 @@
 import math
 from memo import memo0
-from Thing import Thing
+from thing import Thing
 
 class Sym(Thing):
   "track symbols seen in a column"

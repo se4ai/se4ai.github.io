@@ -3,8 +3,6 @@ from sym import Sym
 from num import Num
 from copy import deepcopy 
 
-# Num,[2,3,4]
-
 def chops(lst, q= my.bins, 
            getx= lambda z:z,     # for list of numbers
            gety= lambda g,z: z,  # for lst of numbers
@@ -14,47 +12,41 @@ def chops(lst, q= my.bins,
            goals=[0], # list of gety's first argument
            ):
   # these 3 functions let an item have 1 to many goals
-  def create(): 
-    return [(isa(),g) for g in goals]
+  def create(): return [(isa(),g) for g in goals]
   def update(ys,item):
     for y,g in ys: 
       val = gety(g,item)
-      if val != my.ignpre: y+ val
-  def simpler(ys0,ys1,ys2):
-    for y0,y1,y2 in zip(ys0,ys1,ys2):
+      if val != my.ignore: y + val
+  def better(ys0,ys1,ys2):
+    for (y0,_),(y1,_),(y2,_) in zip(ys0,ys1,ys2):
       if y0.simpler(y1,y2): return True
   #------
-  lst = sorted(lst, key=getx)
+  lst = sorted([z for z in lst if z != my.ignore], key=getx)
   n   = len(lst)
-  w   = int(n/q)   # a chop must be at least w wide
-  if epsilon=None: # set epsilon from value near the median
-    epsilion = lst[n*(0.5+my.ncohen)] - lst[n*0.5]
-  chop = []
-  y0, y1, y2 = create(), None, None
+  w   = int(n/q) # a chop must be at least w wide
+  if epsilon == None: # set epsilon from value near the median
+    epsilon = lst[int(n*(0.5+my.ncohen))] - lst[int(n*0.5)]
+  y0, y1, y2 = create(), create(), create()
+  nchops, chop = 0, []
   for j,item in enumerate(lst):
     if getx(item) != my.ignore:
       chop += [item] 
       update(y0, item)
-      if y2: update(y2, item)
-      if (len(chop) >= w # enough to chop
-          and j <= n-w-1 # after chop, enough for other chops
-          and getx(item) != getx(lst[j+1])  # dont split same thing       
-          and getx(chop[-1]) - getx(chop[0]) >= epsilon): 
-          good = False
-          if not y1:      # nothing to compare against
-            good = True   # so we can return this
-          else:
-            if not y2:
-              y2 = create()
-              [update(y2,z) for z in chop]
-            good = simpler(y0, y1, y2)
-          if good:
+      update(y2, item)
+      if len(chop) >= w: # enough to chop
+       if j <= n-w: # after chop, enough for other chops
+        if getx(item) != getx(lst[j+1]):  # dont split same thing
+         # does chop divide nums by more then epsilon?
+         if getx(chop[-1]) - getx(chop[0]) >= epsilon:
+          # is this chop better than that last one?
+          if not nchops or better(y0, y1, y2): 
+            nchops += 1
             y0 = deepcopy(y2)
             y1 = deepcopy(y2)
-            y2 = None
+            y2 = create()
             yield chop 
             chop = []
-  if chop:
+  if chop: 
     yield chop
 
 """

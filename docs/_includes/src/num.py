@@ -1,5 +1,5 @@
 from config import my
-from thing  import thing
+from thing  import Thing
 
 class Num(Thing):
   "track numbers seen in a column"
