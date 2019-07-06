@@ -3,21 +3,29 @@ from sym import Sym
 from num import Num
 from copy import deepcopy as duplicate
 
+Num,[2,3,4]
 def chops(lst, q= my.bins, x= lambda z:z,ys=lambda z:[],
-          epsilon=None):
+          epsilon=None, goals=[],ako=Num):
   "assumes lst is sorted"
+  make  = lambda: [(g,ako()) for g in goals]
+  update= lambda lst,logs: [log+lst[g] for g,log in logs]
+  lst = sorted(lst, key=x)
   n   = len(lst)
   w   = int(n/q)
   out = []
   if epsilon=None:
     epsilion = lst[n*(0.5+my.ncohen)] - lst[n*0.5]
+  b4s, nows = stats(), stats()
   for j,item in enumerate(lst):
+    update(item, b4s)
+    update(item, nows)
     out += [item] 
     if (len(out) >= w and j <= n-w-1 
         and x(item) != x(lst[j+1])
         and x(out[-1]) - x(out[0]) >= epsilon):
       yield out
       out = []
+      stats = 
   if out:
     yield out
 
