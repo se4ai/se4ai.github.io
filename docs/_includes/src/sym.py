@@ -5,17 +5,27 @@ from thing import Thing
 class Sym(Thing):
   "track symbols seen in a column"
   def __init__(i,inits=[]): 
-    i.n,i.most,i.mode,i.bag = 0,0,None,{}
+    i.n,i.mode,i.bag = 0,None,{}
     i.memo = {}
     [i + x for x in inits]
   def spread(i): return i.ent()
   def expect(i): return i.mode
   def __add__(i,x):
+    i.memo= {}
     i.n += 1
-    new = i.bag[x] = i.bag.get(x,0) + 1
-    if new > i.most:
-      i.most,i.mode = new,x
-    return x
+    i.bag[x] = i.bag.get(x,0) + 1
+  def __sub__(i,x):
+    i.memo={}
+    if x in i.bag: 
+      i.n -= 1
+      i.bag[x] -= 1
+  @memo0
+  def mode(i):
+    most=0
+    for k,v in i.bag.items():
+      if v > most:
+        i.mode, most = k,v
+    return i.mode
   @memo0
   def ent(i):
     e=0
