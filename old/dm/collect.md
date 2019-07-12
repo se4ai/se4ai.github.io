@@ -18,7 +18,6 @@ layout: dm
 ounce of knowldge ugudies colelction the spike example of how to focust ehe data colelction  
 
 
-{% include email_link.html user=site.users.erik %}
 
 https://link-springer-com.prox.lib.ncsu.edu/chapter/10.1007/978-3-642-55035-5_18
 
