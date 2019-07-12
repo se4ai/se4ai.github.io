@@ -13,7 +13,7 @@ gawk 'BEGIN {
          First = 1      
          In = 1
   }         
-  /# /{ sub(/^#/,"")
+  /^# /{ sub(/^#/,"")
         print "---"
         print "title: " $0
         print "layout: default"

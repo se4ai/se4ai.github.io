@@ -1,11 +1,5 @@
 
 
----
-title:  ## About this book
-layout: default
-hascode: true
----
-
  ## About this book
 
  This book is about using better software engineering to build better AI software. Most of our case studies come from our experience in applying AI to software engineering-- which means that **this book is about  SE for AI for SE**.
@@ -29,12 +23,6 @@ hascode: true
  - Your  first question should not be  be  "what data miners should I apply to this data?";
  - Rather, it should be  "what are the ethical requirements of this development? And how can we best support those requirements?".
   
----
-title:   ## But is "SE for AI" that important?
-layout: default
-hascode: true
----
-
   ## But is "SE for AI" that important?
 
   It is timely to talk about SE for AI.  **AI software is still software**. And any  software
@@ -89,13 +77,7 @@ hascode: true
 One interesting feature about the above histogram is that 
 **most "data mining" is not about mining the data**.  We say this since, in  a 35 hour work week, only half a day (5.4.hours) was spent in _training_. This is interesting since most data mining textbooks _only_ talk about training. Hence, if we are going to talk SE for AI, there is a pressing need to discuss all the work that fills up the other four days of the week.  
 
----
-title: # Structure of this book.
-layout: default
-hascode: true
----
-
-# Structure of this book.
+## Structure of this book.
 
 In this book we record the core concepts of SE for AI for SE, without overly complex jargon. To that end:
 
@@ -106,23 +88,11 @@ Our  code makes minimal use of external libraries (e.g. no  Pandas, no Scikitlea
 
 Thirdly, this book was partially funded by a grant exploring   ethically applied-design. That work assumes that AI software   _could be ethical_   by virtue of its underlying design patterns and algorithms.  Of course _could be ethical_ is very different to _is ethical_. Even the best design system can be maliciously or accidentally used in an unethical way. Still, the easier it is to build ethical systems, the more likely they will get created. To that end, a minimal Python implementation called KNEAD](short for "<u>K</u>now the <u>N</u>ew   <u>E</u>thically <u>A</u>ligned <u>D</u>esign")  was created to service certain high-level ethical statements. To be sure,  KNEAD is not the only way to satisfy those ethical statements, but it is intended to be (a)   a demonstrator that such a design is possible; (b) a set of design patterns and algorithms that others can quickly port into their   preferred programming tools ; and (c) identify computational bottlenecks in ethical AI that need further research. KNEAD is a minimal implementation (that tries to avoid third party libraries) since that simplifies the second and third goal.
 
----
-title: #   Tools and Data
-layout: default
-hascode: true
----
-
-#   Tools and Data
+##   Tools and Data
 
 We cannot leave this introductory chapter without some introductory notes on the AI tools we apply and the data we study.  More experienced readers might decide to skip this section.
 
----
-title: ##  <a name=3tools>Data miners, optimizers, theorem provers </a>
-layout: default
-hascode: true
----
-
-##  <a name=3tools>Data miners, optimizers, theorem provers </a>
+###  <a name=3tools>Data miners, optimizers, theorem provers </a>
 
 **_Data mining algorithms_ tell us "what is" in the datai**. Data miners extract models   from data. For example, from columns of numbers and _programmer experience_, _development language_, and   _number of observed defects_, then a data miner might learn that defects are  more dependent on the experience of the programmer than the language that they use.  Example  data mining algorithms
     are  nearest neighbor algorithms like kNN; clustering algorithms like k-Means and EM; statistical learners like Naive Bayes; equation learners like linear or logistic regression; decision tree learners like C4.5,   and CART; meta-learners like AdaBoost; and many other as well including  Apriori,, PageRank,  neural networks (and deep learners); etc.
@@ -148,13 +118,7 @@ Note also that optimizers and data miners are tightly inter-connected:
      
 
 
----
-title: ##   Data 
-layout: default
-hascode: true
----
-
-##   Data 
+###   Data 
 
 The above tools are applied to data, In the following, we say a _table_ of data contains _columns_ and _rows_ .  In reality, most data does not arrive in nearly structured tables so much work is required to make it structured (and this book devoted four chapters to that structuring process).
 
@@ -166,13 +130,7 @@ Within structured data, each  row containing values for  some inputs plus _g_ go
 - For classification and regression problems, there is only one symbolic/numeric goal (respectively).  Algorithms for classification or regression try to predict for goal values.
 - For text mining applications, there can 100,000s of inputs (one for every word in the language being studied).
 
----
-title: ## <a name=models>Learning Algorithms</a>
-layout: default
-hascode: true
----
-
-## <a name=models>Learning Algorithms</a>
+### <a name=models>Learning Algorithms</a>
 
 _Unsupervised algorithms_   group together items with similar values. Some algorithms do not _generalize_ in the sense that the models they generate contain all the rows and all the columns. For example, clustering algorithms   bunch up the data into groups of similar rows (so all the small furry   animals might appear in one cluster and anything with feathers might appear in another). In this case, the model generated by clustering algorithms are the sets of rows in different clusters.
 

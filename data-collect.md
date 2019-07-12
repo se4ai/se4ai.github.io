@@ -1,12 +1,6 @@
 
 
----
-title: # Data collection
-layout: default
-hascode: true
----
-
-# Data collection
+## Data collection
 
 Sometimes other people's data is better than yours (the github exaple from
 mitch)
