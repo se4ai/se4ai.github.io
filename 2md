@@ -48,8 +48,12 @@ if [ -n "$1" ]; then
   main $1
   git commit -am as
 else
-  for f in $There/src/*.md; do; main $f; done
-  for f in $There/src/*.put; do; main $f; done
+  for f in $There/src/*.md; do
+    main $f
+  done
+  for f in $There/src/*.put; do
+    main $f
+   done
   git commit -am as
   git push
 fi
