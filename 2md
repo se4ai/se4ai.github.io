@@ -48,10 +48,10 @@ if [ -n "$1" ]; then
   main $1
   git commit -am as
 else
-  for f in $There/src/*.md; do
+  for f in $There/*.md; do
     main $f
   done
-  for f in $There/src/*.put; do
+  for f in $There/*.put; do
     main $f
    done
   git commit -am as
