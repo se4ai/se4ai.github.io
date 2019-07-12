@@ -1,5 +1,5 @@
 ---
-title: I love the night life
+title: Home
 layout: default
 ---
 
