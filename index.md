@@ -13,7 +13,6 @@ graph TD;
     C-->D;
 </div -->
 
-![](/img/banner.png)
 
 787878
 
