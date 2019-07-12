@@ -1,1 +1,9 @@
 theme: jekyll-theme-midnight
+about:
+ title: "SE 4 AI"
+ who: Tim Menzies
+ when: 2019
+ what: 'SE in the age of AI'
+ email: 'timm@ieee.org'
+ bold: '003366'
+markdown: kramdown
