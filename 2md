@@ -40,7 +40,7 @@ main() {
   file=$(basename $arg)
   stem="${file%%.*}"
   out=$Top/${stem}.md
-  echo "# $(basename $arg) ==> docs/$stem.out"
+  echo "# $(basename $arg) ==> $out"
   cat $1 | worker  > $out
   git add $out
 }
