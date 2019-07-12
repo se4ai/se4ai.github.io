@@ -3,6 +3,9 @@
 # todo. add yaml front matter include "code: true"
 
 Top=$(git rev-parse --show-toplevel)
+
+There=$Top/../code/src
+
 worker() {
 gawk 'BEGIN {  
          q="\""
@@ -10,6 +13,14 @@ gawk 'BEGIN {
          First = 1      
          In = 1
   }         
+  /# /{ sub(/^#/,"")
+        print "---"
+        print "title: " $0
+        print "layout: default"
+        print "hascode: true"
+        print "---"
+        print ""
+      }
   /^"""</,/^>"""/ {  next } 
   /^"""/          {  In = 1 - In       
                      if (In)            
@@ -24,29 +35,21 @@ gawk 'BEGIN {
   END     { if (In) print "````"
             }'
 } 
-
 main() {
   arg=$1
   file=$(basename $arg)
   stem="${file%%.*}"
-  out=$Top/docs/${stem}.md
-    echo "# $(basename $arg) ==> docs/$stem.out"
-    (
-    cat  $Top/etc/header.md $Top/etc/toc.md
-    cat $1 | worker  
-    cat $Top/etc/footer.md 
-    ) > $out
-  
-  git add $Top/docs/${stem}.md
-  
+  out=$Top/${stem}.md
+  echo "# $(basename $arg) ==> docs/$stem.out"
+  cat $1 | worker  > $out
+  git add $out
 }
 if [ -n "$1" ]; then
   main $1
   git commit -am as
 else
-  for f in $Top/src/*; do
-    main $f
-  done
+  for f in $There/src/*.md; do; main $f; done
+  for f in $There/src/*.put; do; main $f; done
   git commit -am as
   git push
 fi
