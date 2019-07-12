@@ -5,13 +5,13 @@ layout: default
 
 mermaidss
 
-<div class="mermaid" style="background-color: gray;">
+<!-- div class="mermaid">
 graph TD;
     A-->B;
     A-->C;
     B-->D;
     C-->D;
-</div>
+</div -->
 
 
 
@@ -19,7 +19,7 @@ graph TD;
 
 one more time
 
-$x^2$
+$$x^2$$
 
 asda
 
