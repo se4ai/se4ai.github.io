@@ -3,7 +3,7 @@ title: " About this book"
 layout: default
 ---
 
- This book is about using better software engineering to build better AI software. Most of our case studies come from our experience in applying AI to software engineering-- which means that **this book is about  SE for AI for SE**.
+This book is about using better software engineering to build better AI software. Most of our case studies come from our experience in applying AI to software engineering-- which means that **this book is about  SE for AI for SE**.
 
  AI is a very broad topic, discussed in
  [so](REFS.md#norvig-2009) 
@@ -12,7 +12,7 @@ layout: default
  [other](REFS.md#witten-2016)
  books. What make this book different is trhee things. Firstly,  we look
  at 
- AI tools that have had much recent   impact on software
+ AI tools with recent   impact on software
  engineering. Specifically, we will talk a lot about data mining algorithms;
  some about optimizers; and a little about theorem provers
  (and we say more about  all these, [below](#3tools)).
