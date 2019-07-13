@@ -138,16 +138,10 @@ _Unsupervised algorithms_   group together items with similar values. Some algor
 Another kind of unsupervised learning algorithm, are _association rule learners_ that report what column values often occur together.  For example, if we look for patterns in logs of software projects from the 1980s and the 2010s, an association rule learner might report that:
 
 ```
----
-title: " rule format: IF ==> THEN"
-layout: default
----
----
-title: " IF, THEN = lists of column values"
-layout: default
----
-[age=old, speed=fast] ==> [language=c, os=unix]
-[application=web] ==> [os=aws] 
+  # rule format: IF ==> THEN
+  # IF, THEN = lists of column values
+  [age=old, speed=fast] ==> [language=c, os=unix]
+  [application=web] ==> [os=aws] 
 ```
 
 Unlike clustering algorithms, association rule learners offer some  generalization since they do not report all the rows or all the columns.
