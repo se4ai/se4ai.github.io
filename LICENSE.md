@@ -1,6 +1,3 @@
-
-"""
-
 ---
 title: " BSD 2-Clause License"
 layout: default

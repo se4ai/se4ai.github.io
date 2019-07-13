@@ -1,6 +1,3 @@
-
-"""
-
  ## About this book
 
  This book is about using better software engineering to build better AI software. Most of our case studies come from our experience in applying AI to software engineering-- which means that **this book is about  SE for AI for SE**.
