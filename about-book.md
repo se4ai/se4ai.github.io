@@ -24,7 +24,7 @@ layout: default
  - Your  first question should not be  be  "what data miners should I apply to this data?";
  - Rather, it should be  "what are the ethical requirements of this development? And how can we best support those requirements?".
   
-  ## But is "SE for AI" that important?
+ ## But is "SE for AI" that important?
 
   It is timely to talk about SE for AI.  **AI software is still software**. And any  software
    (be it AI software, or otherwise) needs installation, configuration, maintenance, interfacing to other software, testing, certification,  user support, usability additions, and packaging (for distribution). As shown below, Bill Benton from Redhat [reports that](REFS.md/#benton-2019) that when we look at the data mining pipelines used to distribute and scale AI tools, there is  much overlap between the activities of data scientists and   more traditional activities  like data engineer and application developer. That is,   
@@ -184,10 +184,7 @@ For example, splitting _age_ are 120 years  divides the goal of  _heartRate_  in
 
 Sometimes, such splits are misleading since they hide important numeric detail. And other times, such splits are very useful since they reduce the search space. This is because concepts spread out across a very large numeric range can be made visible by condensing the large range into a few splits.  
 
----
-title: " Exercise"
-layout: default
----
+## Quiz
 
 
 In this papge,  find two technical terms; e.g. the CART data miner, e.g. the NSGA-II optimier
