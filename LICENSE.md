@@ -1,12 +1,10 @@
 
+"""
 
 ---
-title:  BSD 2-Clause License
+title: " BSD 2-Clause License"
 layout: default
-hascode: true
 ---
-
- BSD 2-Clause License
 
 Copyright (c) 2019, Tim Menzies and Tom Zimmermann
 All rights reserved.

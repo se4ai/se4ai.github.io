@@ -1,4 +1,4 @@
-
+"""
 
 ## Data collection
 
@@ -11,5 +11,4 @@ but when this workits amaizing. the fact that there is some generality across al
 projects is..
 inspriiring.
 
-````python
-````
+"""

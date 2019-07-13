@@ -1,4 +1,5 @@
 
+"""
 
  ## About this book
 
@@ -138,19 +139,13 @@ Another kind of unsupervised learning algorithm, are _association rule learners_
 
 ```
 ---
-title:  rule format: IF ==> THEN
+title: " rule format: IF ==> THEN"
 layout: default
-hascode: true
 ---
-
- rule format: IF ==> THEN
 ---
-title:  IF, THEN = lists of column values
+title: " IF, THEN = lists of column values"
 layout: default
-hascode: true
 ---
-
- IF, THEN = lists of column values
 [age=old, speed=fast] ==> [language=c, os=unix]
 [application=web] ==> [os=aws] 
 ```
@@ -190,12 +185,9 @@ For example, splitting _age_ are 120 years  divides the goal of  _heartRate_  in
 Sometimes, such splits are misleading since they hide important numeric detail. And other times, such splits are very useful since they reduce the search space. This is because concepts spread out across a very large numeric range can be made visible by condensing the large range into a few splits.  
 
 ---
-title:  Exercise
+title: " Exercise"
 layout: default
-hascode: true
 ---
-
- Exercise
 
 
 In this papge,  find two technical terms; e.g. the CART data miner, e.g. the NSGA-II optimier
