@@ -1,4 +1,7 @@
-## Data collection
+---
+title: " Data collection"
+layout: default
+---
 
 Sometimes other people's data is better than yours (the github exaple from
 mitch)
