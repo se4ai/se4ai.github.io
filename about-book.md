@@ -24,21 +24,21 @@ layout: default
  - Your  first question should not be  be  "what data miners should I apply to this data?";
  - Rather, it should be  "what are the ethical requirements of this development? And how can we best support those requirements?".
   
- ## But is "SE for AI" that important?
+## But is "SE for AI" that important?
 
   It is timely to talk about SE for AI.  **AI software is still software**. And any  software
    (be it AI software, or otherwise) needs installation, configuration, maintenance, interfacing to other software, testing, certification,  user support, usability additions, and packaging (for distribution). As shown below, Bill Benton from Redhat [reports that](REFS.md/#benton-2019) that when we look at the data mining pipelines used to distribute and scale AI tools, there is  much overlap between the activities of data scientists and   more traditional activities  like data engineer and application developer. That is,   
    **AI software needs care and feeding by software engineersi**. 
 
 <p align="center">
-  <img  src="img/benton19.png">
+  <img  src="/img/benton19.png">
 </p>
 
    Another reason to explore SE for AI is that  
    **most "AI software" is not about AI**.   David Sculley  [offers the following  diagram](REFS.md/#sculley-2015) showing the size (in lines of code) of  Google's software suite. Note how small is the AI box (shown in black), buried away in the middle of all the other software.
 
 <p align="center">
-  <img  src="img/googleloc.png">
+  <img  src="/img/googleloc.png">
 </p>
 
 
