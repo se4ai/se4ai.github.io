@@ -52,11 +52,10 @@ $$
 
 where:
 
-- $f$ are the features we are considering  (usually the independent variables[^trick1])
-- $p=2$ makes this the Euclidean distance; 
+- $$f$$ are the features we are considering  (usually the independent variables[^trick1])
+- $$p=2$$ makes this the Euclidean distance; 
 - dividing by the root of the number of features makes this range from 0 to 1
 
-$$
 [^trick1]: Sometimes $f$ can be the dependent variables. In two-tiered
 clustering you might cluster first by the dependent variables, and
 then by the independent variables.  Since the number of dependents
