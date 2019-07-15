@@ -19,6 +19,14 @@ Optimizers change things. That is, once you have learned
 that you like X and do not like Y, then an optimizer
 could suggest "do X - Y". Optimizers are discussed later.
 
+The goal of this chapter is to offer certain core intuitions, common features,
+about learners. It is not a comprehensive guide (for that, see [the excellent Ian Witten book]
+on data mining](REFS#witten-2016)
+ but it does introduce much of the learning technology used
+later in this book.
+
+----
+
 Learners process examples  (also called rows)
 of the form
 $$(X,Y)$$ were:
@@ -47,7 +55,7 @@ standard distance function between rows $a,b$ with $i$
 is:
 
 $$
-\mathcal{dist}(a,b,f,p=2) = \left(\frac{1}{\sqrt{|f|}}\right)\left(\sum_{i\in f} \mathcal{diff}(a_i,b_i)^p\right)^(1/p)
+\mathcal{dist}(a,b,f,p=2) = \left(\frac{1}{\sqrt{|f|}}\right)\left(\sum_{i\in f} \mathcal{diff}(a_i,b_i)^p\right)^{1/p}
 $$
 
 where:
