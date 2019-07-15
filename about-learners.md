@@ -39,7 +39,7 @@ can be:
   we love/hate that we want to minimize/maximize (respectively);
   e.g. amount of reused code or number of bugs.
 
-Supervised learners learn a model $$f$$ of the form $$Y=f(X)$.
+Supervised learners learn a model $$f$$ of the form $$Y=f(X)$$.
 Unsupervised learners ignore the dependent variable
 and group together  similar rows, based on their $$X$$ values.
 For that grouping, some distance function is required. A
@@ -47,7 +47,7 @@ standard distance function between rows $a,b$ with $i$
 is:
 
 $$
-\mathcal{dist}(a,b,f,p=2) = (\frac{1}{\sqrt{|f|}})(\sum_{i\in f}( \mathcal{diff}(a_i,b_i))^p)^(1/p)
+\mathcal{dist}(a,b,f,p=2) = \left(\frac{1}{\sqrt{|f|}}\right)\left(\sum_{i\in f} \mathcal{diff}(a_i,b_i)^p\right)^(1/p)
 $$
 
 where:
@@ -56,7 +56,7 @@ where:
 - $p=2$ makes this the Euclidean distance; 
 - dividing by the root of the number of features makes this range from 0 to 1
 
-$\
+$$
 [^trick1]: Sometimes $f$ can be the dependent variables. In two-tiered
 clustering you might cluster first by the dependent variables, and
 then by the independent variables.  Since the number of dependents
