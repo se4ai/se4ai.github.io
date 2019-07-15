@@ -51,15 +51,16 @@ Supervised learners learn a model $$f$$ of the form $$Y=f(X)$$.
 Unsupervised learners ignore the dependent variable
 and group together  similar rows, based on their $$X$$ values.
 For that grouping, some distance function is required. A
-standard distance function between rows $a,b$ with $i$ 
-is:
+standard distance function between rows $$a,b$$ with $$f$$ 
+features
 
 $$
-\mathcal{dist}(a,b,f,p=2) = \left(\frac{1}{\sqrt{|f|}}\right)\left(\sum_{i\in f} \mathcal{diff}(a_i,b_i)^p\right)^{1/p}
+\mathcal{dist}(a,b,f,r,p=2) = \left(\frac{1}{\sqrt{|f|}}\right)\left(\sum_{i\in f} \mathcal{diff}(r,i,a_i,b_i)^p\right)^{1/p}
 $$
 
 where:
 
+- $$r$$ is the set of all rows;
 - $$f$$ are the features we are considering  (usually the independent variables[^trick1])
 - $$p=2$$ makes this the Euclidean distance; 
 - dividing by the root of the number of features makes this range from 0 to 1
