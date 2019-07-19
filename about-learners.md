@@ -27,8 +27,11 @@ later in this book.
 
 ----
 
+<<<<<<< HEAD
 ## Columns and Rows
 
+=======
+>>>>>>> 04dbb69eaea898aa0af810898f6b706b44a57b8c
 Learners process examples  (also called rows)
 of the form
 $$(X,Y)$$ were:
@@ -49,6 +52,7 @@ can be:
   we love/hate that we want to minimize/maximize (respectively);
   e.g. amount of reused code or number of bugs.
 
+<<<<<<< HEAD
 A set of rows is sometimes called a table, or a relation. In such sets, we
 often keep statistics on each column. 
 If `n,s` are instances of class `Num,Sym` then `n+x, s+x`
@@ -90,6 +94,8 @@ is $$=\sum_i p_i\log_2p_i$$ where $$p_i=f_i/n$$.
 Entropy  is minimal (zero)
 when all the symbols  are the same.
 
+=======
+>>>>>>> 04dbb69eaea898aa0af810898f6b706b44a57b8c
 Supervised learners learn a model $$f$$ of the form $$Y=f(X)$$.
 Unsupervised learners ignore the dependent variable
 and group together  similar rows, based on their $$X$$ values.
@@ -105,7 +111,11 @@ where:
 
 - $$r$$ is the set of all rows;
 - $$f$$ are the features we are considering  (usually the independent variables[^trick1])
+<<<<<<< HEAD
 - $$p=2$$ makes this the Euclidean distance (but it is worthy exploring other values); 
+=======
+- $$p=2$$ makes this the Euclidean distance; 
+>>>>>>> 04dbb69eaea898aa0af810898f6b706b44a57b8c
 - dividing by the root of the number of features makes this range from 0 to 1
 
 [^trick1]: Sometimes $f$ can be the dependent variables. In two-tiered
@@ -114,6 +124,7 @@ then by the independent variables.  Since the number of dependents
 is typically much less than the independents, this can run very
 fast.
 
+<<<<<<< HEAD
 In the _dist_ equation, the _diff_ function for symbolic and numberic columns. For numbers, a usual _diff_ has the range $$0..1$$ and
 is calulated as follows:
 
@@ -364,3 +375,14 @@ layout: default
 title: " derive the cosine rule"
 layout: default
 ---
+=======
+ or independent 
+In the latter case, we also have 
+   <X,Y>
+
+wererun over data of the form
+
+
+The simplest (and sometimes slowest) learner is a cluster.
+Clsuters ignore any class or goal variables
+>>>>>>> 04dbb69eaea898aa0af810898f6b706b44a57b8c
