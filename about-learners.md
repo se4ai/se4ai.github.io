@@ -305,7 +305,7 @@ is useful sice it reduces the number of examples passed to the learner:
     - $$M$$ models are received from its children.
     - Each model $$M_1$$ is tested on the $$M-1$$ sub-clusters that were not used to generate it. 
     - The $$\mathcal{best}$$ models are the  $$(M_1,M_2,M_3..)\subseteq M$$ of models with indistinguishably best performance,
-    - A new model $$M_0$$ is build from $D_0$$, a random sample of size $$|D|/|M|$$ of the data in $$(D_1,D_2,D_3..)$$. 
+    - A new model $$M_0$$ is build from $$D_0$$, a random sample of size $$|D|/|M|$$ of the data in $$(D_1,D_2,D_3..)$$. 
     - $$M_0$$ is tested on  $$D-D0$$.
     - The new $$\mathcal{best'}$$ model is either $$M_0$$ (if it outperforms $$\mathcal{best}$$) or any one of $$\mathcal{best}$$.
     - If there is no parent  node, BUBBLES returns $$\mathcal{best'}$$.
