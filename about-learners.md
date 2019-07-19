@@ -292,13 +292,13 @@ Fast supervised learning
 Dont traing on  examples , use some sunset (selected at random, or selected froma  cluserr)
 move the elarning into the clsuterr so  icnremetnaly do top-down recrsive clsutering and build one mdoel per elaf clsuter)
 
-FYI- currently exepreimentaing with a upwards growth clsuterr called BUBBLES that has the _bellwether_ premise; i.e.
+FYI- currently experimenting with data mining with BUBBLES that has the _bellwether_ premise; i.e.
 that there exist a small number of examples that can be used to reason about the rest. In essence, _bellwether_
 is an _instance selection_ algorithm that uses some target learner as the instance selection tool. If the data
 set is large, BUBBLES
-is useful sice it reduces the number of examples passed to the learner:
+is useful side it reduces the number of examples passed to the learner:
 
-- BUBBLES recrusively clusters the data.
+- BUBBLES recursively clusters the data.
 - Each node hold data $$D$$ which is recursively clustered into $$M$$ child clusters.
 - One model is learned from the data in each leaf and pushed to its parents.
 - At each internal node
@@ -309,7 +309,7 @@ is useful sice it reduces the number of examples passed to the learner:
     - $$M_0$$ is tested on  $$D-D0$$.
     - The new $$\mathcal{best'}$$ model is either $$M_0$$ (if it outperforms $$\mathcal{best}$$) or any one of $$\mathcal{best}$$.
     - If there is no parent  node, BUBBLES returns $$\mathcal{best'}$$.
-    - Else if pushes $$\mathcal{best'}$$ to the aprent.
+    - Else if pushes $$\mathcal{best'}$$ to the parent.
 
 
 maths methods highly optimized. For example, SVM with a lienar kernel runs very fast over a large text corpus. 
