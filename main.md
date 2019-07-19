@@ -22,10 +22,6 @@ Read the code on [Github](https://github.com/se4ai/code/tree/master/main.py) <fo
 This file is loaded by everything else. It creates a global `my`
 holding system-wide settings.
 
-Also controlled here is the random number seed[^seed]. The idiom
-`my =Defaults().reset()` will reset everything back to the defaults,
-including the seed.  If that is not desired, just use `my=Defaults()`.
-
 Note that, often, this code  read rows of data where the first row
 contains the names of the columns. Those names can contain magic
 symbols denoting special properties of the columns. For a list of
@@ -34,44 +30,40 @@ those properties, see `ignore, less, more, klass`, below.
 ````python
    1. import random
    2. 
-   3. class Defaults:
-   4.   def __init__(i):
-   5.     ## system settings (do not change)
-   6.     # misc
-   7.     i.inf     = 10**32
-   8.     i.tiny    = 1/i.inf
-   9.     i.private = "_"
-  10.     # characters in data,header
-  11.     i.ignore = "?"   # column to ignore
-  12.     i.less   = "<"   # a numeric goal, to be minimized
-  13.     i.more   = ">"   # a numeric goal, to goal to maximize
-  14.     i.klass  = "!"   # a symbolic class, to be predicted for
-  15. 
-  16.     # other stuff
-  17.     i.seed = 235324971  # from random.org
-  18.     # hyper parameter settings
-  19.     # sampling
-  20.     i.keep   = 128
-  21.     # chops
-  22.     i.cohen  = 0.3 # 0.5 0.4 0.3 0.2
-  23.     i.ncohen = 1/7 # 2/9 2/8 1/7 1/6
-  24.     i.bins   = 16
-  25.     i.simplerBy = 0.01
-  26.     # read data in 'eras' of size i.era
-  27.     i.era    = 512
-  28.   def reset(i,seed=None):
-  29.     random.seed(seed or i.seed)
-  30.     return i
-  31. 
-  32. my= Defaults().reset()
-  33. 
+   3. def defaults():
+   4.   class o:
+   5.     def __init__(i,**kw): i.__dict__.update(kw)
+   6. 
+   7.   return o(
+   8.     ## system settings (do not change)
+   9.     inf     = 10**32,
+  10.     tiny    = 10**-32,
+  11.     private = "_",
+  12.     seed    = 235324971,  # from random.org
+  13.     # characters in data,header
+  14.     rows    = o(nums   = "$", # numeric independent variable
+  15.                 ignore = "?", # column to ignore
+  16.                 less   = "<", # a numeric goal, to be minimized
+  17.                 more   = ">", # a numeric goal, to goal to maximize
+  18.                 klass  = "!", # a symbolic class, to be predicted for
+  19.                 someDom= 64),
+  20.     # chops
+  21.     chops   = o(cohen  = 0.3,  # 0.5 0.4 0.3 0.2
+  22.                 ncohen = 0.14,  # 2/9 2/8 1/7 1/6
+  23.                 bins   = 16,
+  24.                 simplerBy = 0.01),
+  25.     # read data in 'eras' of size i.era
+  26.     data    = o(ignore="?",
+  27.                 era=512))
+  28. 
+  29. my= defaults()
 ````
-
 
 ## How to Test
 
-Each file can be loaded and tested independently .
-To enable that,  each file begins with a set of `import` statements that describe all its dependencies.
+Each file can be loaded and tested independently .  To enable that,
+each file begins with a set of `import` statements that describe
+all its dependencies.
 
 Some files `X.py` have demo/test code in `okX.py` 
 
@@ -108,9 +100,6 @@ To document this code, add in Markdown comments within multi-line Python quotes.
 - To avoid clashes between documentation and code files, 
   the former have a dash in their name (e.g. _about-book.md_).
 - So to extend this code, do not write code files with dashes in the name.
-
-[^seed]: Computers don’t generate truly random numbers—they are deterministic, which means that they operate by a set of rules. You can mimic randomness by specifying a set of rules. For example, “take a number x, add 900 +x, then subtract 52.” In order for the process to start, you have to specify a starting number, x (the seed).
-
 ## Comprehension Questions:
 
 ```

@@ -21,32 +21,43 @@ best goals.
 Rows will know how to mutate their cells, soon.
 
 ````python
-   1. from memo import memos,fresh
-   2. from lib  import Pretty
-   3. 
-   4. @memos
-   5. class Row(Pretty):
-   6.   id = 0
-   7.   def __init__(i,lst):
-   8.     i.cells = lst
-   9.     i.id = Row.id = Row.id + 1
-  10.   @fresh
-  11.   def __setitem__(i, k, v): i.cells[k] = v
-  12.   def __getitem__(i, k   ): return i.cells[k]
-  13.   def doms0(i,rows):
-  14.     n = my.someDom
-  15.     return sum([ i.dominates( any(rows.all), rows)
-  16.                  for _ in range(n) 
-  17.               ]) / n
-  18.   def dominates(i,j,rows):   
-  19.     s1, s2, n = 0, 0, len(rows.goals()) 
-  20.     for goal in rows.goals():
-  21.       a,b = i[goal.pos], j[goal.pos]
-  22.       a,b = goal.norm(a), goal.norm(b)
-  23.       s1 += 10**(goal.w * (a-b)/n)
-  24.       s2 += 10**(goal.w * (b-a)/n)
-  25.     return s1/n < s2/n
-  26. 
+   1. from main import my
+   2. from memo import memo0, memos,fresh
+   3. from lib  import Pretty
+   4. 
+   5. @memos
+   6. class Row(Pretty):
+   7.   id = 0
+   8.   def __init__(i,lst):
+   9.     i.cells = lst
+  10.     i.id = Row.id = Row.id + 1
+  11.   @fresh
+  12.   def __setitem__(i, k, v): i.cells[k] = v
+  13.   def __getitem__(i, k   ): return i.cells[k]
+  14.   @memo0
+  15.   def doms(i,rows):
+  16.     import random
+  17.     print("test", random.choice([10,20,30,40]))
+  18.     print("any", any(rows.all))
+  19.     print("ast", rows.all[0])
+  20.     #print("rows", rows)
+  21.     n = my.rows.someDom
+  22.     return sum([ i.dominates( any(rows.all), rows)
+  23.                  for _ in range(n) 
+  24.                ]) / n
+  25.   def dominates(i,j,rows):   
+  26.     print("i",i)
+  27.     print("j",j)
+  28.     z = 0.00001
+  29.     s1, s2, n = z,z,z+len(rows.goals) 
+  30.     for goal in rows.goals:
+  31.       print("G?",goal.pos)
+  32.       a,b = i[goal.pos], j[goal.pos]
+  33.       a,b = goal.norm(a), goal.norm(b)
+  34.       s1 += 10**(goal.w * (a-b)/n)
+  35.       s2 += 10**(goal.w * (b-a)/n)
+  36.     return s1/n < s2/n
+  37. 
 ````
 
 ## Comprehension Questions
