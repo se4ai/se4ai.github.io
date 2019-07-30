@@ -28,7 +28,7 @@ The book introduces these technologies, from a programming perspective.
 Our goal is to give you enough information so you can build, refactor, and improve  your own versions of these tools.
 
 But more than than,
-this book asks ask what is missing from most other textbooks on AI and SE.
+this book asks what is missing from most other textbooks on AI and SE.
 To fill that gap,  we will cover:
 
 - software processes; and 
