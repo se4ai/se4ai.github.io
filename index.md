@@ -4,7 +4,7 @@ layout: default
 ---
 
 As AI tools get used more and more,
-ti is vitally important to have an ethical perspective on AI tool development.
+it is vitally important to have an ethical perspective on AI tool development.
 We assert that
 it is the ethical duty of anyone building
 software   to produce tools  that conform to accepted ethical standards.
@@ -27,7 +27,7 @@ Hence we say that
 _not choosing is unethical_
 since we are not
 controlling 
-what goals are not satisfied by that model.  
+what goals are not satisfied by our AI tools.
 
 
 To understand those choices, we need to understand more about the technologies used with AI tools.
