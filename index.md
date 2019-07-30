@@ -49,21 +49,18 @@ As shown in this book,
 using data miners and optimizers and theorem prover, we can select the kinds of models we want.
 Hence we say that
 
-- _ethics_ are a choice;
-- and
+- _Ethics_ are a choice;
+- And
 _not choosing is unethical_
 since we are not
 controlling 
 what goals are not satisfied by that model.  
 
-## Rules for  Ethical SE in the age of AI
+## Why Read This Book?
 
-Once upon a time (in 2000),
-Joel Spolsky offer a dozen tests to rate
-the quality of a software team[^foot].
-In the spirit of the Joel test,
-we offer our set of tests  to rate the quality
-of software teams dealing with AI.
+You should read this book, if you do not know how to build ethical AI software.
+The test if this book is for you, ask the following questions:
+
 
 2. How stable is the performance of your AI tool ?
 1. Have you compared the effectiveness of your AI tools against other options?
@@ -96,7 +93,8 @@ to the most of the above then:
 - Researchers should accept  a new  research challenge (how how to enable that kinds of ethics in that kind of AI tool).
    
 
-[^foot]: The Joel test has 12 questions: (1) Do you use source control?; (2) Can you make a build in one step?; (3) Do you make daily builds?; (4) Do you have a bug database?; (5) Do you fix bugs before writing new code?; (6) Do you have an up-to-date schedule?; (7) Do you have a spec?; (8) Do programmers have quiet working conditions?; (9)  Do you use the best tools money can buy?; (10) Do you have testers?; (11_ Do new candidates write code during their interview?; (12) Do you do hallway usability testing?
+[^foot]: These questions are inspired by Joel Spolsky's 12 step test for the quality of a software team.  His
+test has 12 questions: (1) Do you use source control?; (2) Can you make a build in one step?; (3) Do you make daily builds?; (4) Do you have a bug database?; (5) Do you fix bugs before writing new code?; (6) Do you have an up-to-date schedule?; (7) Do you have a spec?; (8) Do programmers have quiet working conditions?; (9)  Do you use the best tools money can buy?; (10) Do you have testers?; (11_ Do new candidates write code during their interview?; (12) Do you do hallway usability testing?
 
 ## Roadmap
 
