@@ -21,8 +21,10 @@ code {
 	float: left;
 }
 .imgright {
-	margin:3px;
-	padding:3px;
+	margin:2px;
+	padding: 2px;
+   border:2px solid #021a40;
+   background-color:#ff0;
 	float: right;
         width: 350px;
 }
