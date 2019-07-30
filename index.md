@@ -59,7 +59,8 @@ what goals are not satisfied by that model.
 ## Why Read This Book?
 
 You should read this book, if you do not know how to build ethical AI software.
-The test if this book is for you, ask the following questions:
+More specifically, if you do not know how to design AI tools
+that can address the following, then this is the book for you:
 
 
 2. How stable is the performance of your AI tool ?
