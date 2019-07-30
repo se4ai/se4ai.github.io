@@ -96,36 +96,4 @@ to the most of the above then:
 
 [^foot]: These questions are inspired by Joel Spolsky's 12 step test for the quality of a software team.  His test has 12 questions: (1) Do you use source control?; (2) Can you make a build in one step?; (3) Do you make daily builds?; (4) Do you have a bug database?; (5) Do you fix bugs before writing new code?; (6) Do you have an up-to-date schedule?; (7) Do you have a spec?; (8) Do programmers have quiet working conditions?; (9)  Do you use the best tools money can buy?; (10) Do you have testers?; (11_ Do new candidates write code during their interview?; (12) Do you do hallway usability testing?
 
-## Roadmap
-
-
-1. Technology:
-   1. To begin: [preface](index), [motivation](), [ethics](), [baselines](/about-baselines)
-   1. About data mining [discretization](abiut-discretization); [basic learning](about-learners); [advanced learning](about-advanced-learning).
-   2. Optimizers: [landscapes](about-landscapes); 
-               [basic-optimizers](about-optimizers); 
-               [advanced optimization](about-advanced-optimization);   
-               [optimization and data mining](about-duo)
-   3. Theorem proving 
-               [basic-optimizers](about-optimizers); 
-               [advanced optimization](about-advanced-optimization);   
-2. Processes:
-   1. Requirements
-   2. Collection
-   3. Cleaning
-   4. Labelling
-   5. Model building
-   6. Evaluation
-   7. Deployment
-   8. Monitoring 
-3. Code:
-    1. Numbers, Symbols
-    2. Rows and Columns and Table
-    3. Clustering
-    4. Classification
-    5. etc
-
-Note that in the above, after some preliminary notes in [ethics](), there is no separate section on that topic. Rather,
-ethically-aligned design is the theme that covers the entire book.
-
 ## Notes
