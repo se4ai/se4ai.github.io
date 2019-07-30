@@ -18,7 +18,7 @@ for widespread use by more engineers are:
 - theorem provers 
 
 When used together, these three technologies can greatly benefit each other.
-Data miners can simplify optimizers. Optimizers can make theorem pzgrovers run faster.
+Data miners can simplify optimizers. Optimizers can make theorem provers run faster.
 And theorem provers can become generators for data mining..
 The book introduces these technologies, from a programming perspective.
 Our goal is to give you enough information so you can build, refactor, and improve  your own versions of these tools.
@@ -54,21 +54,24 @@ what goals are not satisfied by that model.
 ## 12 Rules for SE in the age of AI
 
 Once upon a time (in 2000),
-Joel Spolsky offer a 12 step test to rate
+Joel Spolsky offer a dozen tests to rate
 the quality of a software team[^foot].
-In the spirot of the Joel test,
-we offer our own 12 step test to rate the quality
+In the spirit of the Joel test,
+we offer our set of tests  to rate the quality
 of software teams dealing with AI.
 
 1. Have you compared the effectiveness of your AI tools against other options?
 2. How stable is the performance of your AI tool ?
-3. Have you optimize your software to ensure most effectiveness?
+3. Can you report the dx/dy of your AI tool (i.e. if we change inputs _X_,
+   does that effect the outputs _Y_)?
+3. Using that dx/dy knowledge, can you optimize your software to ensure most effectiveness?
+4. Using that optimizer, can you AI tools chase a wide range of business goals?
 4. Do you have a continuous monitoring process in place to ensure AI tool effectiveness?
 5. Do you have a continuous repair process in place to mitigate for poor performance?
 6. Does your AI tools  run
   fast enough, not use excessive minimal system resources, to enable such comparisons, stability
 tests, optimization
-  monitoring, repair?
+  monitoring, and repair?
 7. Does your AI tools ship with a "certification envelope" (so that its users
    know when not to trust it)?
 8. Are you testing if your AI tool is being unfair to different social groups?
@@ -81,7 +84,7 @@ A score of 12 is perfect, 11 is tolerable, but 10 or lower and you
 have got serious problems. The truth is that most software organizations 
 are running with a score of 2 or 3, and they need serious help.
 So if you AI tools can't or won't answer "yes"
-to the most of the abive then:
+to the most of the above then:
 
 - Industrial practitioners should use different tools; and 
 - Researchers should accept  a new  research challenge (how how to enable that kinds of ethics in that kind of AI tool).
@@ -121,4 +124,4 @@ to the most of the abive then:
 Note that in the above, after some preliminary notes in [ethics](), there is no separate section on that topic. Rather,
 ethically-aligned design is the theme that covers the entire book.
 
-
+## Notes
