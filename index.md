@@ -6,7 +6,7 @@ layout: default
 
 ## Questions (that need Answers)
 
-![](img/questions.png){: .align-right}
+![](img/questions.png){: .imgright}
 
 What do AI developers need to know about software engineering? And what does SE need to know about AI?
 

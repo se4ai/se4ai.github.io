@@ -20,9 +20,16 @@ code {
 	padding-top:0px;
 	float: left;
 }
+.imgright {
+	margin:3px;
+	padding:3px;
+	float: right;
+        width: 350px;
+}
 .alignright {
 	margin-top:0px;
 	padding-top:0px;
+        border-color: #CCC;
 	float: right;
 }
 a:link,
