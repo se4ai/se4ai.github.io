@@ -22,12 +22,13 @@ for widespread use by more engineers are:
 
 When used together, these three technologies can greatly benefit each other.
 Data miners can simplify optimizers. Optimizers can make theorem provers run faster.
-And theorem provers can become generators for data mining..
+And theorem provers can become generators for data mining.
 
 The book introduces these technologies, from a programming perspective.
 Our goal is to give you enough information so you can build, refactor, and improve  your own versions of these tools.
 
-More than the above, we ask what is missing from most other textbooks on AI and SE.
+But more than than,
+this book asks ask what is missing from most other textbooks on AI and SE.
 To fill that gap,  we will cover:
 
 - software processes; and 
