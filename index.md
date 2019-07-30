@@ -4,8 +4,9 @@ layout: default
 ---
 
 
+## Questions (that need Answers)
 
-
+<img src="img/questions.png" width=400 align=right>
 What do AI developers need to know about software engineering? And what does SE need to know about AI?
 
 Looking at recent high-impact industrial and  research results, 
@@ -54,7 +55,7 @@ since we are not
 controlling 
 what goals are not satisfied by that model.  
 
-## 12 Rules for SE in the age of AI
+## Rules for  Ethical SE in the age of AI
 
 Once upon a time (in 2000),
 Joel Spolsky offer a dozen tests to rate
@@ -63,8 +64,8 @@ In the spirit of the Joel test,
 we offer our set of tests  to rate the quality
 of software teams dealing with AI.
 
-1. Have you compared the effectiveness of your AI tools against other options?
 2. How stable is the performance of your AI tool ?
+1. Have you compared the effectiveness of your AI tools against other options?
 3. Can you report the dx/dy of your AI tool (i.e. if we change inputs _X_,
    how does that effect the outputs _Y_)?
 3. Using that dx/dy knowledge, can you optimize your software to ensure most effectiveness?
@@ -94,13 +95,13 @@ to the most of the above then:
 - Researchers should accept  a new  research challenge (how how to enable that kinds of ethics in that kind of AI tool).
    
 
-[^foot]: The Joel test as 12 questions: (1) Do you use source control?; (2) Can you make a build in one step?; (3) Do you make daily builds?; (4) Do you have a bug database?; (5) Do you fix bugs before writing new code?; (6) Do you have an up-to-date schedule?; (7) Do you have a spec?; (8) Do programmers have quiet working conditions?; (9)  Do you use the best tools money can buy?; (10) Do you have testers?; (11_ Do new candidates write code during their interview?; (12) Do you do hallway usability testing?
+[^foot]: The Joel test has 12 questions: (1) Do you use source control?; (2) Can you make a build in one step?; (3) Do you make daily builds?; (4) Do you have a bug database?; (5) Do you fix bugs before writing new code?; (6) Do you have an up-to-date schedule?; (7) Do you have a spec?; (8) Do programmers have quiet working conditions?; (9)  Do you use the best tools money can buy?; (10) Do you have testers?; (11_ Do new candidates write code during their interview?; (12) Do you do hallway usability testing?
 
 ## Roadmap
 
 
 1. Technology:
-   1. To begin: [preface](index), [motivation](), [ethics](), [baselines]()
+   1. To begin: [preface](index), [motivation](), [ethics](), [baselines](/about-baselines)
    1. About data mining [discretization](abiut-discretization); [basic learning](about-learners); [advanced learning](about-advanced-learning).
    2. Optimizers: [landscapes](about-landscapes); 
                [basic-optimizers](about-optimizers); 

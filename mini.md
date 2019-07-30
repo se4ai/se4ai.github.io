@@ -255,97 +255,58 @@ look before you leap (reason over sub-sub clusters, not top cluster)
  246.     return what(name=name,pos=n,
  247.                 w= -1 if my.char.less in name else 1)
  248. 
- 249. def shuffleAndFindPoles(rows):
- 250.   hi=len(rows)
- 251.   south=b=None
- 252.   bx={} 
- 253.   c=0
- 254.   def update(b,x,south,c):
- 255.     tmp = bx[x] = abs(b-x)
- 256.     if tmp > c: c,south = tmp,x
- 257.     return south,c
- 258.   # find south and furthest from south
- 259.   for x in range(hi-1,0,-1):
- 260.     y=random.randint(0,x)
- 261.     if south is None: 
- 262.        south = south = rows[y]
- 263.        c = bx[south] = 0
- 264.     else: 
- 265.        south,c=update(south,rows[y],south,c)
- 266.     if x==y: continue
- 267.     rows[x],rows[y]=rows[y],rows[x]
- 268.   south,c=update(south, rows[0],south,c)
- 269.   c1= c
- 270.   north = south
- 271.   for x,b2x in bx.items():
- 272.     if c >= 2*b2x:
- 273.        tmp= abs(x-north)
- 274.        if tmp > c1:
- 275.          print(".")
- 276.          c1,north = tmp,x
- 277.   return c1, c, north,south
- 278.        
- 279. 
- 280. [print(y) for y in  
- 281.   sorted(
- 282.     [shuffleAndFindPoles(shuffle([0,100]+ [int(r()*100) for _ in range(1000)])) 
- 283.      for _ in range(20)])]
- 284. 
- 285. 
- 286. sys.exit()
- 287.  
- 288. class Place:
- 289.   def __init__(i, names):
- 290.     i.history= History(names)
- 291.     i.c = i.north = i.south = None
- 292.     i.distances = Float() 
- 293.   def add(i,row,rows):
- 294.     if not i.north or not i.south: 
- 295.        anything = one(rows)
- 296.        i.north  = anything.furthest(rows, i.history)
- 297.        i.south  = i.north.furthest(rows,  i.history)
- 298.        i.c      = i.south.dist(i.north,   i.history)
- 299.     a = i.north.dist(row, i.history)
- 300.     b = i.south.dist(row, i.history)
- 301.     d = (a**2 + i.c**2 - b**2)/2*i.c
- 302.     i.distances + d
- 303.     return o(row     = row,
- 304.              northern= a<b,
- 305.              weird   = abs(i.distances.z(d)) > 1)
- 306.   def adds(i,src):
- 307.     cache=[]
- 308.     for x in src:
- 309.       x = x.clone()
- 310.       i.history + x
- 311.       cache += [x]
- 312.       if len(cache) > my.era:
- 313.         for row in shuffle(cache):
- 314.           yield i.add(row,cache)
- 315.         cache = []
- 316.     if cache:
- 317.       for row in shuffle(cache): 
- 318.         yield i.add(row,cache)
- 319. 
- 320. def data(rows=[], names=[], about=''):
- 321.   use  = [n for n,x in enumerate(names) if not my.char.ignore in x]
- 322.   cols = lambda lst: [lst[n] for n in use]
- 323.   here = Place(cols(names))
- 324.   rows = [Row(cols(row)) for row in rows]
- 325.   for x in here.adds(rows): 
- 326.      tag=""
- 327.      if   x.weird and     x.northern:tag="N"
- 328.      elif x.weird and not x.northern:tag="S"
- 329.      elif not x.weird and x.northern:tag=" "
- 330.      else: tag="s"
- 331.      print(tag,end="")
- 332. 
- 333. class stories(ok): pass
- 334. 
- 335. @stories
- 336. def _auto():
- 337.   from auto import auto
- 338.   from weather2 import weather2
- 339.   data(**auto())
+ 249. class Place:
+ 250.   def __init__(i, names):
+ 251.     i.history= History(names)
+ 252.     i.c = i.north = i.south = None
+ 253.     i.distances = Float() 
+ 254.   def add(i,row,rows):
+ 255.     if not i.north or not i.south: 
+ 256.        anything = one(rows)
+ 257.        i.north  = anything.furthest(rows, i.history)
+ 258.        i.south  = i.north.furthest(rows,  i.history)
+ 259.        i.c      = i.south.dist(i.north,   i.history)
+ 260.     a = i.north.dist(row, i.history)
+ 261.     b = i.south.dist(row, i.history)
+ 262.     d = (a**2 + i.c**2 - b**2)/2*i.c
+ 263.     i.distances + d
+ 264.     return o(row     = row,
+ 265.              northern= a<b,
+ 266.              weird   = abs(i.distances.z(d)) > 1)
+ 267.   def adds(i,src):
+ 268.     cache=[]
+ 269.     for x in src:
+ 270.       x = x.clone()
+ 271.       i.history + x
+ 272.       cache += [x]
+ 273.       if len(cache) > my.era:
+ 274.         for row in shuffle(cache):
+ 275.           yield i.add(row,cache)
+ 276.         cache = []
+ 277.     if cache:
+ 278.       for row in shuffle(cache): 
+ 279.         yield i.add(row,cache)
+ 280. 
+ 281. def data(rows=[], names=[], about=''):
+ 282.   use  = [n for n,x in enumerate(names) if not my.char.ignore in x]
+ 283.   cols = lambda lst: [lst[n] for n in use]
+ 284.   here = Place(cols(names))
+ 285.   rows = [Row(cols(row)) for row in rows]
+ 286.   for x in here.adds(rows): 
+ 287.      tag=""
+ 288.      if   x.weird and     x.northern:tag="N"
+ 289.      elif x.weird and not x.northern:tag="S"
+ 290.      elif not x.weird and x.northern:tag=" "
+ 291.      else: tag="s"
+ 292.      print(tag,end="")
+ 293. 
+ 294. class stories(ok): pass
+ 295. 
+ 296. @stories
+ 297. def _auto():
+ 298.   from auto import auto
+ 299.   from weather2 import weather2
+ 300.   data(**auto())
 ---
 title: "  for row,history in data(**auto()):"
 layout: default
@@ -354,7 +315,7 @@ code: true
 
 Read the code on [Github](https://github.com/se4ai/code/tree/master/mini.py) <font color=orange><i class="fab fa-github-3x"></i></font>.
 
- 340.   for row,history in data(**auto()):
+ 301.   for row,history in data(**auto()):
 ---
 title: "    print(row.cells)"
 layout: default
@@ -363,7 +324,7 @@ code: true
 
 Read the code on [Github](https://github.com/se4ai/code/tree/master/mini.py) <font color=orange><i class="fab fa-github-3x"></i></font>.
 
- 341.     print(row.cells)
+ 302.     print(row.cells)
 ---
 title: "  lst = sorted(history.rows,"
 layout: default
@@ -372,7 +333,7 @@ code: true
 
 Read the code on [Github](https://github.com/se4ai/code/tree/master/mini.py) <font color=orange><i class="fab fa-github-3x"></i></font>.
 
- 342.   lst = sorted(history.rows,
+ 303.   lst = sorted(history.rows,
 ---
 title: "               key=lambda z:z.dominates(history))"
 layout: default
@@ -381,7 +342,7 @@ code: true
 
 Read the code on [Github](https://github.com/se4ai/code/tree/master/mini.py) <font color=orange><i class="fab fa-github-3x"></i></font>.
 
- 343.                key=lambda z:z.dominates(history))
+ 304.                key=lambda z:z.dominates(history))
 ---
 title: "  for row in lst[:5]+lst[-5:]:"
 layout: default
@@ -390,7 +351,7 @@ code: true
 
 Read the code on [Github](https://github.com/se4ai/code/tree/master/mini.py) <font color=orange><i class="fab fa-github-3x"></i></font>.
 
- 344.   for row in lst[:5]+lst[-5:]:
+ 305.   for row in lst[:5]+lst[-5:]:
 ---
 title: "    print(row)"
 layout: default
@@ -399,10 +360,10 @@ code: true
 
 Read the code on [Github](https://github.com/se4ai/code/tree/master/mini.py) <font color=orange><i class="fab fa-github-3x"></i></font>.
 
- 345.     print(row)
- 346. ###########################################################
- 347. 
- 348. if __name__ == "__main__":
- 349.   ok.main(sys.argv)
- 350. 
+ 306.     print(row)
+ 307. ###########################################################
+ 308. 
+ 309. if __name__ == "__main__":
+ 310.   ok.main(sys.argv)
+ 311. 
 ````
