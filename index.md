@@ -7,6 +7,7 @@ layout: default
 ## Questions (that need Answers)
 
 <img src="img/questions.png" width=400 align=right>
+
 What do AI developers need to know about software engineering? And what does SE need to know about AI?
 
 Looking at recent high-impact industrial and  research results, 
