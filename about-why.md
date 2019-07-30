@@ -7,13 +7,19 @@ layout: default
 
 ![](img/questions.png){: .imgright}
 
-More and more, software is making decisions that affect people’s
+As we said before,
+when you start a new AI project,
+your  first question should not be  be  "what data miners should I apply to this data?".
+Rather, it should be  "what are the ethical requirements of this development? And how can we best support those requirements?".
+
+
+More and more, AI tools  are making decisions that affect people’s
 lives in such high-stakes applications such as mortgage lending,
 hiring, and prison sentencing. Many high-stake applications such
-as finance, hiring, admissions, criminal justice use algorithmic
+as finance, hiring, admissions, criminal justice use AI
 decision-making
 frequently[^ladd-1998],[^burrell-2016],[^corbett-2018],[^galindo-2000],[^yan-2013],[^chalfin-2016],[^ajit-2016],[^berk-2015],[^berk-2016].
-Unfortunately, some of that software is known to exhibit “group
+Unfortunately, some of  AI tools are  known to exhibit “group
 discrimination”; i.e. their decisions are inappropriately affected
 attributes like race, gender, age, etc:
 
@@ -44,30 +50,10 @@ of any developer can be defeated by  malevolent forces, or even by just dumb luc
 So it is wrong to say that if our guileless are followed that the result AI tool will always adhere to 
 socially-accepted ethical standards.
 
-But it also wrong to say that just because some ethical goals are not reached, that we should not strive towards
+But it also wrong to say that just because some ethical goals are not always reached, that we should not strive towards
 those goals.
 Developers will always try to adhere to ethicals standards.
 Or, at the very least, they should monitor their AI tools and report unethical usage or consequences.
-
-When discussing this work with colleagues, we are still sometimes
-asked if ethical issues _should_
-or _can_ be solved by 
-software engineers. We reply that:
-
-- It _should_ be the goal of  software developers to ensure
-that software conforms to  its
-required ethical standards.
-- Further, even if we think that  ethics is not our
-problem, our users may disagree.
-When users discover problems with software, it is the job of
-the person maintaining that software (i.e.  a software engineer) to fix that problem.
-- Lastly, we also think that this problem _can_ be solved by software engineers. 
-For example _Hyperparameter  optimization_ 
-is now widely applied in SE (see [Xia'18](/REFS#xia-2018) and [Osman'17](/REFS#osman-2017)),
-That kind of optimizers
-selects the model we want from the large space of poossible models.
-That is, methods that have matured within the SE community (by SE researchers and practitioners),
-can now be applied to other problems (e.g.  as discussed later in this book, how to  mitigate unfair software).
 
 Many industrial practitioners and researchers agree that
 we need
@@ -91,42 +77,115 @@ rganizations
 - _Dependability_: Decision to maintain and/or keep a software product in the market
 - _Common goods_: Contributing to, using, promoting open source software
 
+When discussing this work with colleagues, we are still sometimes
+asked if ethical issues _should_
+or _can_ be solved by 
+software engineers. We reply that:
+
+- It _should_ be the goal of  software developers to ensure
+that software conforms to  its
+required ethical standards.
+- Further, even if we think that  ethics is not our
+problem, our users may disagree.
+When users discover problems with software, it is the job of
+the person maintaining that software (i.e.  a software engineer) to fix that problem.
+- Lastly, we also think that this problem _can_ be solved by software engineers. 
+For example _Hyperparameter  optimization_ 
+is now widely applied in SE (see [Xia'18](/REFS#xia-2018) and [Osman'17](/REFS#osman-2017)),
+That kind of optimizers
+selects the model we want from the large space of poossible models.
+That is, methods that have matured within the SE community (by SE researchers and practitioners),
+can now be applied to other problems (e.g.  as discussed later in this book, how to  mitigate unfair software).
+
 
 ## Testing For "Ethical" Software
 
-Once aupon a time, back in the year 2000, Joel Spolsky proosed 12 tests for
-the the quality of a software teami[^foot].  This test was widely influencial in the agile community. 
+Once upon a time, back in the year 2000, Joel Spolsky proofed 12 tests for
+the quality of a software team[^foot].  This test was widely influential in the agile community. 
 
 [^foot]: (1) Do you use source control?; (2) Can you make a build in one step?; (3) Do you make daily builds?; (4) Do you have a bug database?; (5) Do you fix bugs before writing new code?; (6) Do you have an up-to-date schedule?; (7) Do you have a spec?; (8) Do programmers have quiet working conditions?; (9)  Do you use the best tools money can buy?; (10) Do you have testers?; (11) Do new candidates write code during their interview?; (12) Do you do hallway usability testing?
 
-Now, two decades later, we demand more of our software (particularly of our AI software).
+Now, two decades later, we demand more of our software (particularly of our AI software). Here are some other questions
+we now want to ask about our software.  Include below are some ways that AI tols can be used to address these questions. Before
+moving to those, we must stress that the AI tools are just **one way**, and not **the only way**, to 
+implement  ethically-aligned design.
  
 
-2. How stable is the performance of your AI tool ?
-1. Have you compared the effectiveness of your AI tools against other options?
-3. Can you report the dx/dy of your AI tool (i.e. if we change inputs _X_,
-   how does that effect the outputs _Y_)?
-3. Using that dx/dy knowledge, can you optimize your software to ensure most effectiveness?
-4. Using that optimizer, can your AI tools chase a wide range of business goals?
-4. Do you have a continuous monitoring process in place to ensure AI tool effectiveness?
-5. Do you have a continuous repair process in place to mitigate for poor performance?
-6. Does your AI tools  run
+<em>1. How stable are the  conclusions from  your AI tool ?</em>
+
+- The conclusions from an AI tools should be succinct enough to inspect and understand. Stability should
+be tested across multiple random samples of the training data as well as over time (as new data arrives).
+
+<em>2. Have you compared the effectiveness of your AI tools against other options?</em>
+
+- When commissioning an AI tool for   a new domain, some experimentation is required to match the right tool to the current data.
+
+<em>3. Can you report the dx/dy of your AI tool (i.e. if we change inputs _X_,
+   how does that effect the outputs _Y_)?</em>
+
+- We need to know the envelope within which important conclusions stay the same.
+- We also need to know how to change things that are undesirable.
+
+<em>4. Using that dx/dy knowledge, can you optimize your software to ensure most effectiveness?</em>
+
+- AI tools include an optimizer that can intelligently explore the state space of your AI tool?
+
+<em>5. Using that optimizer, can your AI tools chase a wide range of business goals?</em>
+
+- Optimizers/data miners should not be hard-wired to specific goals. Rather, they should accept as input
+  the specific goals that the local business people want to achieve.
+
+<em>6. Do you have a continuous monitoring process in place to ensure AI tool effectiveness?</em>
+
+- We need to know when AI tools are going off the rails (performing poorly).
+
+<em>7. Do you have a continuous repair process in place to mitigate for poor performance?</em>
+
+- We need some kind of mitigation strategy that can manage less-than-desired AI tool performance.
+
+<em>8. Does your AI tools  run
   fast enough, not use excessive minimal system resources, to enable such comparisons, stability
 tests, optimization
-  monitoring, and repair?
-7. Do your AI tools ship with a "certification envelope" (so that its users
-   know when not to trust it)?
-8. Are you testing if your AI tools are  being unfair to different social groups?
-9. Is your AI tool transparent enough to allow detection of misue??
-10. Are your AI tools  accountable (transparent, reliable, and safe)?
-11. Do your AI tools  support inclusiveness for its user population?
-12. Are your AI  your tools private and secure?
+  monitoring, and repair?</em>
+
+- All the above should be achievable within the system constraints of the local environment.
+
+<em>9. Do your AI tools ship with a "certification envelope" (so that its users
+   know when not to trust it)?</em>
+
+- AI tools should broadcast when they can be trusted, and when they should be suspected.
+
+<em>10. Are you testing if your AI tools are  being unfair to different social groups?</em>
+
+- Fairness can be seen in the different  responses of your AI tools to
+social groups
+  marked by protected attributes (e.g. age, race , gender).
+  Sometimes, it is required to use these protected attributes in a
+ model (e.g. certain genders are a very good predictor for "not
+  pregnant"). But at other times, it is optional to use 
+  protected  attributes,
+as apposed to some other parts of the data. At those times, 
+  it is at least polite (and at most illegal) to report models that places special emphasis  on these protected attributes.
 
 
-A score of 12 is perfect, 11 is tolerable, but 10 or lower and you
-have got serious problems. The truth is that most software organizations 
-are running with a score of 2 or 3, and they need serious help.
-So if you AI tools can't or won't answer "yes"
+<em>11. Is your AI tool transparent enough to allow detection of misue?</em>
+
+- One way to increase the odds of misuse of any system is it make it harder for someone to audit that system.
+
+<em>12. Are your AI tools  accountable (transparent, reliable, and safe)?</em>
+
+- Unsafe and unreliable software can fail, hurting people as it does so.
+
+<em>13. Do your AI tools  support inclusiveness for its user population?</em>
+
+- For users that want to lean in and participate in the creation and maintenance of an AI tool, can that tool
+  report itself succinctly enough to allows humans to watch, understand, and change that system?
+
+<em>14. Are your AI  your tools private and secure?</em>
+
+- The less private and the less secure the system, the greater the odds of misuse.
+
+If you AI tools can't or won't answer "yes"
 to the most of the above then:
 
 - Industrial practitioners should use different tools; and 
