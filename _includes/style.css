@@ -23,8 +23,7 @@ code {
 .imgright {
 	margin:2px;
 	padding: 2px;
-   border:2px solid #021a40;
-   background-color:#ff0;
+   border:2px solid #CCC;
 	float: right;
         width: 350px;
 }
