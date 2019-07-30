@@ -23,7 +23,7 @@ Rows will know how to mutate their cells, soon.
 ````python
    1. from main import my
    2. from memo import memo0, memos,fresh
-   3. from lib  import Pretty
+   3. from lib  import Pretty,one
    4. 
    5. @memos
    6. class Row(Pretty):
@@ -33,31 +33,22 @@ Rows will know how to mutate their cells, soon.
   10.     i.id = Row.id = Row.id + 1
   11.   @fresh
   12.   def __setitem__(i, k, v): i.cells[k] = v
-  13.   def __getitem__(i, k   ): return i.cells[k]
+  13.   def __getitem__(i, k   ):  return i.cells[k]
   14.   @memo0
   15.   def doms(i,rows):
-  16.     import random
-  17.     print("test", random.choice([10,20,30,40]))
-  18.     print("any", any(rows.all))
-  19.     print("ast", rows.all[0])
-  20.     #print("rows", rows)
-  21.     n = my.rows.someDom
-  22.     return sum([ i.dominates( any(rows.all), rows)
-  23.                  for _ in range(n) 
-  24.                ]) / n
-  25.   def dominates(i,j,rows):   
-  26.     print("i",i)
-  27.     print("j",j)
-  28.     z = 0.00001
-  29.     s1, s2, n = z,z,z+len(rows.goals) 
-  30.     for goal in rows.goals:
-  31.       print("G?",goal.pos)
-  32.       a,b = i[goal.pos], j[goal.pos]
-  33.       a,b = goal.norm(a), goal.norm(b)
-  34.       s1 += 10**(goal.w * (a-b)/n)
-  35.       s2 += 10**(goal.w * (b-a)/n)
-  36.     return s1/n < s2/n
-  37. 
+  16.     n = my.rows.someDom
+  17.     return sum([i.dominates(one(rows.all),rows) 
+  18.                 for _ in range(n)])  / n
+  19.   def dominates(i,j,rows):   
+  20.     z = 0.00001
+  21.     s1, s2, n = z,z,z+len(rows.goals) 
+  22.     for goal in rows.goals:
+  23.       a,b = i[goal.pos], j[goal.pos]
+  24.       a,b = goal.has.norm(a), goal.has.norm(b)
+  25.       s1 -= 10**(goal.w * (a-b)/n)
+  26.       s2 -= 10**(goal.w * (b-a)/n)
+  27.     return s1/n < s2/n
+  28. 
 ````
 
 ## Comprehension Questions

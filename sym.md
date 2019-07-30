@@ -15,27 +15,28 @@
   10.     [i + x for x in inits]
   11.   def delta(i) : return i.ent()
   12.   def expect(i): return i.mode
-  13.   @fresh
-  14.   def __add__(i,x):
-  15.     i.n += 1
-  16.     i.bag[x] = i.bag.get(x,0) + 1
-  17.   @fresh
-  18.   def __sub__(i,x):
-  19.     if x in i.bag:
-  20.       i.n -= 1
-  21.       i.bag[x] -= 1
-  22.   def mode0(i):
-  23.     most,out = 0,None
-  24.     for k,n in i.bag.items():
-  25.       if n > most:
-  26.         out, most = k,n
-  27.     return out
-  28.   def ent0(i):
-  29.     e=0
-  30.     for v in i.bag.values():
-  31.       p  = v/i.n
-  32.       e -= p * math.log(p,2)
-  33.     return e
+  13.   def norm(i,x): return x
+  14.   @fresh
+  15.   def __add__(i,x):
+  16.     i.n += 1
+  17.     i.bag[x] = i.bag.get(x,0) + 1
+  18.   @fresh
+  19.   def __sub__(i,x):
+  20.     if x in i.bag:
+  21.       i.n -= 1
+  22.       i.bag[x] -= 1
+  23.   def mode0(i):
+  24.     most,out = 0,None
+  25.     for k,n in i.bag.items():
+  26.       if n > most:
+  27.         out, most = k,n
+  28.     return out
+  29.   def ent0(i):
+  30.     e=0
+  31.     for v in i.bag.values():
+  32.       p  = v/i.n
+  33.       e -= p * math.log(p,2)
+  34.     return e
 ````
 
 ## Check Your Comprehension 

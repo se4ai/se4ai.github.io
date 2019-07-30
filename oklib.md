@@ -32,6 +32,11 @@ Read the code on [Github](https://github.com/se4ai/code/tree/master/oklib.py) <f
   19.     i.e=100
   20.     i._has=i
   21. 
-  22. print(Fred())
-  23. if __name__ == "__main__": ok()
+  22. print(''.join(sorted([any('abcde') for _ in range(50)])))
+  23. 
+  24. print(Fred())
+  25. print(s2m(""" a,b,3,2,g
+  26.   d,e,3,4,f
+  27.   k,l,100,200,f"""))
+  28. if __name__ == "__main__": ok()
 ````

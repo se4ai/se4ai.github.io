@@ -12,7 +12,7 @@ Read the code on [Github](https://github.com/se4ai/code/tree/master/lib.py) <fon
 
 
 ````python
-   1. import random
+   1. import random,re
    2. from main import my
    3. from collections.abc import Iterable   
    4. 
@@ -26,7 +26,7 @@ Read the code on [Github](https://github.com/se4ai/code/tree/master/lib.py) <fon
 ````python
    6. 
    7. r = random.random
-   8. any = random.choice
+   8. one = random.choice
    9. 
 ````
 
@@ -55,14 +55,33 @@ Read the code on [Github](https://github.com/se4ai/code/tree/master/lib.py) <fon
   22. def nump(x)  : return isinstance(x,(float,int))
   23. 
   24. def stringp(x): return isinstance(x,str)
+  25. 
+  26. def token(x):
+  27.   try: return int(x)
+  28.   except:
+  29.     try: return float(x)
+  30.     except:return x
+  31.    
 ````
 
 ## Math
 
 ````python
-  25. 
-  26. def close(x,y,near=0.01): return y*(1-near) <=x<= y*(1+near)
-  27. 
+  32. 
+  33. def close(x,y,near=0.01): return y*(1-near) <=x<= y*(1+near)
+  34. 
+````
+
+## Strings
+
+````python
+  35. 
+  36. def s2m(s):
+  37.   return [
+  38.     [token(cell) for cell in 
+  39.        re.sub(r'[ \t]*',"", line).split(",")] 
+  40.     for line in s.splitlines()]
+  41. 
 ````
 
 ## Lists
@@ -72,19 +91,19 @@ Read the code on [Github](https://github.com/se4ai/code/tree/master/lib.py) <fon
 #### items: over top level
 
 ````python
-  28. 
-  29. def items(x): 
-  30.    for y in (x if iterp(x) else [x]): yield y
-  31. 
+  42. 
+  43. def items(x): 
+  44.    for y in (x if iterp(x) else [x]): yield y
+  45. 
 ````
 
 #### ritems: recursively, over all levels
 
 ````python
-  32. def ritems(x): 
-  33.   if iterp(x):
-  34.     for y in x:
-  35.       for z in ritems(y): yield z
-  36.   else: yield x
-  37. 
+  46. def ritems(x): 
+  47.   if iterp(x):
+  48.     for y in x:
+  49.       for z in ritems(y): yield z
+  50.   else: yield x
+  51. 
 ````

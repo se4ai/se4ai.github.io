@@ -13,11 +13,11 @@ Read the code on [Github](https://github.com/se4ai/code/tree/master/weather2.py)
 ````python
    1. from data import data
    2. 
-   3. def weather2(): return data(
-   4.   name = "albrecht", 
-   5.   rows = [
-   6.     ["outlook", "$temp", "$temperature",
-   7.       "?$humid", "wind", ">play"],
+   3. def weather2(): return dict(
+   4.   about = "albrecht", 
+   5.   names = ["outlook", "$temp", 
+   6.       "?$humid", "wind", ">play"],
+   7.   rows=[
    8.     ["sunny",85,85, "FALSE",1],
    9.     ["sunny",80,90,"TRUE",1],
   10.     ["overcast",83,86,"FALSE",2],

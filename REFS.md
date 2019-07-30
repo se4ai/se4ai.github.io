@@ -25,6 +25,10 @@ https://freevariable.com/slides/semla-2019.pdf
 
 J. Brickell and V. Shmatikov, “The cost of privacy: destruction of data- mining utility in anonymized data publishing,” in Proceeding of the 14th ACM SIGKDD international conference on Knowledge discovery and data mining. New York, NY, USA: ACM, 2008, pp. 70–78.
 
+### Breiman 1984
+
+Breiman, Leo; Friedman, J. H.; Olshen, R. A.; Stone, C. J. (1984). Classification and regression trees. Monterey, CA: Wadsworth & Brooks/Cole Advanced Books & Software. ISBN 978-0-412-04841-8.
+
 ### Brun 2018
 
 Y. Brun and A. Meliou, “Software fairness,” ser. ESEC/FSE 18. NY, USA: ACM, pp. 754–759.
@@ -63,10 +67,22 @@ Mark W Craven and Jude W Shavlik. 2014. Learning symbolic rules using artificial
 Hoa Khanh Dam, Truyen Tran, and Aditya Ghose. 2018. 
 "Explainable Software Analytics.". ICSE, NIER, 2018,  arXiv preprint arXiv:1802.00603 (2018).
 
+### Dougherty 1995
+
+James Dougherty, Ron Kohavi, and Mehran Sahami. 1995. Supervised and unsupervised discretization of continuous features. In Proceedings of the Twelfth International Conference on International Conference on Machine Learning (ICML'95), Armand Prieditis and Stuart J. Russell (Eds.). Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 194-202.
+http://robotics.stanford.edu/users/sahami/papers-dir/disc.pdf
+
 ### Duda 2000
 
 Richard O. Duda, Peter E. Hart, and David G. Stork. 2000. 
 "Pattern Classification" (2nd Edition). Wiley-Interscience, New York, NY, USA.
+
+## E
+
+### Entropy 1949
+
+von Neumann, Shannon, and Entropy:
+http://bit.ly/2Y1yBQh
 
 ## F
 
@@ -96,6 +112,15 @@ Wei Fu and Tim Menzies. 2017. Easy over hard: a case study on deep learning. In 
 
 
 ## G
+
+### Gay 2010
+
+Gregory Gay, Tim Menzies, Omid Jalali, Gregory Mundy, Beau Gilkerson, Martin Feather.
+2010.
+Finding robust solutions in requirements models
+Automated Software Engineering
+March.
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.650.3238&rep=rep1&type=pdf
 
 ### Grus 2019
 
@@ -189,15 +214,29 @@ European Conference on. IEEE, 107–116.
 
 Tim Menzies, Oussama El-Rawas, Jairus Hihn, and Barry Boehm. 2009. Can we build software faster and better and cheaper?. In Proceedings of the 5th International Conference on Predictor Models in Software Engineering (PROMISE '09). ACM, New York, NY, USA, , Article 2 , 9 pages. DOI=http://dx.doi.org/10.1145/1540438.1540442
 
+### Menzies 2007
+
+Tim Menzies, Oussama Elrawas, Jairus Hihn, Martin Feather, Ray Madachy, and Barry Boehm. 2007. The business case for automated software engineering. ASE'07.
+http://doi.org/10.1145/1321631.1321676
+
 ### MicroAi 2019
 
 Microsoft AI principles. 2019. https://www.microsoft.com/en-us/ai/our-approach-to-ai
+
+### Mittas 2013
+
+Mittas  N,  Angelis  L  (2013)  Ranking  and  clustering  software  cost  estimationmodels through a multiple comparisons algorithm. IEEE Trans SE 39(4):537–551, DOI 10.1109/TSE.2012.45
 
 ## N
 
 ### Nair 2018
 
 Nair, V., Menzies, T., Siegmund, N., & Apel, S. (2018). Faster discovery of faster system configurations with spectral learning. Automated Software Engineering, 25(2), 247-277.
+
+### Nam 2016
+
+J. Nam and S. Kim, "CLAMI: Defect Prediction on Unlabeled Datasets (T)," 2015 30th IEEE/ACM International Conference on Automated Software Engineering (ASE), Lincoln, NE, 2015, pp. 452-463.
+http://people.csail.mit.edu/hunkim/papers/nam-HDP-fse2015.pdf
 
 ### Norvig 2009
 
@@ -233,6 +272,10 @@ Gaissmaier. 2017. FFTrees: A toolbox to create, visualize, and
 evaluate fast-and-frugal decision trees. Judgment and Decision
 Making 12, 4 (2017), 344–368.
 
+### Quinlan 1986
+
+Quinlan, J. R. (1986). "Induction of decision trees" (PDF). Machine Learning. 1: 81–106. doi:10.1007/BF00116251
+
 ## R
 
 ### Ribeiro 2016
@@ -252,6 +295,12 @@ Robert Sawyer. 2013. Bias Impact on Analyses and Decision Making
 Depends on the Development of Less Complex Applications. In Principles
 and Applications of Business Intelligence Research. IGI Global,
 83–95.
+
+### Sayyad 2013
+
+Sayyad, A. S., Menzies, T., & Ammar, H. (2013, May). On the value of user preferences in search-based software engineering: a case study in software product lines. In Proceedings of the 2013 International Conference on Software Engineering (pp. 492-501). IEEE Press.
+
+### Scott-Knot 
 
 ### Sculley 2015
 
@@ -295,6 +344,12 @@ Tantithamthavorn, C., McIntosh, S., Hassan, A. E., & Matsumoto, K. (2016, May). 
 
 ## W
 
+### Wolpert 2013
+
+iD. Wolpert. (2013(. Ubiquity symposium: Evolutionary computation and the processes of life: what the no free lunch theorems really mean: how to improve search algorithms. Ubitquity.
+Volume 2013, Number December (2013), Pages 1-15.
+https://ubiquity.acm.org/article.cfm?id=2555237
+
 ### Witten 2016
 
 Ian H. Witten, Eibe Frank, Mark A. Hall, and Christopher J. Pal.
@@ -302,3 +357,9 @@ Ian H. Witten, Eibe Frank, Mark A. Hall, and Christopher J. Pal.
 Tools and Techniques" (4th ed.). Morgan Kaufmann Publishers Inc.,
 San Francisco, CA, USA.
 
+## Z
+
+### Zitler 2004
+
+Zitzler, Eckart & Künzli, Simon. (2004). Indicator-Based Selection in Multiobjective Search. Conference on Parallel Problem Solving from Nature (PPSN VIII). 832-842. 10.1007/978-3-540-30217-9_84. 
+http://www.simonkuenzli.ch/docs/ZK04.pdf

@@ -36,7 +36,7 @@
   31.       i.mu -= d/i.n
   32.       i.m2 -= d*(x - i.mu)
   33.   def norm(i,x):
-  34.     return (x - i.lo) / (i.hi - i.lo - my.tiny)
+  34.     return  (x - i.lo) / (i.hi - i.lo - my.tiny)
 ````
 
 Note that there is a numerical methods

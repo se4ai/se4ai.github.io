@@ -5,25 +5,177 @@ layout: default
 
 Learners divide old data  into (say):
 
-- things that are similar or different (this is called
-  clustering)
-- things you care about 
-- things you don't 
-- things you want to avoid.
+- things that are similar or different (this is sometimes called clustering)
+- things you can recognize, or score (this is called classification or regression)
+- things you want to avoid or use (this is called optimization)
 
-They then can look at new data to learn if
-what kind of thing it is.
+Then, when new data arrives, we can:
 
+- work where to put it (which cluster)
+- or what it is (using classification or regression) 
+- or how to change it (using optimization)
 
-Optimizers change things. That is, once you have learned
-that you like X and do not like Y, then an optimizer
-could suggest "do X - Y". Optimizers are discussed later.
+For now, we focus on clustering, data mining, and regression. Later we will talk about optimization (but as we shall see, data mining and optimization are connected in that either one can help the other).
 
 The goal of this chapter is to offer certain core intuitions, common features,
 about learners. It is not a comprehensive guide (for that, see [the excellent Ian Witten book]
 on data mining](REFS#witten-2016)
  but it does introduce much of the learning technology used
 later in this book.
+
+## But which learner is best?
+
+## Data Miners work on Data
+
+1. Tables have rows and columns of data. 
+      - When data does not come in a nice neat table[^usually], then the
+  first task of the data scientist is to wrangle the data into such a format. 
+      - Later in this book, we devote three chapters to that wrangling (when we talk about data collection, data cleaning, and data labelling).
+1. Columns are also sometimes called features, attributes, or variables.
+1. Columns can be numeric or symbolic. 
+     - Numbers can be added together. 
+     - Symbols can only be compared using _equals_ and _not equals_.
+1. Some columns might be _goals_ (things we want to minimize or maximize) 
+   or _classes_ (which we want to predict).  
+     - Goals and classes are sometimes called the _dependent_ variables. 
+     - Goals are always numeric columns and the others can be symbolic or numeric.
+     - Classifiers predict for symbolic goals (e.g _car=ford_ or _disease=measles_).
+     - Regression algorithms predict for numeric goals (e.g. the time to failure of a hard drive).
+- Columns that are not dependent are _independent_.
+
+[^usually]: Which is, in fact, the usual case.
+
+## Operations on data
+
+### Discretization
+
+Columns of numbers can be divided into a few ranges using _discretization_. 
+For example, here's a number ranges divided into 12 bins:
+
+![](https://www.cradle-cfd.com/images/tec/column01/fig5.1.jpg)
+
+
+- Discretization converts a (potentially) infinite range of numbers to into a small set of systems. 
+
+Discretization is usually applied just to one column, or a pair of columns. 
+     -  In _supervised discretization_, we break up one column according to how much those breaks divide some goal column.
+     -  For example, consider a table of data about
+every Australian born since 1788. If that table has independent and dependent  columns _age_ and _alive?_,
+then it is
+tempting to split _age_ at least at 120 since above that point, everyone is _alive?=no_.
+
+
+- As we shall see, we can also "discretize" more that just columns (and multi-dimensional "discretization" is called _clustering_).
+
+
+### Clustering
+
+Clusters  divide the table  into groups of similar rows (and each group is a cluster). Usually, 
+  clustering  ignores the goal/class columns (but it is possible and sometimes useful to cluster on the  goals/class).
+
+
+If  new thing is not similar to any existing cluster, then it is _anomaly_. 
+
+- Once we have enough data in a cluster, we can can save space/time by  ignoring anything that isn't an anomaly (since we have already seen it before).
+- Once we have too many new anomalies, it is time to recurs and form sub-clusters (so that we can work out the structure of the anomalies).
+- In this way, one way to track anomalies is to track when  new clusters start forming.
+
+Note that Recursive clustering lets us divide large problems into smaller ones.
+
+If we only build models for the smaller clusters, then [model construction is much faster](https://arxiv.org/pdf/1802.05319.pdf).
+
+
+### Model Building
+
+
+There are many ways to build models, most of which involve [dividing the data](https://i.stack.imgur.com/v4IfD.png).
+
+- Usually the divisions are pre-computed and cached (and those divisions are called the _model_). 
+- But _lazy learners_
+        work out the divisions at runtime on a case-by-case basis (e.g. nearest neighbor methods that use a division
+        consisting of $$k$$ nearest neighbors). Note that lazy learners can be much slower than otherwise since nothing is
+        pre-computed and cached from training time (so all the 
+        work hapens at test time).
+
+Different learners divide the data in different ways. For example: 
+
+- Some learners divide the data using straight lines, parallel to the data axis (e.g. Decision trees)
+      - E.g. continuing the above example, if the features are _age_ and _weight_ and _alive?_
+        then the region _age &lt; 120_ has a border that is a line orthogonal to the _age_ axis and
+        parrallel to the _weight_ access.
+- While others
+       allow curved boundaries  (_neural networks, support vector machines_).
+- _Naive Bayes_ classifiers divide the data on the class value, then keeps summaries on the values seen in each division.
+       When new data arrives, we check how similar it is to the summaries fron each class (and the new data is assigned the
+       class that it is most similar).
+    - For example, if all elephants are big and all snails are small, then if a new thing arrives that is big,
+      we will guess that it is an elephant.
+- <img align=right width=300 src="https://en.wikipedia.org/wiki/Logistic_regression#/media/File:Exam_pass_logistic_curve.jpeg">Logistic regression sorts data according to [an S-shaped curve](https://www.wolframalpha.com/input/?i=1%2F(1%2Be%5E(-x))+from+-10+to+10) ranging from $$0 \le y \le 1$$.  On that slope, we strongly
+       believe in $$\neg x$$ or $$x$$ at $$y=0,1$$ (respectively)
+     - For example, suppose we have learned that students pass exams at the range of _x=1.5\*hoursStudies-4_
+     - The curve $$y=1/(1+e^{-x}$$ is shown at right.
+ - Support vector machines invent new dimensions that let us  [better separate the data](https://pubs.rsc.org/image/article/2018/MO/c8mo00111a/c8mo00111a-f5_hi-res.gif). To do this, they use a _kernel function_ and different kernels invent
+       different dimensions (e.g. here's [one that uses](http://omega.albany.edu:8008/machine-learning-dir/notes-dir/ker1/phiplot.gif)  $$\sqrt{2}x_1x_2}$$). Note that  some kernels are
+       are [most suited to the current data](https://images.squarespace-cdn.com/content/54856bade4b0c4cdfb17e3c0/1418555379610-JJN6XJ9SG8TEABIB55R1/?content-type=image%2Fpng).
+- Tree learners divide the data using a _split_ most reduces the _variety_ of stuff in each split. As discussed below, variety can be measured using _entropy_ (for discrete values) or _standard deviation_ (for numeric values);
+- Random forests build (say) 100 decision trees, each time  using (say) $$\log_2$$ of the
+  attributes (picked at random) and some random subset of the rows (i.e. not more than can fit  into main memory).
+ - Ensemble learners randomly divide the data, build one model per division, then make conclusions by voting across
+  the ensemble.
+
+### Uncertainty
+
+The less things divide, or the more than fall into the gaps between the divisions, the more we doubt those conclusions.
+  For example:
+
+- In a random forest, if all the trees offer the same conclusion, then might strongly believe that conclusion.
+     - But if half the forest says _X_ and the other half says _Y_, then we are less certain of the conclusion. 
+
+- In logistic regression, when the output is around $$y=0,5$$ then we should be a little skeptical of the conclusions.
+    - Continuing the example from above, after studying for three hours, it is nearly a 50-50 proposition
+      whether or not the student will pass the exam.
+- In a two-class Bayes classifier, of the probability of $$a,b$$ is $$0.9,0.1$$ then we strong believe in $$a$$. 
+    - But
+        when those probabilities are $$0.55,0.45$$, we are less certain of our conclusions.
+
+The other place we need to doubt conclusions is when they fall outside of everything that has been seen before. 
+
+- One way to handle anomalies at model construction times is  as described above) to divide the anomalies into similar groups and process each group separately; i.e. fork sub-clusters
+- One way to handle models at testing time is that if a new example
+      arrives, and it is anomalous, then we should doubt that our AI tool can cope with that data 
+
+
+## Operations and Ethics
+
+
+Explanation and transparent:
+
+- Discretization divides many values into just a few, which makes explanation and  transparency easier  (since there is less to explain).
+
+Privacy:
+
+- If clusters only keep samples, not all, of the data, then the non-sampled data is 100\% private.
+
+Inclusiveness:
+
+- If a human has to check the conclusions of an AI tool that uses clustering,  then they 
+      need only show them representative samples of the data (i.e. just some
+       per cluster). 
+
+Reliability
+
+-  Once data is divided into small clusters, we can quickly check for stability and  (and here reliability)
+- Incremental clustering lets us stream over the data and recognize when new data is outside the _certification envelope_
+      of what has been seen before.     This also informs reliability.
+
+Effectiveness
+
+- In the happy case where anomalies are localized to particular clusters, then this simplifies repair or pollution marking[^pollute]  (since it
+      localizes the regions we need to fix, or avoid). 
+
+[^pollute]: Pollution marking is adding a flag to some regions of a model saying "keep away! Don't use me!". In a hiearchical clustering of data,
+we can decide about new examples by descending the hierarchy looking for the smallest cluster nearest the example that is _not_ marked as polluted.
+
 
 ----
 
@@ -42,7 +194,9 @@ or columns.
 The outputs
 can be:
 
-- one  class that may be symbolic (e.g. defective=True or False) or numeric (e.g. development effort).
+- one  class that may be symbolic
+  (e.g. defective=True or False) or numeric (e.g. development
+  effort).
 - one or more numeric goals that divide into things
   we love/hate that we want to minimize/maximize (respectively);
   e.g. amount of reused code or number of bugs.
@@ -76,17 +230,10 @@ print(s,s.mode, s.ent)
 ==> ent = 1.38
 ```
 In the `Num`eric summaries, we see counts of how many `n` numbers seen, their minimum and maximum values (denoted `lo,hi`), 
-and their standard deviation `sd` which is a measure of the diversity of a set of numbers.
-The standard deviation of  a set of $$n$$ numbers is
-$$\sigma(Y,n) = \sqrt\frac{\sum_i (Y_i-Y')^2}{n-1}$$ where $$Y'$$ is the mean value for $Y$. Standard deviation is minimal (zero)
-when all the numbers are the same.
+and their standard deviation `sd`.
 
 In the `Sym`bolic summary, we see counts of how many `n` numbers were seen, their most common value (denoted`mode`),
-and their entropy `ent` (which is a measure of the diversity of a set of symbols.
-The entropy of $n$ symbols occuring at frequency $$f_1,f_2,..$$ etc
-is $$=\sum_i p_i\log_2p_i$$ where $$p_i=f_i/n$$.
-Entropy  is minimal (zero)
-when all the symbols  are the same.
+and their entropy `ent`.
 
 Supervised learners learn a model $$f$$ of the form $$Y=f(X)$$.
 Unsupervised learners ignore the dependent variable
@@ -118,7 +265,7 @@ is calulated as follows:
 $$\mathcal{diff}(r,i,a_i,b_i) = (r.col[i].norm(a_i) = r.col[i].b_i)^p$$
 
 where $$r.col.norm(x)$$ is a function that normalises $$x$$ to the range $$0..1$$ using $$\frac{x-lo}{hi - lo + 0.0000001}$$
-(i.e. using the smallest and largest value seen in column $$i$$) and                                          $$0.0000001$$
+(i.e. using the smallest and largest value seen in column $$i$$) and                  $$0.0000001$$
 is a small constant added to the denominator to avoid divide-by-zero errors. 
 
 For symbols, a usual $$diff$$ is 
@@ -144,6 +291,8 @@ The famous K-means algorithm reduces that to $$O(kN)$$ as follows:
 1. Declare that  $$K$$ rows (picked at random) are the _centroids_;
 2. Marks each example with the id of its nearest centroid;
 3. Finds the central point of all the rows marked with the same centroid.
+h
+
 4. Declares those new central points to be the new centroids
 5. Goto 1
 
@@ -206,12 +355,15 @@ Note that RP0 is like a faster version of the recursive $$k=2$$-means algorithm 
 There are many  interesting ways to modify  RP0:
 - Do not sub-cluster all data. E.g. only divide on (say) X=50% of data selected (a) at random or (b) spread out between the poles.
 This way ensures that sub-trees get smaller and smaller.
+- If you only build intra-cluster models, only do that on non-root clusters. Then you can use statistics collected in the parent to inform your decisions in the child.
+  Also, the top 2-3 clusters in RP0 are   good to avoid- (since that will be most approxaimate, most error prone).
 - Ignore (some) newly arrived data. In this aproach,   an _anomaly detector_ could report if the newly
 arriving data is anything like what has been seend before (if so, we can ignore it since it does not add anything
 to the model). For example,  in step2, as new data arrives, its distance could be compared to (say) $M$ other things already in the cluster.
 If that is less than the $$Y$$ times the median value of all the distances previously seen in the cluster, the new example is boring and might be ignored
 (For this approach, [Fayola Peters](REFS#peters-2015) suggests $Y=1$).
 In step2, once $$M$$ examples have been read  a classifier/regression algorithm could be executed on the examples in that cluster and executed on any newly arriving examples.
+
 
 ## From Unsupervised to Supervised Learning
 
@@ -275,41 +427,9 @@ Here are some important details about the above process:
 
 ## Supervised Learning
 
-desciretiaon is slicing and dividing columns
-
-learning is slicing and dividing rows
-clusters- does not use class var
-naive bayes
-decision trees
-logisitic regression
-support vector machines (a favorite in text minig)
-ensele learning
-guesiann process models
-
-Fast supervised learning
-
 
 Dont traing on  examples , use some sunset (selected at random, or selected froma  cluserr)
 move the elarning into the clsuterr so  icnremetnaly do top-down recrsive clsutering and build one mdoel per elaf clsuter)
-
-FYI- currently experimenting with data mining with BUBBLES that has the _bellwether_ premise; i.e.
-that there exist a small number of examples that can be used to reason about the rest. In essence, _bellwether_
-is an _instance selection_ algorithm that uses some target learner as the instance selection tool. If the data
-set is large, BUBBLES
-is useful side it reduces the number of examples passed to the learner:
-
-- BUBBLES recursively clusters the data.
-- Each node hold data $$D$$ which is recursively clustered into $$M$$ child clusters.
-- One model is learned from the data in each leaf and pushed to its parents.
-- At each internal node
-    - $$M$$ models are received from its children.
-    - Each model $$M_1$$ is tested on the $$M-1$$ sub-clusters that were not used to generate it. 
-    - The $$\mathcal{best}$$ models are the  $$(M_1,M_2,M_3..)\subseteq M$$ of models with indistinguishably best performance.
-    - A new model $$M_0$$ is build from $$D_0$$, a random sample of size $$|D|/|M|$$ of the data in $$(D_1,D_2,D_3..)$$. 
-    - $$M_0$$ is tested on  $$D-D0$$.
-    - The new $$\mathcal{best'}$$ model is either $$M_0$$ (if it outperforms $$\mathcal{best}$$) or any one of $$\mathcal{best}$$.
-    - If there is no parent  node, BUBBLES returns $$\mathcal{best'}$$.
-    - Else if pushes $$\mathcal{best'}$$ to the parent.
 
 
 maths methods highly optimized. For example, SVM with a lienar kernel runs very fast over a large text corpus. 
@@ -336,6 +456,8 @@ contrast sets (avoding dullr egions)
 ### naive bayes group and the class and loomfor dfferente ebween theing
 XXX decision trees cut on the class
 cover and differentiate make a decision the spin hthru the rest
+
+neural ents
 
 ## Divide nums (discreitzation)
 
