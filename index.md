@@ -1,5 +1,5 @@
 ---
-title: " Home"
+title: " Preface"
 layout: default
 ---
 
@@ -7,6 +7,7 @@ layout: default
 
 
 What do AI developers need to know about software engineering? And what does SE need to know about AI?
+
 Looking at recent high-impact industrial and  research results, 
 three 
 technologies 
@@ -20,6 +21,7 @@ for widespread use by more engineers are:
 When used together, these three technologies can greatly benefit each other.
 Data miners can simplify optimizers. Optimizers can make theorem provers run faster.
 And theorem provers can become generators for data mining..
+
 The book introduces these technologies, from a programming perspective.
 Our goal is to give you enough information so you can build, refactor, and improve  your own versions of these tools.
 
@@ -44,6 +46,7 @@ It turns out that many different can be fitted to data.
 Each such model represents a trade between what we want and what we want to avoid.
 As shown in this book,
 using data miners and optimizers and theorem prover, we can select the kinds of models we want.
+
 Hence we say that
 _ethics_ are a choice and
 _not choosing is unethical_
@@ -63,22 +66,23 @@ of software teams dealing with AI.
 1. Have you compared the effectiveness of your AI tools against other options?
 2. How stable is the performance of your AI tool ?
 3. Can you report the dx/dy of your AI tool (i.e. if we change inputs _X_,
-   does that effect the outputs _Y_)?
+   how does that effect the outputs _Y_)?
 3. Using that dx/dy knowledge, can you optimize your software to ensure most effectiveness?
-4. Using that optimizer, can you AI tools chase a wide range of business goals?
+4. Using that optimizer, can your AI tools chase a wide range of business goals?
 4. Do you have a continuous monitoring process in place to ensure AI tool effectiveness?
 5. Do you have a continuous repair process in place to mitigate for poor performance?
 6. Does your AI tools  run
   fast enough, not use excessive minimal system resources, to enable such comparisons, stability
 tests, optimization
   monitoring, and repair?
-7. Does your AI tools ship with a "certification envelope" (so that its users
+7. Do your AI tools ship with a "certification envelope" (so that its users
    know when not to trust it)?
-8. Are you testing if your AI tool is being unfair to different social groups?
+8. Are you testing if your AI tools are  being unfair to different social groups?
 9. Is your AI tool transparent enough to allow detection of misue??
-10. Is your software accountable? That is, is it  transparent, reliable, and safe?
-11. Does you software support inclusiveness for its user population?
-12. Is your software private and secure?
+10. Are your AI tools  accountable (transparent, reliable, and safe)?
+11. Do your AI tools  support inclusiveness for its user population?
+12. Are your AI  your tools private and secure?
+
 
 A score of 12 is perfect, 11 is tolerable, but 10 or lower and you
 have got serious problems. The truth is that most software organizations 
