@@ -31,13 +31,11 @@ But more than than,
 this book asks what is missing from most other textbooks on AI and SE.
 To fill that gap,  we will cover:
 
-- software processes; and 
-- ethically-aligned design
-
+- Software processes:
 Software process is how large teams divide tasks such that more people can deliver more functionality, faster.
 Software processes are vital to the scalability and maintainability of AI tools.
-
-Ethically-aligned design is how we can match up high-level ethical goals (e.g. fairness, reliability, transparency, etc)  with
+- Ethically-aligned design:
+This is how match up high-level ethical goals (e.g. fairness, reliability, transparency, etc)  with
 lower-level functionality (e.g. rule generation, anomaly detection, clustering, etc). 
 As AI tools get used more and more,
 such an ethical perspective on AI tools is becoming increasingly  important.
@@ -49,9 +47,10 @@ It turns out that many different can be fitted to data.
 Each such model represents a trade between what we want and what we want to avoid.
 As shown in this book,
 using data miners and optimizers and theorem prover, we can select the kinds of models we want.
-
 Hence we say that
-_ethics_ are a choice and
+
+- _ethics_ are a choice;
+- and
 _not choosing is unethical_
 since we are not
 controlling 
