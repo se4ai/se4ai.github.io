@@ -1,5 +1,5 @@
 ---
-title: " About this book"
+title: " Motivation"
 layout: default
 ---
 
@@ -40,10 +40,10 @@ Thirdly, the authors of this book have spent decades applying many
 AI tools ( mostly  for software engineering applications). We share
 some of that case study experience in this book.
  
-## But is "SE for AI" that important?
+## Is "SE for AI" all that important?
 
-  It is timely to talk about SE for AI since  **AI software is still
-  software**. All  software
+  It is timely to talk about SE for AI. **AI software is still
+  software** and   all  software
    (be it AI software, or otherwise) needs installation, configuration,
    maintenance, interfacing to other software, testing, certification,
    user support, usability additions, and packaging (for distribution).
@@ -55,9 +55,7 @@ some of that case study experience in this book.
    developer. That is, **AI software needs care and feeding by
    software engineersi**.
 
-<p align="center">
-  <img  src="/img/benton19.png">
-</p>
+  ![](/img/benton19.png"){: .image800}
 
 Another reason to explore SE for AI is that **most "AI software"
    is not about AI**.   David Sculley  [offers the following
@@ -66,7 +64,7 @@ Another reason to explore SE for AI is that **most "AI software"
    (shown in black), buried away in the middle of all the other
    software.
 
-  ![](/img/googleloc.png){: .image600}
+  ![](/img/googleloc.png){: .image800}
 
 
 
@@ -113,9 +111,11 @@ the good news is that
 
 Since good SE can lead to better AI, we devoted many  chapters of this book to industrial data mining pipelines.   Recently we reversed engineering a nine step pipeline for industrial machine learning.  For simplicity's sake, we draw it as steps that run left to right (but in reality, **AI is an agile process** where we jump around these steps, as required):
 
-  ![](/img/9steps.png){: .image600}
+  ![](/img/9steps.png){: .image800}
 
    We also surveyed many industrial data scientists to understand how much time they spend on different parts of this pipeline:
+
+![](/img/black.png){:height="20px" width="94px"}
 
 |part|hrs/week<br>(mean, approx)|bar chart|
 |------------|---|-----------------------------------------------------|
