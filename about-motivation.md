@@ -117,13 +117,13 @@ Since good SE can lead to better AI, we devoted many  chapters of this book to i
 
 
 |part|hrs/week<br>(mean, approx)|bar chart|
-|------------|---|-----------------------------------------------------|
+|-----------:|---|-----------------------------------------------------|
 |requirements|4.4|          ![](/img/black.png){:height="20px" width="94px"} |
 |collection |4.7|           ![](/img/black.png){:height="20px" width="94px"} |
 |cleaning   |4.5|           ![](/img/black.png){:height="20px" width="90px"} |
 |labelling   |2.9|            ![](/img/black.png){:height="20px" width="58px"}|
 |feature engineering | 4.6|   ![](/img/black.png){:height="20px" width="92px"}|
-|training    |5.4|            ![](/img/black.png){:height="20px" width="108px"}|
+|model training    |5.4|            ![](/img/black.png){:height="20px" width="108px"}|
 |evaluation  |3.8|            ![](/img/black.png){:height="20px" width="76px"} |
 |deployment  |5.1|            ![](/img/black.png){:height="20px" width="102px"}|
 |monitoring  |2.6|            ![](/img/black.png){:height="20px" width="52px"}|
