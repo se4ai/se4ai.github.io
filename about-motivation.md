@@ -55,7 +55,7 @@ some of that case study experience in this book.
    developer. That is, **AI software needs care and feeding by
    software engineers**.
 
-  ![](/img/benton19.png){: .image800}
+  ![](/img/benton19.png){: .image600}
 
 Another reason to explore SE for AI is that **most "AI software"
    is not about AI**.   David Sculley  [offers the following
@@ -64,7 +64,7 @@ Another reason to explore SE for AI is that **most "AI software"
    (shown in black), buried away in the middle of all the other
    software.
 
-  ![](/img/googleloc.png){: .image800}
+  ![](/img/googleloc.png){: .image600}
 
 
 
@@ -86,9 +86,7 @@ Since AI software is still software, it follows that **poor
    to the data, and only connect to the least features that were
    most influential.
 
-<p align="center">
-  <img  src="img/couple.png">
-</p>
+![](img/couple.png){: .image600}
 
 
 While poor software engineering can lead to problems with the AI,
