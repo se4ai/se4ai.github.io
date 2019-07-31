@@ -53,9 +53,9 @@ some of that case study experience in this book.
    overlap between the activities of data scientists and   more
    traditional activities  like data engineer and application
    developer. That is, **AI software needs care and feeding by
-   software engineersi**.
+   software engineers**.
 
-  ![](/img/benton19.png"){: .image800}
+  ![](/img/benton19.png){: .image800}
 
 Another reason to explore SE for AI is that **most "AI software"
    is not about AI**.   David Sculley  [offers the following
@@ -115,19 +115,18 @@ Since good SE can lead to better AI, we devoted many  chapters of this book to i
 
    We also surveyed many industrial data scientists to understand how much time they spend on different parts of this pipeline:
 
-![](/img/black.png){:height="20px" width="94px"}
 
 |part|hrs/week<br>(mean, approx)|bar chart|
 |------------|---|-----------------------------------------------------|
 |requirements|4.4|          ![](/img/black.png){:height="20px" width="94px"} |
-|collection |4.7|          <img height=20 width=94  src=img/black.png>|
-|cleaning   |4.5|          <img height=20 width=90  src=img/black.png>|
-|labelling   |2.9|          <img height=20 width=58  src=img/black.png>|
-|feature engineering | 4.6| <img height=20 width=92  src=img/black.png>|
-|training    |5.4|          <img height=20 width=108 src=img/black.png>|
-|evaluation  |3.8|          <img height=20 width=76  src=img/black.png>|
-|deployment  |5.1|          <img height=20 width=102 src=img/black.png>|
-|monitoring  |2.6|          <img height=20 width=52  src=img/black.png>|
+|collection |4.7|           ![](/img/black.png){:height="20px" width="94px"} |
+|cleaning   |4.5|           ![](/img/black.png){:height="20px" width="90px"} |
+|labelling   |2.9|            ![](/img/black.png){:height="20px" width="58px"}|
+|feature engineering | 4.6|   ![](/img/black.png){:height="20px" width="92px"}|
+|training    |5.4|            ![](/img/black.png){:height="20px" width="108px"}|
+|evaluation  |3.8|            ![](/img/black.png){:height="20px" width="76px"} |
+|deployment  |5.1|            ![](/img/black.png){:height="20px" width="102px"}|
+|monitoring  |2.6|            ![](/img/black.png){:height="20px" width="52px"}|
 
 One interesting feature about the above histogram is that 
 **most "data mining" is not about mining the data**.  We say this since, in  a 35 hour work week, only half a day (5.4.hours) was spent in _training_. This is interesting since most data mining textbooks _only_ talk about training. Hence, if we are going to talk SE for AI, there is a pressing need to discuss all the work that fills up the other four days of the week.  
