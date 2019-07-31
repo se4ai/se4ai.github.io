@@ -114,7 +114,7 @@ Since good SE can lead to better AI, we devoted many  chapters of this book to i
    We also surveyed many industrial data scientists to understand how much time they spend on different parts of this pipeline:
 
 
-|part|hrs/week<br>(mean, approx)|bar chart|
+||hrs/week<br>(mean,<br>approx)||
 |-----------:|---|-----------------------------------------------------|
 |requirements|4.4|          ![](/img/black.png){:height="20px" width="94px"} |
 |collection |4.7|           ![](/img/black.png){:height="20px" width="94px"} |
