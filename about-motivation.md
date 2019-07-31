@@ -11,7 +11,7 @@ This book is about using better software engineering to build better AI software
  [very](REFS.md#grus--2019)
  [many](REFS.md#duda-2000)
  [other](REFS.md#witten-2016)
- books. Sp what makes this book so different?
+ books. S what makes this book so different?
 
 Firstly, in this book, **ethics is a primary design principle**.
 We assert that the design goals for SE-for-AI must be _ethically-aligned_
