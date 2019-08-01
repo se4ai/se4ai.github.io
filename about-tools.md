@@ -3,7 +3,11 @@ title: " Tools"
 layout: default
 ---
 
-Before going on, we digress to introduce some of  the technology explored in this book.
+Before going on, we digress to introduce some of  the technology
+explored in this book. Taken together, these tools are a  vast array
+of methods for building models. The ethically-aware engineer can
+take advantage of this vast space by selecting models that better
+satisfy ethical goals. Further, AI tools can be used to explore this space of models (and to do so, very quickly).
 
 ## Data Miners
 
@@ -62,7 +66,7 @@ Experienced analysts know that such negative results
 are important[^holmes]
 since they let us simplify how we report models,  thus simplifying  all the subsequent activity inspired by that model. 
 
-[^holmes]: From the _Adventure of Silver Blaze_ by Arthur Conan Doyle. Gregory (Scotland Yard detective): "Is there any other point to which you would wish to draw my attention?"<br> Holmes: "To the curious incident of the dog in the night-time."<br> Gregory: "The dog did nothing in the night-time."<br> Holmes: "That was the curious incident." 
+[^holmes]: From the _Adventure of Silver Blaze_ by Arthur Conan Doyle.<br>Gregory (Scotland Yard detective): "Is there any other point to which you would wish to draw my attention?"<br> Holmes: "To the curious incident of the dog in the night-time."<br> Gregory: "The dog did nothing in the night-time."<br> Holmes: "That was the curious incident." 
 
 ## Optimizers
 
