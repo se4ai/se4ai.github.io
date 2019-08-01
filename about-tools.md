@@ -5,21 +5,78 @@ layout: default
 
 Before going on, we digress to offer  a few definitions,
 
- **Data mining algorithms** tell us "what is" in the data. Data miners extract models   from data. For example, from columns of numbers and <em>programmer experience</em>, <em>development language</em>, and   <em>number of observed defects</em>, then a data miner might learn that defects are  more dependent on the experience of the programmer than the language that they use.  
- 
-- Example  data mining algorithms
+## Data Miners
+
+ **Data mining algorithms** tell us "what is" in the data. Data miners extract models   from data. 
+Sample  data mining algorithms
  are  nearest neighbor algorithms like kNN; clustering algorithms like k-Means and EM; statistical learners like Naive Bayes; equation learners like linear or logistic regression; decision tree learners like C4.5,   and CART; meta-learners like AdaBoost; and many other as well including  Apriori,, PageRank,  neural networks (and deep learners); etc.
- 
-<em>_Optimizers</em> tell us "what to do". Optimizers look  at models and tell us how changes in something effects something else. Ideally, optimizers also tell us the <em>least_</em>we need to do to <em>most</em> improve something. For example, an optimizer might report that defects can are most reduced   using   developers with two years of experience. They might also report that improving experience to three, four, five years (and above) offers little extra reduction in observed defects. 
- 
--  Example optimizers include genetic algorithms like NSGA-II, MOEA/D and differential evolution;   sequential model-based optimization methods like FLASH and SMAC; and other approaches such as particle swam optimization, tabu search; and many more besides
 
+For example, suppose we have data on hundreds of cars and we want to predict their city-cycle fuel consumption in miles per gallon. That data has the following format:
 
-Theorem provers are very specialized tools for finding settings to variables that satisfy the logical constraints of a model. Such a theorem prover might report that  A=true and B=false satisfies the constraint (A and not B).   For example, the constraints of the kernel of the Linux operating system can be expressed as hundreds of thousands of constraints.  When optimizing the design of some new version of Linux (e.g. to try and avoid  modules  with a track record of problems) we can use theorem provers to (a) generate a population of valid designs; and (b) check the validity of a new design. 
+1. mpg:           continuous
+2. cylinders:     multi-valued discrete
+3. displacement:  continuous
+4. horsepower:    continuous
+5. weight:        continuous
+6. acceleration:  continuous
+7. model year:    multi-valued discrete
+8. origin:        multi-valued discreta % 1 = usa; 2 = europe; 3 = japane
 
--  Example theorem provers include  maxWalkSat, pycoSAT, MathSAT, vZ, Z3,  and many more besides.
+When run through the CART regression tree learner, those  hundreds of examples generate the following model:
 
-Note that <b>optimizers are model-based</b> and <b>data miners are data-based</b>. 
+```
+displacement <= 190.5 : 
+|   weight <= 2219.5 : 
+|   |   model-year <= 77 then mpg = 30
+|   |   model-year >  77 then mpg = 34
+|   weight >  2219.5 : 
+|   |   model-year <= 78 : 
+|   |   |   weight <= 2775 then mpg =  25
+|   |   |   weight >  2775 then mpg = 23
+|   |   model-year >  78   then mpg = 28
+displacement >  190.5 : 
+|   displacement <= 261  then mpg = 20
+|   displacement >  261 : 
+|   |   model-year <= 76 then mpg = 15
+|   |   model-year >  76 then mpg = 19
+```
+
+This model can be read as nested set of  if-then-elses. For example, if displacement is small (under 190.5) then we enter the top tree. Else, we enter the bottom tree. i
+
+The leaves
+of the tree offer predictions. For example, if displacement is small (under 190.5) and the car is not heavy (weight under 2220 pounds) and its an early model care (before 1977)
+then it is predicted that that car gets 30 miles per gallon.
+
+Before going on, one fun thing to note about this tree is what
+is does **not** contain.  This data miner  found that  cylinder,
+horsepower, acceleration,  origin were not as insightful as the
+other attributes used in this tree (and for that reason, they were ignored). This is not to say that these ignore attributes
+are unimportant for predicting miles per hour-- just that combiantions
+of other values were more important. 
+Experienced analysts know that such negative results 
+(that some attributes can be ignored) 
+are important[^holmes]
+since they let us simpligy how we report models,  thus simplifing  all the subsequent activity inspired by that model. 
+
+[^holmes]: From the _Adventure of Silver Blaze_ by Arthur Conan Doyle. Grregory (Scotland Yard detective): "Is there any other point to which you would wish to draw my attention?"<br>
+Holmes: "To the curious incident of the dog in the night-time."<br>
+Gregory: "The dog did nothing in the night-time."<br>
+Holmes: "That was the curious incident." 
+
+---
+title: " Optimizers"
+layout: default
+---
+
+Optimizers tell us "what to do". Optimizers look  at the data generated from models
+and tell us how changes in something effects something else. 
+ Sample optimizers include genetic algorithms like NSGA-II,
+MOEA/D and differential evolution;   sequential model-based
+optimization methods like FLASH and SMAC; and other approaches such
+as particle swam optimization, tabu search; and many more besides
+
+While <b>data miners are data-based</b>, 
+<b>optimizers are model-based</b>:
 
 -  Data miners explore whatever data is available.
 -  Models, on the other hand, can be used to build more data whenever they want, just by running the model some more. 
@@ -29,8 +86,129 @@ This means that:
 -  data miners explore a fixed data space
 - while optimizers explore a more fluid data set (since they can  zoom into little cracks in the data, expanding that part of the data as they go).
 
+
+Ideally,
+optimizers also tell us the <em>least_</em>we need to do to
+<em>most</em> improve something. For example, an optimizer might
+report that defects can are most reduced   using   developers with
+two years of experience. They might also report that improving
+experience to three, four, five years (and above) offers little
+extra reduction in observed defects.
+
+For example, returning to the car data example described above, suppose the car data was generated from  comptuer-aided design package that inputs 100s of attributes
+about the design to output predictions about the car weight, acceleration and miles per hour (in the city). Now our designes want to know what design attributes to change
+in order to
+
+- minimize weight
+- maximmze acceleration
+- and maximze miles per hour.
+
+One way to do that is to generate some data, then sort it such that:
+
+- the best cars (which are  light and nimble cars with low mph) appear first;
+- the worst cars (which are heavy, slugglish cars with high mph) appear last.
+
+Applying such a criteria, the car data looks like:
+
+
+```
+|      |cylinder| displacmnt| hpower| <weight| >acceltn| model| origin| >mpg| >dom|
+|---- -|--------:| ----------:| ------:| -------:| -------:|-----:|------:|--------:|-----:|
+|best |4       | >85       | <46   | 1975  |  19.4   |  >81 |  3   |   40  | 1.0|
+|best |4       | >85       | <65   | 1985  |  21.5   |  >78 |  2   |   40  | 1.0|
+|best |4       | >85       | <65   | 2085  |  21.7   |  >80 |  2   |   40  | 1.0|
+|best |4       | >96       | <65   | 2130  |  24.6   |  >82 |  2   |   40  | 1.0|
+|..  .|...     | ...       | ...   | ...   |  ..     |  ... |  ... |   ... | ...|
+|worst|8       | >383      | >165  | 4746  |  12     |  <71 |  1   |   10  | 0|
+|worst|8       | >3835     | >165  | 4951  |  11     |  <73 |  1   |   10  | 0|
+|worst|8       | >383      | >165  | 4952  |  11.5   |  <73 |  1   |   10  | 0|
+|worst|8       | >383      | >165  | 4955  |  11.5   |  <71 |  1   |   10  | 0|
+```
+
+Optimizers use this data to find changes which, if applied to the cars, will make them weigh less, speed up faster, and use less gas.
+Some optimziers just reason about the best rows while others reason about the delta between the  best and worse rows.
+In other case, the goal is a miimal change to the model inputs which will generate better cars.
+
+
+Some optimizers use the _best_
+rows as an archive from which they  pull suggested changes to the
+data.  Other optimizers find suggested changes by  on the delta between the _best_ and
+_worst_
+
+- find the delta between the bext and worst examoes
+- experiment with applying those detail
+
+## Theorem Provers
+
+**Theorem provers** are very specialized tools for finding settings to variables that satisfy the logical constraints of a model. Such a theorem prover might report that  A=true and B=false satisfies the constraint (A and not B).   
+Sample theorem provers include  maxWalkSat, pycoSAT, MathSAT, vZ, Z3,  and many more besides.
+
+For example, suppose we have a feature model descriping a tree of options about a search engine. In the following, a filled/hollow cirle means 
+"mandatory"/"optional" (respectively). Also, white/dark fans means "and","or" (respectively). 
+
+
+![](/img/translatefm.png)
+
+This tree can be expressed as 
+![](/img/translatefmclauses.png)
+
+
+The above is saying that screens can be one (and only one) of basic or color or high resoultion
+and that the phone's media can be one or more of a camera and an MP3 player.
+The last two lines are the constrstraints can can be read as the "camera requires a high resolution screen" and  "GPS excludes the use of a basic screen".
+Theoreem provers can input te c
+
+For example, the constraints of the kernel of the Linux operating system can be expressed as hundreds of thousands of constraints.  When optimizing the design of some new version of Linux (e.g. to try and avoid  modules  with a track record of problems) we can use theorem provers to (a) generate a population of valid designs; and (b) check the validity of a new design. 
+
+## Combinations of the Above
+
 Note also that optimizers and data miners are tightly inter-connected:
 
 - Data miners can learn a model which [can be used by optimizers](REFS.md#feather-2002).  
 - Optimizers can [adjust the control parameters of a data miner](REFS.md#fu-2016) such that those data miners learn better models (technical note: this is called [search-based software engineering](REFS.md#harman-2012)).
+
+In our literature review, we have seen several different kinds of combinations of data miners and optimizers:
+
+- Thorem provers as data generators:  
+    - when models comne with many constraints, we can use theorem provers to [generate valid examples](REFS#chen-2018a);
+- Optimizers to improver theorem provers: 
+    -  When there are very many ways to solve constraints, theorem provers can take a long time to generate thigns we like. In
+  this case, a common strategy is to, fristly, - run theorem provers (a little) to get a sampple of solutions; then 
+      next run mutators and optimizers to [combine in interesting ways](REFS#chen-2019) the solutions generated by the theorem provers.
+- Mash-ups of data miners and optimizers: 
+    - In this approach, data miners and optimizers can be seen as separate executables. For example, Abdessalem et al. [1] generate test cases for autonomous cars via a cyclic approach where an optimizer reflects on the output of data miners that reflect on the output of an optimizer (and so on).
+- Data miners acting as optimizers: 
+    - In this approach, there is no separation between the data miner and optimizer. For example, [Chen et al.](REFS#chen-2018a)
+show that their recursive descent bi-clustering algorithm (which is a data mining technique) out-performs traditional evolutionary algorithms for the purposes of optimizing SE models.
+- Optimizers control the data  miners: 
+    - In this approach,the data miner is a sub-routine called by the optimizer. For example, several recent papers improve predictive performance via optimizers that tune the control parameters of the data miner (See [Agrawal 2018a](REFS:agrawal-2018a), 
+   [Fu'18](REFS:fu-206), and [Tantithamthavorn et al/](Tan-2016a)).
+- Data miners control the optimizers: In this approach, the optimizer is a sub-routine called by the data miner. For example, 
+[Majumder et al.](majumder-2018) use k-means clustering to divide up a complex text mining problem, then apply optimizers within each cluster. They report that this method speeds up their processing by up to three orders of magnitude.
+
+
+## Quiz
+
+
+Skim the paper [this paper](https://arxiv.org/pdf/1812.01550.pdf).
+
+Write a very brief report on on the papers explroed in thaat paper. Headings:
+
+- Your name():
+- Term:
+- Write a ten line summary of what this does? Input? Output? Processing? Indications for when to use it? Not use it?
+- Paper Title:
+- Year:
+- Venue:
+- Authors:
+- URL for download (if you can find it):
+- How does this paper use its technology? Explain (half a page):
+    - Thorem provers as data generators 
+    - Optimizers to improver theorem provers 
+    - Mash-ups of data miners and optimizers 
+    - Data miners acting as optimizers 
+    - Optimizers control the data  miners 
+    - Data miners control the optimizers
+    - Other
+
 
