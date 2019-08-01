@@ -141,10 +141,11 @@ For example, suppose we have a feature model  describing  a tree of options abou
 "mandatory"/"optional" (respectively). Also, white/dark fans means "and","or" (respectively). 
 
 
-![](/img/translatefm.png)
+![](/img/translatefm.png){: width="600px"}
 
-This tree can be expressed as 
-![](/img/translatefmclauses.png)
+This tree can be expressed as:
+
+![](/img/translatefmclauses.png){: width="400px"}
 
 
 The above is saying that screens can be one (and only one) of basic or color or high resoultion
