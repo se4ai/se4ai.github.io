@@ -121,7 +121,7 @@ Applying such a criteria, the car data looks like:
 |worst|8       | >383      | >165  | 4952  |  11.5   |  <73 |  1   |   10  |
 |worst|8       | >383      | >165  | 4955  |  11.5   |  <71 |  1   |   10  |
 |     |        |           |       | minimize| maximize|    |       | maximize      |
-{: style="padding:"3px""}
+{: style="padding:3px;" }
 
 Optimizers use this data to find a set of changes (also know as "mutations")  which, if applied to the cars, will make them weigh less, speed up faster, and use less gas.
 
