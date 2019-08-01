@@ -13,7 +13,15 @@ satisfy ethical goals. Further, AI tools can be used to explore this space of mo
 
  **Data mining algorithms** tell us "what is" in the data. Data miners extract models   from data. 
 Sample  data mining algorithms
- are  nearest neighbor algorithms like kNN; clustering algorithms like k-Means and EM; statistical learners like Naive Bayes; equation learners like linear or logistic regression; decision tree learners like C4.5,   and CART; meta-learners like AdaBoost; and many other as well including  Apriori,, PageRank,  neural networks (and deep learners); etc.
+ are :
+
+- nearest neighbor algorithms like kNN; 
+- clustering algorithms like k-Means and EM; statistical learners like Naive Bayes; 
+- equation learners like linear or logistic regression; 
+- decision tree learners like C4.5,   and CART; 
+- meta-learners like AdaBoost; 
+- and many other as well including  Apriori,, PageRank,  neural networks (and deep learners); 
+- etc.
 
 For example, suppose we have data on hundreds of cars and we want to predict their city-cycle fuel consumption in miles per gallon. That data has the following format:
 
@@ -72,10 +80,18 @@ since they let us simplify how we report models,  thus simplifying  all the subs
 
 Optimizers tell us "what to do". Optimizers look  at the data generated from models
 and tell us how changes in something effects something else. 
- Sample optimizers include genetic algorithms like NSGA-II,
-MOEA/D and differential evolution;   sequential model-based
-optimization methods like FLASH and SMAC; and other approaches such
-as particle swam optimization, tabu search; and many more besides
+Ideally,
+optimizers also tell us the <em>least_</em> we need to do to
+<em>most</em> improve something. 
+Sample optimizers include:
+
+- genetic algorithms like NSGA-II,
+MOEA/D and differential evolution;   
+- sequential model-based
+optimization methods like FLASH and SMAC; 
+- and other approaches such
+as particle swam optimization, tabu search; 
+- and many more besides
 
 While <b>data miners are data-based</b>, 
 <b>optimizers are model-based</b>:
@@ -89,13 +105,6 @@ This means that:
 - while optimizers explore a more fluid data set (since they can  zoom into little cracks in the data, expanding that part of the data as they go).
 
 
-Ideally,
-optimizers also tell us the <em>least_</em>we need to do to
-<em>most</em> improve something. For example, an optimizer might
-report that defects can are most reduced   using   developers with
-two years of experience. They might also report that improving
-experience to three, four, five years (and above) offers little
-extra reduction in observed defects.
 
 For example, returning to the car data example described above, suppose the car data was generated from  a computer-aided design package that inputs 100s of attributes
 about the design to output predictions about the car weight, acceleration and miles per hour (in the city). Now our designers want to know what design attributes to change
@@ -140,7 +149,10 @@ changes are applied, the whole process can repeat for many _generations_ (and wi
 ## Theorem Provers
 
 **Theorem provers** are very specialized tools for finding settings to variables that satisfy the logical constraints of a model. Such a theorem provers might report that  A=true and B=false satisfies the constraint (A and not B).   
-Sample theorem provers include  maxWalkSat, pycoSAT, MathSAT, vZ, Z3,  and many more besides.
+Sample theorem provers include:
+
+-  maxWalkSat, pycoSAT, MathSAT, vZ, Z3
+-  and many more besides.
 
 For example, [Mendonca et al.](REFS#mendonca-2009) offer the following feature model  describing  a tree of options about a search engine. In this diagram,   a filled/hollow circle means 
 "mandatory"/"optional" (respectively). Also, white/dark fans means "and","or" (respectively). 
