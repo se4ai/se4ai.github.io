@@ -138,7 +138,7 @@ changes are applied, the whole process can repeat for many _generations_ (and wi
 **Theorem provers** are very specialized tools for finding settings to variables that satisfy the logical constraints of a model. Such a theorem provers might report that  A=true and B=false satisfies the constraint (A and not B).   
 Sample theorem provers include  maxWalkSat, pycoSAT, MathSAT, vZ, Z3,  and many more besides.
 
-For example, suppose we have a feature model  describing  a tree of options about a search engine. In the following, a filled/hollow circle means 
+For example, [Mendonca et al.](REFS#mendonca-2009) offer the following feature model  describing  a tree of options about a search engine. In this diagram,   a filled/hollow circle means 
 "mandatory"/"optional" (respectively). Also, white/dark fans means "and","or" (respectively). 
 
 
@@ -148,11 +148,17 @@ This tree can be expressed as:
 
 ![](/img/translatefmclauses.png){: width="400px"}
 
-A theorem provers can explore this model and find product design that satisfy all these constraints. While that is trivial in this case (cause the model is so small), theorems
+Note the last two theorems (lines 13,14). Without these two lines then any choice in any sub-tree is valid (so it is easy to design a search engine).
+However, with these _cross-tree constraints_ we have to be more careful.  Technically, the presence of these cross-tree constraints makes this problem
+NP-hard (i.e. can be very slow, especially when the theory grows larger and larger).. 
+
+A theorem provers can explore this model and find product design that satisfy all these constraints. While this is trivial in this case (cause the model is so small), theorems
 about real-world software rapidly get very large:
 
 - A feature model of the LINUX kernel has 4000 variables and over 100,000 constraints;
-- When software branches are expressed as theorems, those theorems get very large indeed.
+- When software branches are expressed as theorems, those theorems get very large indeed (more than thousands of variables and tens of thousands of constraints).
+
+Such large theories are too hard to use just via a manual inspection--   which is why we need theorem provers.
 
 ## Combinations of the Above
 
