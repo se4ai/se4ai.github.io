@@ -121,6 +121,7 @@ Applying such a criteria, the car data looks like:
 |worst|8       | >383      | >165  | 4952  |  11.5   |  <73 |  1   |   10  |
 |worst|8       | >383      | >165  | 4955  |  11.5   |  <71 |  1   |   10  |
 |     |        |           |       | minimize| maximize|    |       | maximize      |
+{: style="padding:"3px""}
 
 Optimizers use this data to find a set of changes (also know as "mutations")  which, if applied to the cars, will make them weigh less, speed up faster, and use less gas.
 
@@ -134,10 +135,10 @@ changes are applied, the whole process can repeat for many _generations_ (and wi
 
 ## Theorem Provers
 
-**Theorem provers** are very specialized tools for finding settings to variables that satisfy the logical constraints of a model. Such a theorem prover might report that  A=true and B=false satisfies the constraint (A and not B).   
+**Theorem provers** are very specialized tools for finding settings to variables that satisfy the logical constraints of a model. Such a theorem provers might report that  A=true and B=false satisfies the constraint (A and not B).   
 Sample theorem provers include  maxWalkSat, pycoSAT, MathSAT, vZ, Z3,  and many more besides.
 
-For example, suppose we have a feature model  describing  a tree of options about a search engine. In the following, a filled/hollow cirle means 
+For example, suppose we have a feature model  describing  a tree of options about a search engine. In the following, a filled/hollow circle means 
 "mandatory"/"optional" (respectively). Also, white/dark fans means "and","or" (respectively). 
 
 
@@ -147,7 +148,7 @@ This tree can be expressed as:
 
 ![](/img/translatefmclauses.png){: width="400px"}
 
-A theorem prover can explore this model and find product design that satisfy all these constraints. While that is trivial in this case (cause the model is so small), theorems
+A theorem provers can explore this model and find product design that satisfy all these constraints. While that is trivial in this case (cause the model is so small), theorems
 about real-world software rapidly get very large:
 
 - A feature model of the LINUX kernel has 4000 variables and over 100,000 constraints;
@@ -162,8 +163,8 @@ Note also that optimizers and data miners are tightly inter-connected:
 
 In our literature review, we have seen several different kinds of combinations of data miners and optimizers:
 
-- Thorem provers as data generators:  
-    - when models comne with many constraints, we can use theorem provers to [generate valid examples](REFS#chen-2018a);
+- Theorem provers as data generators:  
+    - when models come with many constraints, we can use theorem provers to [generate valid examples](REFS#chen-2018a);
 - Optimizers to improve theorem provers: 
     - Theorem provers deliver solutions in whatever order is dictated  by their internal design. This means, when
      there are very many ways to solve constraints, theorem provers can take a long time to generate solutions that we prefer. In
@@ -185,9 +186,8 @@ show that their recursive descent bi-clustering algorithm (which is a data minin
 ## Quiz
 
 
-Skim the paper [this paper](https://arxiv.org/pdf/1812.01550.pdf).
-
-Write a very brief report on on the papers explroed in thaat paper. Headings:
+Skim [this paper](https://arxiv.org/pdf/1812.01550.pdf).
+Write a very brief report on one of the  papers explored in paper. Headings:
 
 - Your name():
 - Term:
@@ -198,8 +198,8 @@ Write a very brief report on on the papers explroed in thaat paper. Headings:
 - Authors:
 - URL for download (if you can find it):
 - How does this paper use its technology? Explain (half a page):
-    - Thorem provers as data generators 
-    - Optimizers to improver theorem provers 
+    - Theorem provers as data generators 
+    - Optimizers to improve theorem provers 
     - Mash-ups of data miners and optimizers 
     - Data miners acting as optimizers 
     - Optimizers control the data  miners 
