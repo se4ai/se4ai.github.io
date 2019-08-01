@@ -3,7 +3,7 @@ title: " Tools"
 layout: default
 ---
 
-Before going on, we digress to offer  a few definitions,
+Before going on, we digress to introduce some of  the technology explored in this book.
 
 ## Data Miners
 
@@ -13,14 +13,16 @@ Sample  data mining algorithms
 
 For example, suppose we have data on hundreds of cars and we want to predict their city-cycle fuel consumption in miles per gallon. That data has the following format:
 
-1. mpg:           continuous
-2. cylinders:     multi-valued discrete
-3. displacement:  continuous
-4. horsepower:    continuous
-5. weight:        continuous
-6. acceleration:  continuous
-7. model year:    multi-valued discrete
-8. origin:        multi-valued discreta % 1 = usa; 2 = europe; 3 = japane
+| attribute | range|
+| mpg         | continuous |
+| cylinders   | multi-valued discrete |
+| displacement| continuous |
+| horsepower  | continuous |
+| weight      | continuous |
+| acceleration| continuous |
+| model year  | multi-valued discrete |
+| origin      | multi-valued discrete: 1=USA; 2=Europe; 3=Japanese |
+{: style="align:center"}
 
 When run through the CART regression tree learner, those  hundreds of examples generate the following model:
 
@@ -41,7 +43,8 @@ displacement >  190.5 :
 |   |   model-year >  76 then mpg = 19
 ```
 
-This model can be read as nested set of  if-then-elses. For example, if displacement is small (under 190.5) then we enter the top tree. Else, we enter the bottom tree. i
+This model can be read as nested set of  if-then-else statement.
+For example, if displacement is small (under 190.5) then we enter the top tree. Else, we enter the bottom tree. 
 
 The leaves
 of the tree offer predictions. For example, if displacement is small (under 190.5) and the car is not heavy (weight under 2220 pounds) and its an early model care (before 1977)
@@ -51,14 +54,14 @@ Before going on, one fun thing to note about this tree is what
 is does **not** contain.  This data miner  found that  cylinder,
 horsepower, acceleration,  origin were not as insightful as the
 other attributes used in this tree (and for that reason, they were ignored). This is not to say that these ignore attributes
-are unimportant for predicting miles per hour-- just that combiantions
+are unimportant for predicting miles per hour-- just that combinations
 of other values were more important. 
 Experienced analysts know that such negative results 
 (that some attributes can be ignored) 
 are important[^holmes]
-since they let us simpligy how we report models,  thus simplifing  all the subsequent activity inspired by that model. 
+since they let us simplify how we report models,  thus simplifying  all the subsequent activity inspired by that model. 
 
-[^holmes]: From the _Adventure of Silver Blaze_ by Arthur Conan Doyle. Grregory (Scotland Yard detective): "Is there any other point to which you would wish to draw my attention?"<br>
+[^holmes]: From the _Adventure of Silver Blaze_ by Arthur Conan Doyle. Gregory (Scotland Yard detective): "Is there any other point to which you would wish to draw my attention?"<br>
 Holmes: "To the curious incident of the dog in the night-time."<br>
 Gregory: "The dog did nothing in the night-time."<br>
 Holmes: "That was the curious incident." 
@@ -95,18 +98,18 @@ two years of experience. They might also report that improving
 experience to three, four, five years (and above) offers little
 extra reduction in observed defects.
 
-For example, returning to the car data example described above, suppose the car data was generated from  comptuer-aided design package that inputs 100s of attributes
-about the design to output predictions about the car weight, acceleration and miles per hour (in the city). Now our designes want to know what design attributes to change
+For example, returning to the car data example described above, suppose the car data was generated from  a computer-aided design package that inputs 100s of attributes
+about the design to output predictions about the car weight, acceleration and miles per hour (in the city). Now our designers want to know what design attributes to change
 in order to
 
 - minimize weight
-- maximmze acceleration
-- and maximze miles per hour.
+- maximize acceleration
+- and maximize miles per hour.
 
 One way to do that is to generate some data, then sort it such that:
 
 - the best cars (which are  light and nimble cars with low mph) appear first;
-- the worst cars (which are heavy, slugglish cars with high mph) appear last.
+- the worst cars (which are heavy, sluggish cars with high mph) appear last.
 
 Applying such a criteria, the car data looks like:
 
@@ -125,25 +128,22 @@ Applying such a criteria, the car data looks like:
 |worst|8       | >383      | >165  | 4955  |  11.5   |  <71 |  1   |   10  | 0|
 ```
 
-Optimizers use this data to find changes which, if applied to the cars, will make them weigh less, speed up faster, and use less gas.
-Some optimziers just reason about the best rows while others reason about the delta between the  best and worse rows.
-In other case, the goal is a miimal change to the model inputs which will generate better cars.
+Optimizers use this data to find a set of changes (also know as "mutations")  which, if applied to the cars, will make them weigh less, speed up faster, and use less gas.
+
+- Some optimizers just reason about the best rows;
+- While others reason about the delta between the  best and worse rows.
+
+In either case, the goal is to find  minimal changes to the model inputs which will generate better cars. Once those
+changes are applied, the whole process can repeat for many _generations_ (and within each generation, we generate more data, look for good changes, then apply those changes).
 
 
-Some optimizers use the _best_
-rows as an archive from which they  pull suggested changes to the
-data.  Other optimizers find suggested changes by  on the delta between the _best_ and
-_worst_
-
-- find the delta between the bext and worst examoes
-- experiment with applying those detail
 
 ## Theorem Provers
 
 **Theorem provers** are very specialized tools for finding settings to variables that satisfy the logical constraints of a model. Such a theorem prover might report that  A=true and B=false satisfies the constraint (A and not B).   
 Sample theorem provers include  maxWalkSat, pycoSAT, MathSAT, vZ, Z3,  and many more besides.
 
-For example, suppose we have a feature model descriping a tree of options about a search engine. In the following, a filled/hollow cirle means 
+For example, suppose we have a feature model  describing  a tree of options about a search engine. In the following, a filled/hollow cirle means 
 "mandatory"/"optional" (respectively). Also, white/dark fans means "and","or" (respectively). 
 
 
