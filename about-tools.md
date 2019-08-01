@@ -45,10 +45,11 @@ displacement >  190.5 :
 
 This model can be read as nested set of  if-then-else statement.
 For example, if displacement is small (under 190.5) then we enter the top tree. Else, we enter the bottom tree. 
-
 The leaves
-of the tree offer predictions. For example, if displacement is small (under 190.5) and the car is not heavy (weight under 2220 pounds) and its an early model care (before 1977)
-then it is predicted that that car gets 30 miles per gallon.
+of the tree offer predictions. For example:
+
+-  If displacement is small (under 190.5) and the car is not heavy (weight under 2220 pounds) and its an early model care (before 1977)
+- then this model predicts that that car gets 30 miles per gallon.
 
 Before going on, one fun thing to note about this tree is what
 is does **not** contain.  This data miner  found that  cylinder,
@@ -61,15 +62,9 @@ Experienced analysts know that such negative results
 are important[^holmes]
 since they let us simplify how we report models,  thus simplifying  all the subsequent activity inspired by that model. 
 
-[^holmes]: From the _Adventure of Silver Blaze_ by Arthur Conan Doyle. Gregory (Scotland Yard detective): "Is there any other point to which you would wish to draw my attention?"<br>
-Holmes: "To the curious incident of the dog in the night-time."<br>
-Gregory: "The dog did nothing in the night-time."<br>
-Holmes: "That was the curious incident." 
+[^holmes]: From the _Adventure of Silver Blaze_ by Arthur Conan Doyle. Gregory (Scotland Yard detective): "Is there any other point to which you would wish to draw my attention?"<br> Holmes: "To the curious incident of the dog in the night-time."<br> Gregory: "The dog did nothing in the night-time."<br> Holmes: "That was the curious incident." 
 
----
-title: " Optimizers"
-layout: default
----
+## Optimizers
 
 Optimizers tell us "what to do". Optimizers look  at the data generated from models
 and tell us how changes in something effects something else. 
@@ -114,19 +109,18 @@ One way to do that is to generate some data, then sort it such that:
 Applying such a criteria, the car data looks like:
 
 
-```
-|      |cylinder| displacmnt| hpower| <weight| >acceltn| model| origin| >mpg| >dom|
-|---- -|--------:| ----------:| ------:| -------:| -------:|-----:|------:|--------:|-----:|
-|best |4       | >85       | <46   | 1975  |  19.4   |  >81 |  3   |   40  | 1.0|
-|best |4       | >85       | <65   | 1985  |  21.5   |  >78 |  2   |   40  | 1.0|
-|best |4       | >85       | <65   | 2085  |  21.7   |  >80 |  2   |   40  | 1.0|
-|best |4       | >96       | <65   | 2130  |  24.6   |  >82 |  2   |   40  | 1.0|
-|..  .|...     | ...       | ...   | ...   |  ..     |  ... |  ... |   ... | ...|
-|worst|8       | >383      | >165  | 4746  |  12     |  <71 |  1   |   10  | 0|
-|worst|8       | >3835     | >165  | 4951  |  11     |  <73 |  1   |   10  | 0|
-|worst|8       | >383      | >165  | 4952  |  11.5   |  <73 |  1   |   10  | 0|
-|worst|8       | >383      | >165  | 4955  |  11.5   |  <71 |  1   |   10  | 0|
-```
+|      |cylinder| displacmnt| hpower| <weight| >acceltn| model| origin| >mpg|
+|---- -|--------:| ----------:| ------:| -------:| -------:|-----:|------:|-----:|
+|best |4       | >85       | <46   | 1975  |  19.4   |  >81 |  3   |   40  | 
+|best |4       | >85       | <65   | 1985  |  21.5   |  >78 |  2   |   40  |
+|best |4       | >85       | <65   | 2085  |  21.7   |  >80 |  2   |   40  |
+|best |4       | >96       | <65   | 2130  |  24.6   |  >82 |  2   |   40  |
+|..  .|...     | ...       | ...   | ...   |  ..     |  ... |  ... |   ... |
+|worst|8       | >383      | >165  | 4746  |  12     |  <71 |  1   |   10  |
+|worst|8       | >3835     | >165  | 4951  |  11     |  <73 |  1   |   10  |
+|worst|8       | >383      | >165  | 4952  |  11.5   |  <73 |  1   |   10  |
+|worst|8       | >383      | >165  | 4955  |  11.5   |  <71 |  1   |   10  |
+|     |        |           |       | minimize| maximize|    |       | maximize      |
 
 Optimizers use this data to find a set of changes (also know as "mutations")  which, if applied to the cars, will make them weigh less, speed up faster, and use less gas.
 
