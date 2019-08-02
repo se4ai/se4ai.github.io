@@ -74,5 +74,13 @@ So we suggest to you that when you start a new AI project:
 - Your  first question should **not** be  be  "what data miners should I apply to this data?".
 - Rather, it should be  "what are the ethical requirements of this development? And how can we best support those requirements?".
 
+Please enjoy this book. If you are teaching this material at
+ the graduate level, note that in our table of
+contents (shown at top-of-page) there is an _exercises_ section listing some weekly homeworks
+and some idea for month-long  projects.
 
+Have fun! Be more ethical!
 
+Tim Menzies  (timm)  
+Tom Zimmermann (zimm)
+August, 2019    
