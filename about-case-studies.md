@@ -1,5 +1,5 @@
 ---
-title: " Case Studies"
+title: " 4. Ethics : how"
 layout: default
 ---
 
