@@ -18,18 +18,15 @@ Firstly,   by "better" AI software,
 we mean "ethically-aligned".
 We assert that the design goals for SE-for-AI must be 
 prioritize for human well-being.
-It is ethical to improve
+
+- It is ethical to improve
 the profits of your company since that money becomes wages which
 becomes groceries which becomes dinner so everyone and their kids
 can sleep better at night.
-
-It is also ethical to change the design
+- It is also ethical to change the design
 of AI software in order to ensure   that (say) the software is not
 unduly discriminatory towards a particular social group (e.g. some
 groups characterized by age, race, or gender). 
-We suggest to you that when you start a new AI project,
-your  first question should not be  be  "what data miners should I apply to this data?".
-Rather, it should be  "what are the ethical requirements of this development? And how can we best support those requirements?".
 
 Secondly, the authors of this book have spent decades applying many
 AI tools ( mostly  for software engineering applications). We share
@@ -72,5 +69,10 @@ offer a rich tapestry of tools that software engineers can weave
  together to achieve a variety of goals. The good thing about that
 is that as our tools offer us more
 choices, they also offer us more ethical choices.
- 
+So we suggest to you that when you start a new AI project:
+
+- Your  first question should **not** be  be  "what data miners should I apply to this data?".
+- Rather, it should be  "what are the ethical requirements of this development? And how can we best support those requirements?".
+
+
 
