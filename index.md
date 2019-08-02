@@ -81,6 +81,8 @@ and some idea for month-long  projects.
 
 Have fun! Be more ethical!
 
+![](/img/timm.png){: width=75px} ![](/img/zimm.png){: width=75px}  
+
 Tim Menzies  (timm)  
-Tom Zimmermann (zimm)
+Tom Zimmermann (zimm)     
 August, 2019    
