@@ -81,7 +81,7 @@ and some idea for month-long  projects.
 
 Have fun! Be more ethical!
 
-![](/img/timmzimm.png){: width=150px} 
+![](/img/timmzimm.png){:width="150px"} 
 
 Tim Menzies  (timm)  
 Tom Zimmermann (zimm)     
