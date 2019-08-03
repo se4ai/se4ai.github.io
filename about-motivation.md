@@ -1,5 +1,5 @@
 ---
-title: " But Why SE for AI?"
+title: " But Why Study SE for AI?"
 layout: default
 ---
 

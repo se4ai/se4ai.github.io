@@ -44,18 +44,45 @@ offer their own principles for AI:
 - _Privacy & Security_: AI systems should be secure and respect privacy
 - _Accountability_: AI systems should have algorithmic accountability
 
-The rest of this chapter shows how different algorithm choices let us
-weave together the IEEE and Microsoft concerns. Before showing that, the obvious point
-to make is that ethics is a rapidly evolving concept so the following "weaving" is somewhat
-subjective. But to misquote George Box, all ideas are wrong; but some are useful. 
-The reader might disagree with the following. You might believe that
-we have missed, or 
-missed out, or misrepresented,
-some vital ethical concern.
-In that case, the following is still useful since
-at least our ideas have gotten you thinking abut ethics. In fact,
-the best thing that could happen below is that you say "that is wrong; a better way to do that
-would be..."
+Ethics is a
+rapidly evolving concept so it hardly surprising to say that mapping
+the stated ethical concerns of one organization (Microsoft) into
+another (IEEE) is not easy.  
+
+Nevertheless,
+the following table shows one way we might map together these two
+sets of ethical concerns. Note that:
+
+- "accountability" and "transparency"  appear in both lists. Clearly these
+  are concerns shared by many people.
+- "Competence" is absent from the Microsoft list,
+   (perhaps because it deals with the skills of humans, not algorithms).
+- Also missing from the Microsoft list is "effectiveness" (perhaps
+  because Microsoft thinks all its software is effective).
+- Assessed in terms of the Microsoft terminally, "well-being" and "awareness of misuse"
+  are synonyms since they both reply on "fairness and "reliability and safely".
+
+
+                | Accountable|Transparent|Fair|Rely+Safe|Inclusive|Private+Secure|
+Competence      |            |           |    |         |         |              |
+Accountability  |  x         |           |    |         |         |              |
+Transparency    |            |  x        |    |         |         |              |
+Well-being + aware of misuse||         | x  |     x   |         |              |
+human-rights    |            |           | x   |  x       |  x       |              |
+Data agency     |            |           |    |         |    x     |    x          |
+Effectiveness   |      x      |           |    |   x      |         |     x         |
+
+The reader might disagree with the
+our propose mappings, arguing that 
+we have missed,
+or missed out, or misrepresented, some vital ethical concern.  This  would be 
+a good thing since that would mean you are now engaging in discussions about
+software and ethics.
+In
+fact, the best thing that could happen below is that you say "that
+is wrong; a better way to do that would be..."
+As  George Box said,  all models
+are wrong; but some are useful.  
 
 ## From Ethics to Algorithms
 
