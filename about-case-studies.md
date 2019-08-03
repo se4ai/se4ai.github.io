@@ -4,15 +4,14 @@ layout: default
 ---
 
 The premise of this book is that
-AI tools contain many choices and, taken all together,
-those,
-choices
-offer a rich tapestry of tools that software engineers can weave
- together to achieve a variety of goals. The good thing about that
-is that as our tools offer us more
-choices, they also offer us more ethical choices.
-
-To show examples of that, first we need a working definition of "ethics".
+AI tools offer a rich tapestry
+of choices 
+that
+software engineers can weave
+through to a variety of goals (and which can include ethical goals). 
+This chapter offers specific examples of that process.
+First we offer  a working definition of "ethics". Second, we show how
+ceratin
 
 
 ## Working Definitions of Ethics
@@ -74,8 +73,8 @@ sets of ethical concerns. Note that:
 |Effectiveness   |      x      |           |    |   x      |         |     x         |
 {: border="1px"}
 
-The reader might disagree with the
-our propose mappings, arguing that 
+The reader may dispute 
+our propose mappings, perhaps saying  that 
 we have missed,
 or missed out, or misrepresented, some vital ethical concern.  This  would be 
 a good thing since that would mean you are now engaging in discussions about
@@ -86,13 +85,42 @@ is wrong; a better way to do that would be..."
 As  George Box said,  all models
 are wrong; but some are useful.  
 
-In any case, what the above table does demonstrate is that large organizations
-are now very concerned with ethics. Further, when they talk about ethics, there 
-is much overlap in what they say.
+In any case, what the above table does demonstrate is that:
+
+- Large organizations are now very concerned with ethics. 
+- When they talk about ethics, there is much overlap in what they say.
+- This is a pressing need to extend our current design thinking for AI tools. Hence, this book.
  
 ## From Ethics to Algorithms
 
-The above table maps between ethical concerns 
+The above table maps between ethical concerns  from different organizations. The 
+rest of this chapter discusses how different algorithm choices enable these ethical goals.
+
+### Effectiveness
+
+It is unethical to deliver an AI tool that is performing poorly,
+particularly when there are som amny ways to make an AI tool perform better.
+As discussed in our chapter on [Baselines](about-basleines), no AI tool works
+best for all problems so new problems require some experimentation
+and thing. The faster the algorithm,
+the easier it is to fiddle with. So measured in terms of
+_comissioning effort_,
+ we prefer linear time methods (e.g.  Naive Bayes[^nb])
+to very slow algorithms (e.g. nearest neighbor algorithms that scale very poorly to large 
+data sets).
+
+[^nbn]: 
+Comissioning  effort has to tbe traded off  
+
+
+
+yyyyy (since 
+
+ _comissioning_ is required 
+
+
+Fristly, with regst
+
 Well being & Awareness of Misue    
 - Fairness : 
     - See [Charaborty, 2019](REFS#chakrabory-2019).
