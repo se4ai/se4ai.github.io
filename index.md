@@ -63,15 +63,15 @@ show that their recursive descent bi-clustering algorithm (which is a data minin
     - For example, 
 [Majumder et al.](majumder-2018) used k-means clustering to divide up a complex text mining problem, then apply optimizers within each cluster. They report that this method speeds up their processing by up to three orders of magnitude.
 
-Our point here is that,  when used in combination, data miners and optimizers and theorem 
-provers
+Our point is this,  AI tools
 offer a rich tapestry of tools that software engineers can weave
- together to achieve a variety of goals. The good thing about that
-is that as our tools offer us more
-choices, they also offer us more ethical choices.
+ together to achieve a variety of goals. That means
+that our
+our tools can offer us more
+choices. Which means, in turn, that  they are also offer us more ethical choices.
 So we suggest to you that when you start a new AI project:
 
-- Your  first question should **not** be  be  "what data miners should I apply to this data?".
+- Your  first question should **not** be (e.g.) "what data miners should I apply to this data?".
 - Rather, it should be  "what are the ethical requirements of this development? And how can we best support those requirements?".
 
 Please enjoy this book. If you are teaching this material at
