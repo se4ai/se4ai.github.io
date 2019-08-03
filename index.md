@@ -45,7 +45,12 @@ Thirdly,  we look
  engineering. Specifically, we will talk much about data mining
  algorithms; some about optimizers; and a little about theorem
  provers.
-These technologies are tightly connected. For example:
+When combined,
+these
+ AI tools
+are  a rich tapestry within which software engineers can weave
+around to 
+ achieve a variety of goals. 
 
 - Theorem provers can be data generators for data miners or optimizers
     - When models come with many constraints, we can use theorem provers to [generate valid examples](REFS#chen-2018a);
@@ -71,19 +76,15 @@ show that their recursive descent bi-clustering algorithm (which is a data minin
     - For example, 
 [Majumder et al.](majumder-2018) used k-means clustering to divide up a complex text mining problem, then apply optimizers within each cluster. They report that this method speeds up their processing by up to three orders of magnitude.
 
-Looking over this list, one thing is clear:
- AI tools
-offer a rich tapestry of tools that software engineers can weave
- together to achieve a variety of goals. That means
-that our
-our tools can offer us more
-choices. Which means, in turn, that  they are also offer us more ethical choices.
+Since
+AI tools offer us more
+choices, 
+they also offer us more ethical choices.
+Better yet, AI also gives us methods
+for automatically tracking down  what we want within a very large space of choices. 
+That is, once we tell AI that we want our systems to achieve ethical goals then:
 
-Better yet, not only does AI give us more choices, it also gives us methods
-for automatically find what we want within a very large space of choices. That is (and this is the main point of
-this book):
-
-- <em> AI lets us be more ethical than ever before.</em>
+- <em> AI tools lets us be more ethical than ever before.</em>
 
 
 Please enjoy this book. If you are teaching this material at
@@ -93,7 +94,7 @@ and some idea for month-long  projects.
 
 Have fun! Be more ethical!
 
-![](/img/timmzimm.png){:width="100=px"" } 
+![](/img/timmzimm.png){:width="1s500=px"" } 
 
 Tim Menzies  (timm)  
 Tom Zimmermann (zimm)     
