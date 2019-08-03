@@ -15,14 +15,50 @@ div.wrapper {
 code { 
 	padding-left: 10px; padding-right: 10px;
 }
+.image {
+	margin:2px;
+	padding: 2px;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+        
+}
+.image600 {
+        width: 600px;
+	margin:2px;
+	padding: 2px;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+        
+}
+
+.image800 {
+        width: 800px;
+	margin:2px;
+	padding: 2px;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+        
+}
+
 .alignleft {
 	margin-top:0px;
 	padding-top:0px;
 	float: left;
 }
+.imgright {
+	margin:2px;
+	padding: 2px;
+   border:1px solid #CCC;
+	float: right;
+        width: 350px;
+}
 .alignright {
 	margin-top:0px;
 	padding-top:0px;
+        border-color: #CCC;
 	float: right;
 }
 a:link,
