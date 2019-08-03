@@ -71,7 +71,7 @@ sets of ethical concerns. Note that:
 |Human-rights    |            |           | x   |  x       |  x       |              |
 |Data agency     |            |           |    |         |    x     |    x          |
 |Effectiveness   |      x      |           |    |   x      |         |     x         |
-{:border="1px"}
+{: .pure-table-bordered}
 
 The reader might disagree with the
 our propose mappings, arguing that 
