@@ -64,11 +64,11 @@ sets of ethical concerns. Note that:
   are synonyms since they both reply on "fairness and "reliability and safely".
 
 
-|                | Accountable|Transparent|Fair|Rely+Safe|Inclusive|Private+Secure|
+|                | Accountable|Transparent|Fairness |Rely+Safe|Inclusive|Private+Secure|
 |Competence      |            |           |    |         |         |              |
 |Accountability  |  x         |           |    |         |         |              |
 |Transparency    |            |  x        |    |         |         |              |
-|Well-being + aware of misuse||         | x  |     x   |         |              |
+|Well-being<br>+ aware of misuse||         | x  |     x   |         |              |
 |Human-rights    |            |           | x   |  x       |  x       |              |
 |Data agency     |            |           |    |         |    x     |    x          |
 |Effectiveness   |      x      |           |    |   x      |         |     x         |
