@@ -63,14 +63,14 @@ sets of ethical concerns. Note that:
   are synonyms since they both reply on "fairness and "reliability and safely".
 
 
-                | Accountable|Transparent|Fair|Rely+Safe|Inclusive|Private+Secure|
-Competence      |            |           |    |         |         |              |
-Accountability  |  x         |           |    |         |         |              |
-Transparency    |            |  x        |    |         |         |              |
-Well-being + aware of misuse||         | x  |     x   |         |              |
-human-rights    |            |           | x   |  x       |  x       |              |
-Data agency     |            |           |    |         |    x     |    x          |
-Effectiveness   |      x      |           |    |   x      |         |     x         |
+|                | Accountable|Transparent|Fair|Rely+Safe|Inclusive|Private+Secure|
+|Competence      |            |           |    |         |         |              |
+|Accountability  |  x         |           |    |         |         |              |
+|Transparency    |            |  x        |    |         |         |              |
+|Well-being + aware of misuse||         | x  |     x   |         |              |
+|Human-rights    |            |           | x   |  x       |  x       |              |
+|Data agency     |            |           |    |         |    x     |    x          |
+|Effectiveness   |      x      |           |    |   x      |         |     x         |
 
 The reader might disagree with the
 our propose mappings, arguing that 
@@ -84,8 +84,13 @@ is wrong; a better way to do that would be..."
 As  George Box said,  all models
 are wrong; but some are useful.  
 
+In any case, what the above table does demonstrate is that large organizations
+are now very concerned with ethics. Further, when they talk about ethics, there 
+is much overlap in what they say.
+ 
 ## From Ethics to Algorithms
 
+The above table maps between ethical concerns 
 Well being & Awareness of Misue    
 - Fairness : 
     - See [Charaborty, 2019](REFS#chakrabory-2019).
