@@ -56,9 +56,10 @@ sets of ethical concerns. Note that:
 - "accountability" and "transparency"  appear in both lists. Clearly these
   are concerns shared by many people.
 - "Competence" is absent from the Microsoft list,
-   (perhaps because it deals with the skills of humans, not algorithms).
-- Also missing from the Microsoft list is "effectiveness" (perhaps
-  because Microsoft thinks all its software is effective).
+   (perhaps because it deals with the skills of humans, not algorithms). 
+- Also missing from the Microsoft list is "effectiveness" but
+  we would argue that what IEEE calls "effectiveness" can be expressed
+  in terms of other Microsoft terms (see below).
 - Assessed in terms of the Microsoft terminally, "well-being" and "awareness of misuse"
   are synonyms since they both reply on "fairness and "reliability and safely".
 
@@ -71,7 +72,7 @@ sets of ethical concerns. Note that:
 |Human-rights    |            |           | x   |  x       |  x       |              |
 |Data agency     |            |           |    |         |    x     |    x          |
 |Effectiveness   |      x      |           |    |   x      |         |     x         |
-{: .pure-table-bordered}
+{: border="1px"}
 
 The reader might disagree with the
 our propose mappings, arguing that 
