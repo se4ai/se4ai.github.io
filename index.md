@@ -71,7 +71,8 @@ show that their recursive descent bi-clustering algorithm (which is a data minin
     - For example, 
 [Majumder et al.](majumder-2018) used k-means clustering to divide up a complex text mining problem, then apply optimizers within each cluster. They report that this method speeds up their processing by up to three orders of magnitude.
 
-Our point is this,  AI tools
+Looking over this list, one thing is clear:
+ AI tools
 offer a rich tapestry of tools that software engineers can weave
  together to achieve a variety of goals. That means
 that our
@@ -79,7 +80,7 @@ our tools can offer us more
 choices. Which means, in turn, that  they are also offer us more ethical choices.
 
 Better yet, not only does AI give us more choices, it also gives us methods
-for automatically exploring a very large space of choices. That is (and this is the main point of
+for automatically find what we want within a very large space of choices. That is (and this is the main point of
 this book):
 
 - <em> AI lets us be more ethical than ever before.</em>
@@ -92,7 +93,7 @@ and some idea for month-long  projects.
 
 Have fun! Be more ethical!
 
-![](/img/timm.png){:width="50px" } ![](/img/zimm.png){:width="50px" }  
+![](/img/timmzimm.png){:width="100=px"" } 
 
 Tim Menzies  (timm)  
 Tom Zimmermann (zimm)     
