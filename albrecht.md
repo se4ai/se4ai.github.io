@@ -17,8 +17,8 @@ Read the code on [Github](https://github.com/se4ai/code/tree/master/albrecht.py)
    4. def albrecht(): return data(
    5.   name = "albrecht", 
    6.   rows = [
-   7.     ["In","Out","Query","File","FpAdj", 
-   8.      "RawFPcounts","?AdjFp","<Effort"]
+   7.     ["$In","$Out","$Query","$File","$FpAdj", 
+   8.      "$RawFPcounts","?AdjFp","<Effort"]
    9.     ,[25, 150,	75,	60,	1,	1750,	  1750,	102.4]
   10.     ,[193,	98,	70,	36,	1,  1902,	  1902,	105.2]
   11.     ,[70,	27,	0,	12,	0.8,	535,	  428,	11.1]
