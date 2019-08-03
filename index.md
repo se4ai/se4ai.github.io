@@ -49,7 +49,7 @@ These technologies are tightly connected. For example:
 - Data miners and optimizers can be mashed up to (say) explore complex problems where one
   defines interesting regions where the other can reason faster, and better:
     - In this approach, data miners and optimizers can be seen as separate executables. 
-    - For example, Abdessalem et al. [1] generate test cases for autonomous cars via a cyclic approach where an optimizer reflects on the output of data miners that reflect on the output of an optimizer (and so on).
+    - For example, [Abdessalem et al.](REFS:abdollahi-2016) generate test cases for autonomous cars via a cyclic approach where an optimizer reflects on the output of data miners that reflect on the output of an optimizer (and so on).
 - Data miners can act as optimizers: 
     - In this approach, there is no separation between the data miner and optimizer. 
     - For example, [Chen et al.](REFS#chen-2018a)
@@ -57,7 +57,7 @@ show that their recursive descent bi-clustering algorithm (which is a data minin
 - Optimizers can better control the data  miners: 
     - In this approach,the data miner is a sub-routine called by the optimizer. 
     - For example, several research has  improved data mining performance via optimizers that tune the control parameters of the data miner (See [Agrawal 2018a](REFS:agrawal-2018a), 
-   [Fu'18](REFS:fu-206), and [Tantithamthavorn et al/](Tan-2016a)).
+   [Fu'18](REFS:fu-206), and [Tantithamthavorn et al.](Tan-2016a)).
 - Data miners can better control the optimizers:
     -  In this approach, the optimizer is a sub-routine called by the data miner. 
     - For example, 
