@@ -118,7 +118,6 @@ For examples of this, see [Fu et al.](REFS#fu-2016) and [Agrawal et
 al.](REFS#agrawal-2018a). One way to implement such hyperparameter optimization
 is via active learning (see below). 
 
-XXX lime adjusting the nearest neibout count
 
 The faster the algorithm,
 the easier it is to fiddle with. So measured in terms of
@@ -139,12 +138,13 @@ new test instance.
 - Just as an aside, clustering can be made very fast using tricks
 like 
 recursive random projections (RRP).
-After a few random samples, it is possible to find two moderately distant points "_east,west_"
-Data closest to "_east_" or "_west_" can clustered into two groups.
-Repeating this recursively "_N"_ times generates a tree of clusters of depth "_N_",
+After a few random samples, it is possible to find two moderately distant points "_east_" and "_west_"
+Data can be clustered into two groups, depending or if they are closest
+to "_east_" or "_west_".
+Repeating this recursively "_D"_ times generates a tree of clusters of depth "_D_",
 the leaves of which holds
 data that is 
-similar according  to "_N_" random projections  over "_east,west_" pairs.
+similar according  to "_D_" random projections  over "_east,west_" pairs.
 
 It is important to stress that the  commissioning   effort cannot be the only way we assess
 an AI tool.  For high dimensional image data, deep learning] has
@@ -163,11 +163,11 @@ problem.
 
 ### Inclusiveness
 
-AI tools that include humans in their reasoning process must do two things:
+AI tools that include humans in their reasoning process must do several  things:
 
-1. The humans must be be able to understand  why an AI tool has made a conclusion.  F
+1. The humans must be be able to understand  why an AI tool has made a conclusion.  
     - For this purpose, explanation algorithms are useful.
-2. - Humans must be able to adjust that conclusion. 
+2. Humans must be able to adjust that conclusion. 
     - For this purpose, active learning is useful.
 3. Further, to better support the above, AI tools must understand and respect the goals of the humans involved in this process. 
     - For this purpose, multi-goal Pareto reasoning is useful.
@@ -259,14 +259,15 @@ Pareto frontiers were introduced in [Chapter 3](/about-tools#optimizers) in the 
 how data miners use optimizers. Recall that, given many solutions floating in a space of multiple goals,
 the Pareto frontier are those solutions that are not demonstrably worse that anything else.
 
-There many ways to implement multi-goal reasoning and one of the simplest is to use contrast set learning
+There many ways to implement multi-goal reasoning including genetic algorithms
+and sequential model-based optimization. But  one of the simplest is to use contrast set learning
 and the [Zitler and Künnzli](REFS#zitler-2004) indicator measure $$I$$:
 
 - In the expression $$I(x,y)=\frac{1}{N}\sum_i^N \left(10^{w_i(x_i'-y_i')/N}\right)$$
      -  $$x_i$$ and $$y_i$$ are the i-th goal of row $$x,y$$ 
      -  $$x_i'$$ and $$y_i'$$ are those goals normalized 0..1 for min..max. 
      - Each of the "_N_" goals is weighted $$w_i=-1,1$$ depending on whether or not we seek to minimize or maximze  it.
-- When comparing two rows,  row $$x$$ is better than row $$y$$ if we "lose more"
+- Row $$x$$ is better than row $$y$$ if we "lose more"
   going $$x$$ to $$y$$ than going  $$y$$ to $$x$$; i.e.  $$I(x,y) < I(y,x)$$.
 - Row are sorted by how many times they are better than
   (say) $$M=100$$ other rows (selected at random). 
@@ -445,6 +446,7 @@ more details, see later in this book):
 - Multi-goal optimizers that can explore the trade-off between multiple goals.
 - Hyperparameter optimizers (again, like sequential model-based optimization);
 - Explanation algorithms like LIME or frugal trees;
+- Genetic algorithms;
 - Certification envelope technology such as prototype discovery and anomaly detection
 - Repair algorithms, which can include contrast set learners and tabu-planners;
 - Clustering algorithms, and hierarchical clustering using recurisve random projections;
