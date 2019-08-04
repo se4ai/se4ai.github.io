@@ -262,7 +262,7 @@ the Pareto frontier are those solutions that are not demonstrably worse that any
 There many ways to implement multi-goal reasoning and one of the simplest is to use contrast set learning
 and the [Zitler and Künnzli](REFS#zitler-2004) indicator measure "_I_":
 
-- In the expression `$$I(x,y) = \frac{1}{N}\sum_i^N \left(10^{w_i*(x_i'-y_i')/N}\right)$$`
+- In the expression $$I(x,y)=\frac{1}{N}\sum_i^N \left(10^{w_i*(x_i'-y_i')/N}\right)$$
      -  $$x_i$$ and $$y_i$$ are the i-th goal of row $$x,y$$ 
      -  $$x_i'$$ and $$y_i'$$ are those goals normalized 0..1 for min..max. 
      - Each of the "_N_" goals is weighted $$w_i=-1,1$$ depending on whether or not we seek to minimize or maximze  it.
