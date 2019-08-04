@@ -63,13 +63,13 @@ sets of ethical concerns. Note that:
 
 
 |                | Accountable|Transparent|Fairness |Rely+Safe|Inclusive|Private+Secure|
-|Accountability  |  &#10004;         |           |    |         |         |              |
-|Transparency    |            |  x        |    |         |         |              |
-|Well-being<br>+ aware of misuse||         | x  |     x   |         |              |
-|Human-rights    |            |           | x   |  x       |  x       |              |
-|Data agency     |            |           |    |         |    x     |    x          |
-|Effectiveness   |      x      |           |    |   x      |         |     x         |
-{: border="1px"}
+|Accountability  |  &#10004;  |           |         |         |         |              |
+|Transparency    |            |  &#10004; |         |         |         |              |
+|Well-being<br>+ aware of misuse||        | &#10004;| &#10004;|         |              |
+|Human-rights    |            |           | &#10004;|&#10004; |&#10004; |              |
+|Data agency     |            |           |         |         |&#10004; |   &#10004;   |
+|Effectiveness   |   &#10004; |           |         |&#10004; |         |   &#10004;   |
+{: border="1px" align=center }
 
 The reader might dispute 
 this  mapping, perhaps saying  that 
