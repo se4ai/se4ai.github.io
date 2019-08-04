@@ -16,44 +16,15 @@ in the 21st century, the wise software engineering
 knows how  different AI tools offer different services, and how some of those services
 can achieve certain ethical goals.
 
-The following algorithms will be mentioned briefly (and for
-more details, see later in this book):
-
-- Data pre-processors like feature selection;
-- Classifiers like Naive Bayes and KNN (kth-nearest neighbor);
-- Neural net methods like deep learning;
-- Theorem provers like picoSAT; XXX
-- Meta-learning schemes like active learning.
-- Optimizers like sequential model-based optimization (a kind of active learning);
-- Hyperparameter optimizers (again, like sequential model-based optimization);
-- Explanation algorithms like LIME or FFtrees;
-- Certification envelope technology such as prototype discovery and anomaly detection
-- Repair algorithms, which can include contrast set learners;
-- Clustering algorithms, and hierarchical clustering using recurisve random projections;
-- Incremental learning that updates its models after seeing each new example.
-
-For the reader uninterested  in ethics, this list will be very dull indeed.
-Such readers will (most probably) return to using a single learner/optimizer/whatever over all their future AI
-applications.
-
-For the industrial practitioner who wishes to distinguish themselves within the currently
-crowded AI market, the above list might be a marketting opportunity. Spefically,
-by augmenting their current toolkit with some of the above, they might be able
-to offer services that is absent amongst their  rivals.
-
-For the researcher who is an advocated of a particular AI tool,
-the above list might inspire a research challenge.
-First, they might seek ways  to extend their preferred AI tool
-such that it covers the more of the above services.
-Secondly, they might scoff at this list, saying "I can do better than that". If they then went on
-to implement and evaluate their alternative, then that would be a very good thing
-(since that would give us more material for version two of this book).
+Before continuing, we offer fair warning to the reader versed in the standard texts on, say, data mining.
+The technologies discussed below roams far away from standard discussion of (say)
+classification vs regression vs whatever else. Once we introduce ethical goals like inclusiveness or fairness
+then the technology choices become very different.
 
 ## Current Ethical Concerns
 
-Before doing anything else, we need a list of potential ethical goals for AI
-tiools.  The  [Institute for Electronics and Electrical
-Engineers](/REFS#IEEEethics-2019) (IEEE) has   discussed general principles for
+The  [Institute for Electronics and Electrical
+Engineers](/REFS#IEEEethics-2019) (IEEE) has   recently discussed general principles for
 implementing autonomous and intelligent systems (A/IS).  They propose that the
 design of such A/IS systems satisfy certain criteria:
 
@@ -126,7 +97,114 @@ In any case, what the above table does demonstrate is that:
 The above table maps between ethical concerns  from different organizations.
 The rest of this chapter discusses how different algorithm choices enable these
 ethical goals.  
+These algorithms will be mentioned in brief (and for more details, see later in this book).
+
+### Inclusiveness
+
+AI tools that include humans in their reasoning process must do two things:
+
+1. The humans must be be able to understand  why an AI tool has made a conclusion.  F
+    - For this purpose, explanation algorithms are useful.
+2.- Humans must be able to adjust that conclusion. 
+    - For this purpose, active learning is useful.
+3. Further, to better support the above, AI tools must understand and respect the goals of the humans involved in this process. 
+    - For this purpose, multi-goal Pareto reasoning is useful.
+
+ 
+#### Explanation
+
+Inclusiveness is helped by AI tools that generate succinct human-readable
+models since  humans can read and understand  such models.  Rule-based learners
+like  contrast set learners and FFTrees are useful for generating such succinct
+models:
+
+![](/img/fft.png){: .imgright}
+
+- According  to [George Kelly](REFS#kelly-1955), humans reason about the world
+via lists of differences between things (as apposed to list of things abut each
+object). This is an interesting since the list of obvious difference between
+things can be [much shorter than a description of the
+things](REFS#menzies-2003) (e.g. the difference between clouds and oceans is
+that one you have to look up to see one of them).  Contrast set learners can
+generate very short rules describing a domain by reporting the difference
+between things, weighted by the frequency of each of difference. 
+-   According to  [Gerd Gigerenzer](REFS@gigerenzer-2008), humans reason in a
+"frugal manner"; that is, they ignore much of the available information to find
+good-enough solutions[^simon].
+      - A [frugal tree generator](REFS#phillips-2017) 
+        ranks different divisions of data columns according the goal of the learning (e.g. for each division, how
+   many positive/negative examples does in cover).  
+      - Next, various   learning
+biases are tested.  At every level of its tree building, FFtrees fork sub-trees
+for
+   two biases (the subsets of the data that do/do not match the worst/best division). 
+       In this way, dividing "_N_" levels produces $$2^N$$ different
+      trees.   The tree that performs best (on the training data) is then selected to apply to the test data. 
+      - In practice, frugal trees  are binary trees of depth four or less. Humans can quickly glance at such
+  trees, [then critique or apply them](REFS#gigerenzer-2008). Despite their small size, they can be [remarkably effective](REFS#chen-2018).
+
+[^simon]: Gigerenzer's thinking was  influenced by the Nobel-Prize winning economist and AI pioneer Herbert Simon.
+[Simon argued](REFS#simon-1956) that humans do make optimizer decisions, since such optimality assumes complete knowledge about a situation.
+Rather, says Simon, humans reason via "satisficing" ( a portmanteau of satisfy and suffice) in which they seek solutions
+good enough for the current context.
+
+![](/img/lime.png){: .imgright}
+
+Another interesting approach  to explanation is to use locality reasoning.
+The  [LIME explanation algorithm](REFS#riberio-2016) 
+ builds some model $$M_1$$ using examples around
+some example of interest (LIME does not specify which model is used).
+Next, LIMES builds a local regression mode $$M_2$$ using the predictions from $$M_1$$. The coefficients of $$M_2$$
+are then informative as to what factors are most influential.
+
+For a discussion of other explanation algorithms, see  [Gosiekska and Biecek](REFS#gos-2019).
+
+#### Active Learning
+
+Once a system can explain itself, then most probably humans will want to change some part of it.
+Active learning is a general framework within which humans and AI can learn from each other, in
+the context of specific examples.
+
+- Active learners  incrementally build models using the minimum number of queries
+  to some oracle (e.g. some human). 
+     1. For example, if some as-yet-unlabelled examples fall near the decision
+  boundary between two classes, then  the label for that example is _uncertain_. 
+     2. One active learning stratefy is to
+  ask the oracle about the next most uncertain example, the  update the model using that new information.
+     3. Such learning strategies often dramatically descreses the number of examples
+       need to build a ground truth or comission a model.
+- Active learning is simpler when models can quickly update themselves.
+    - Examples of such fast incremental update algorithms include Naive Bayes and RRP and many others besides.
+- Sequential model-based optimization (SMBO) is an active learner that assumes it is fast to guess
+  a value for a new example (if we have a model) but slow to confirm that guess (by running some oracle).
+     - For example, when optimizing a data miner,
+  SMBO might explore random settings to the control parameters of that learner. 
+     - As it evaluates different
+  settings, it builds  a model predicting the effect of a particular setting.
+     -  The next setting it tries
+  might be the one that is guessed to [achieve the highest predicted  score](REFS#nair-2018).
+
+
+see explanation work [Feather'02]  [Menzies'07] [Gay'12] [Matheer'16]
+
+active learning
+
+#### Multi-goal Pareto Reasoning
+
+One of the lessons of research into requirements engineering is that the stakeholders for software
+have many competing goals. One way to trade-off between competing goals are multi-goal Pareto reasoners. 
+Simple AI tools know how to chase a single goals (e.g. a classifier might try to maximize the accuracy
+of its predictions). 
+We saw
+an example
+ 
 ### Effectiveness
+
+
+ee Hu'18 and anything that does human-in-the-loop reaasoning
+During commissioning, there is usually an audit process where some "ground truth" is established against which we 
+(a) train the AI tool(s) or (b) evaluate the performance of  the tool(s). In many domains, creating that
+ground truth requires an incremental exploration of many examples. For that process, active learning is very useful.
 
 
 It is unethical to deliver an AI tool that is performing poorly,
@@ -143,6 +221,8 @@ tools for automatically finding tunings that can greatly improve effectiveness.
 For examples of this, see [Fu et al.](REFS#fu-2016) and [Agrawal et
 al.](REFS#agrawal-2018a). One way to implement such hyperparameter optimization
 is via active learning (see below). 
+
+XXX lime adjusting the nearest neibout count
 
 The faster the algorithm,
 the easier it is to fiddle with. So measured in terms of
@@ -183,56 +263,6 @@ made no case that deep learning (or any other AI tool) is inherently
 better or worse. Rather, our goal is to  map the trade-offs associated
 with  AI tool such that the best one can be selected from the next
 problem.
-
-### Inclusiveness
-
-Inclusiveness is helped
-by AI tools that generate succinct human-readable models 
-since  
-humans can read and understand  such models.
-Rule-based learners like  FFTrees are useful in the regard:
-
-![](/img/fft.png){: .imgright}
-
--   [FFtreess](REFS#phillips-2017) are a heuristic methods  to test  different learning biases using  problem-specific goals.
-    FFtrees ranks different divisions of data columns according the goal of the learning (e.g. for each division, how
-   many positive/negative examples does in cover).
-   At every level of its tree building, FFtrees fork two sub-trees for
-   two different biases (the subsets of the data that do/do not match the worst/best division). 
-    In this way, dividing "_N_" levels produces $$2^N$$ different
-   trees. The tree that performs best (on the training data) is then selected to apply to the test data. 
-- In practice, FFTrees generate very small binary trees of depth four or less. Humans can quickly glance at such
-  trees, [then critique or apply them](REFS#gigerenzer-2008). Desipte their small size, they can be [remarkably effective](REFS#chen-2018).
-
-AI tools that enable human-in-the-loop reasoning abllow 
-ee Hu'18 and anything that does human-in-the-loop reaasoning
-During commissioning, there is usually an audit process where some "ground truth" is established against which we 
-(a) train the AI tool(s) or (b) evaluate the performance of  the tool(s). In many domains, creating that
-ground truth requires an incremental exploration of many examples. For that process, active learning is very useful.
-
-- Active learners  incrementally build models using the minimum number of queries
-  to some oracle (e.g. some human). 
-     1. For example, if some as-yet-unlabelled examples fall near the decision
-  boundary between two classes, then  the label for that example is _uncertain_. 
-     2. One active learning stratefy is to
-  ask the oracle about the next most uncertain example, the  update the model using that new information.
-     3. Such learning strategies often dramatically descreses the number of examples
-       need to build a ground truth or comission a model.
-- Active learning is simpler when models can quickly update themselves.
-    - Examples of such fast incremental update algorithms include Naive Bayes and RRP and many others besides.
-- Sequential model-based optimization (SMBO) is an active learner that assumes it is fast to guess
-  a value for a new example (if we have a model) but slow to confirm that guess (by running some oracle).
-     - For example, when optimizing a data miner,
-  SMBO might explore random settings to the control parameters of that learner. 
-     - As it evaluates different
-  settings, it builds  a model predicting the effect of a particular setting.
-     -  The next setting it tries
-  might be the one that is guessed to [achieve the highest predicted  score](REFS#nair-2018).
-
-
-see explanation work [Feather'02]  [Menzies'07] [Gay'12] [Matheer'16]
-
-active learning
 
 ### Fairness
 
@@ -382,8 +412,50 @@ EFFECTIVENESS Yu (Ph.D. 2019?): Inclusiveness
 - active learning, incrementa repair, streaming
 - data labelling via very small samples
 - infer laeblling trends (so you know when to stop)
-- labelling error mitation (by sometomes relabelling old examples_
+- labelling error mitation (by sometomes relabelling old examples
 
 FAIRNESS Chakraborty (Ph.D. 2022?)
 - hyperparamter optimzation and fairness
+
+## Summary
+
+The following methods were discussed above, very briefly
+(and for
+more details, see later in this book):
+
+- Cognitive pyschology; specifically, "frugral trees";
+- Data pre-processors like feature selection;
+- Classifiers like Naive Bayes and KNN (kth-nearest neighbor);
+- Neural net methods like deep learning;
+- Theorem provers like picoSAT; XXX
+- Meta-learning schemes like active learning.
+- Optimizers like sequential model-based optimization (a kind of active learning);
+- Multi-goal optimizers that can explore the trade-off between multiple goals.
+- Hyperparameter optimizers (again, like sequential model-based optimization);
+- Explanation algorithms like LIME or frugal trees;
+- Certification envelope technology such as prototype discovery and anomaly detection
+- Repair algorithms, which can include contrast set learners and tabu-planners;
+- Clustering algorithms, and hierarchical clustering using recurisve random projections;
+- Incremental learning that updates its models after seeing each new example.
+
+
+For the industrial practitioner who wishes to distinguish themselves within the currently
+crowded AI market, the above list might be a marketting opportunity. Spefically,
+by augmenting their current toolkit with some of the above, they might be able
+to offer services that is absent amongst their  rivals.
+
+For the researcher who is an advocated of a particular AI tool,
+the above list might inspire a research challenge.
+First, they might seek ways  to extend their preferred AI tool
+such that it covers the more of the above services.
+Secondly, they might scoff at this list, saying "I can do better than that". If they then went on
+to implement and evaluate their alternative, then that would be a very good thing
+(since that would give us more material for version two of this book).
+
+For us, this list is like a specification for an ideal "ethics machine". 
+Later in this book we offer a version 0.1  implementation of that ethics machine.
+As will be seen, that implementation requires much extension  and improvement.
+Nevertheless, it does show that a surprisingly large portion of the above
+can be created in a relatively simple manner. It is hoped that that implementation
+seeds a research community devoted to exploring algorithms with ethical effects.
 
