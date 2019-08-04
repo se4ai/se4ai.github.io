@@ -306,15 +306,20 @@ There many ways to implement multi-goal reasoning including genetic algorithms
 and sequential model-based optimization. But  one of the simplest is to use contrast set learning
 and the [Zitler and Künnzli](REFS#zitler-2004) indicator measure $$I$$:
 
-- In the expression $$I(x,y)=\frac{1}{N}\sum_i^N \left(10^{w_i(x_i'-y_i')/N}\right)$$
-     -  $$x_i$$ and $$y_i$$ are the i-th goal of row $$x,y$$ 
-     -  $$x_i'$$ and $$y_i'$$ are those goals normalized 0..1 for min..max. 
-     - Each of the "_N_" goals is weighted $$w_i=-1,1$$ depending on whether or not we seek to minimize or maximze  it.
-- Row $$x$$ is better than row $$y$$ if we "lose more"
+$$
+I(x,y)=\frac{-1}{N}\sum_i^N 10^{w_i(x_i'-y_i')/N})
+$$
+
+In the expression 
+-  $$x_i$$ and $$y_i$$ are the i-th goal of row $$x,y$$ 
+-  $$x_i'$$ and $$y_i'$$ are those goals normalized 0..1 for min..max. 
+- Each of the "_N_" goals is weighted $$w_i=-1,1$$ depending on whether or not we seek to minimize or maximze  it.
+
+Using $$I$$, we can say that  row $$x$$ is better than row $$y$$ if we "lose more"
   going $$x$$ to $$y$$ than going  $$y$$ to $$x$$; i.e.  $$I(x,y) < I(y,x)$$.
-- Row are sorted by how many times they are better than
+Rows can be   sorted according to  how many times they are better than
   (say) $$M=100$$ other rows (selected at random). 
-- Contrast set learning can then be applied
+Contrast set learning can then be applied
   to discover what selects for the (say) 20% top scoring rows (while avoiding the rest).
 
 Note that, in practice, we have seen
