@@ -17,7 +17,7 @@ knows how  different AI tools offer different services, and how some of those se
 can achieve certain ethical goals.
 
 Before continuing, we offer fair warning to the reader versed in the standard texts on, say, data mining.
-The technologies discussed below roams far away from standard discussion of (say)
+The technologies discussed below roam far away from standard discussion of (say)
 classification vs regression vs whatever else. Once we introduce ethical goals like inclusiveness or fairness
 then the technology choices become very different.
 
@@ -58,7 +58,7 @@ sets of ethical concerns. Note that:
 
 - "accountability" and "transparency"  appear in both the IEEE and Microsoft lists. Clearly these
   are concerns shared by many people.
-- Also missing from the Microsoft list is "effectiveness" but
+- Missing from the Microsoft list is "effectiveness" but
   we would argue that what IEEE calls "effectiveness" can be expressed
   in terms of other Microsoft terms (see below).
 - Assessed in terms of the Microsoft terminology, the IEEE goals or "well-being" and "awareness of misuse"
@@ -99,112 +99,8 @@ The rest of this chapter discusses how different algorithm choices enable these
 ethical goals.  
 These algorithms will be mentioned in brief (and for more details, see later in this book).
 
-### Inclusiveness
-
-AI tools that include humans in their reasoning process must do two things:
-
-1. The humans must be be able to understand  why an AI tool has made a conclusion.  F
-    - For this purpose, explanation algorithms are useful.
-2.- Humans must be able to adjust that conclusion. 
-    - For this purpose, active learning is useful.
-3. Further, to better support the above, AI tools must understand and respect the goals of the humans involved in this process. 
-    - For this purpose, multi-goal Pareto reasoning is useful.
-
- 
-#### Explanation
-
-Inclusiveness is helped by AI tools that generate succinct human-readable
-models since  humans can read and understand  such models.  Rule-based learners
-like  contrast set learners and FFTrees are useful for generating such succinct
-models:
-
-![](/img/fft.png){: .imgright}
-
-- According  to [George Kelly](REFS#kelly-1955), humans reason about the world
-via lists of differences between things (as apposed to list of things abut each
-object). This is an interesting since the list of obvious difference between
-things can be [much shorter than a description of the
-things](REFS#menzies-2003) (e.g. the difference between clouds and oceans is
-that one you have to look up to see one of them).  Contrast set learners can
-generate very short rules describing a domain by reporting the difference
-between things, weighted by the frequency of each of difference. 
--   According to  [Gerd Gigerenzer](REFS@gigerenzer-2008), humans reason in a
-"frugal manner"; that is, they ignore much of the available information to find
-good-enough solutions[^simon].
-      - A [frugal tree generator](REFS#phillips-2017) 
-        ranks different divisions of data columns according the goal of the learning (e.g. for each division, how
-   many positive/negative examples does in cover).  
-      - Next, various   learning
-biases are tested.  At every level of its tree building, FFtrees fork sub-trees
-for
-   two biases (the subsets of the data that do/do not match the worst/best division). 
-       In this way, dividing "_N_" levels produces $$2^N$$ different
-      trees.   The tree that performs best (on the training data) is then selected to apply to the test data. 
-      - In practice, frugal trees  are binary trees of depth four or less. Humans can quickly glance at such
-  trees, [then critique or apply them](REFS#gigerenzer-2008). Despite their small size, they can be [remarkably effective](REFS#chen-2018).
-
-[^simon]: Gigerenzer's thinking was  influenced by the Nobel-Prize winning economist and AI pioneer Herbert Simon.
-[Simon argued](REFS#simon-1956) that humans do make optimizer decisions, since such optimality assumes complete knowledge about a situation.
-Rather, says Simon, humans reason via "satisficing" ( a portmanteau of satisfy and suffice) in which they seek solutions
-good enough for the current context.
-
-![](/img/lime.png){: .imgright}
-
-Another interesting approach  to explanation is to use locality reasoning.
-The  [LIME explanation algorithm](REFS#riberio-2016) 
- builds some model $$M_1$$ using examples around
-some example of interest (LIME does not specify which model is used).
-Next, LIMES builds a local regression mode $$M_2$$ using the predictions from $$M_1$$. The coefficients of $$M_2$$
-are then informative as to what factors are most influential.
-
-For a discussion of other explanation algorithms, see  [Gosiekska and Biecek](REFS#gos-2019).
-
-#### Active Learning
-
-Once a system can explain itself, then most probably humans will want to change some part of it.
-Active learning is a general framework within which humans and AI can learn from each other, in
-the context of specific examples.
-
-- Active learners  incrementally build models using the minimum number of queries
-  to some oracle (e.g. some human). 
-     1. For example, if some as-yet-unlabelled examples fall near the decision
-  boundary between two classes, then  the label for that example is _uncertain_. 
-     2. One active learning stratefy is to
-  ask the oracle about the next most uncertain example, the  update the model using that new information.
-     3. Such learning strategies often dramatically descreses the number of examples
-       need to build a ground truth or comission a model.
-- Active learning is simpler when models can quickly update themselves.
-    - Examples of such fast incremental update algorithms include Naive Bayes and RRP and many others besides.
-- Sequential model-based optimization (SMBO) is an active learner that assumes it is fast to guess
-  a value for a new example (if we have a model) but slow to confirm that guess (by running some oracle).
-     - For example, when optimizing a data miner,
-  SMBO might explore random settings to the control parameters of that learner. 
-     - As it evaluates different
-  settings, it builds  a model predicting the effect of a particular setting.
-     -  The next setting it tries
-  might be the one that is guessed to [achieve the highest predicted  score](REFS#nair-2018).
-
-
-see explanation work [Feather'02]  [Menzies'07] [Gay'12] [Matheer'16]
-
-active learning
-
-#### Multi-goal Pareto Reasoning
-
-One of the lessons of research into requirements engineering is that the stakeholders for software
-have many competing goals. One way to trade-off between competing goals are multi-goal Pareto reasoners. 
-Simple AI tools know how to chase a single goals (e.g. a classifier might try to maximize the accuracy
-of its predictions). 
-We saw
-an example
- 
 ### Effectiveness
 
-
-ee Hu'18 and anything that does human-in-the-loop reaasoning
-During commissioning, there is usually an audit process where some "ground truth" is established against which we 
-(a) train the AI tool(s) or (b) evaluate the performance of  the tool(s). In many domains, creating that
-ground truth requires an incremental exploration of many examples. For that process, active learning is very useful.
 
 
 It is unethical to deliver an AI tool that is performing poorly,
@@ -263,6 +159,122 @@ made no case that deep learning (or any other AI tool) is inherently
 better or worse. Rather, our goal is to  map the trade-offs associated
 with  AI tool such that the best one can be selected from the next
 problem.
+
+
+### Inclusiveness
+
+AI tools that include humans in their reasoning process must do two things:
+
+1. The humans must be be able to understand  why an AI tool has made a conclusion.  F
+    - For this purpose, explanation algorithms are useful.
+2. - Humans must be able to adjust that conclusion. 
+    - For this purpose, active learning is useful.
+3. Further, to better support the above, AI tools must understand and respect the goals of the humans involved in this process. 
+    - For this purpose, multi-goal Pareto reasoning is useful.
+
+ 
+#### Explanation
+
+Inclusiveness is helped by AI tools that generate succinct human-readable
+models since  humans can read and understand  such models.  Rule-based learners
+like  contrast set learners and FFTrees are useful for generating such succinct
+models:
+
+![](/img/fft.png){: .imgright}
+
+- According  to [George Kelly](REFS#kelly-1955), humans reason about the world
+via lists of differences between things (as apposed to list of things abut each
+object). This is an interesting since the list of obvious difference between
+things can be [much shorter than a description of the
+things](REFS#menzies-2003) (e.g. the difference between clouds and oceans is
+that one you have to look up to see one of them).  Contrast set learners can
+generate very short rules describing a domain by reporting the difference
+between things, weighted by the frequency of each of difference. 
+-   According to  [Gerd Gigerenzer](REFS@gigerenzer-2008), humans reason in a
+"frugal manner"; that is, they ignore much of the available information to find
+good-enough solutions[^simon].
+      - A [frugal tree generator](REFS#phillips-2017) 
+        ranks different divisions of data columns according the goal of the learning (e.g. for each division, how
+   many positive/negative examples does in cover).  
+      - Next, various   learning
+biases are tested.  At every level of its tree building, FFtrees fork sub-trees
+for
+   two biases (the subsets of the data that do/do not match the worst/best division). 
+       In this way, dividing "_N_" levels produces $$2^N$$ different
+      trees.   The tree that performs best (on the training data) is then selected to apply to the test data. 
+      - In practice, frugal trees  are binary trees of depth four or less. Humans can quickly glance at such
+  trees, [then critique or apply them](REFS#gigerenzer-2008). Despite their small size, they can be [remarkably effective](REFS#chen-2018).
+
+[^simon]: Gigerenzer's thinking was  influenced by the Nobel-Prize winning economist and AI pioneer Herbert Simon.  [Simon argued](REFS#simon-1956) that humans do make optimizer decisions, since such optimality assumes complete knowledge about a situation.  Rather, says Simon, humans reason via "satisficing" ( a portmanteau of satisfy and suffice) in which they seek solutions good enough for the current context.
+
+![](/img/lime.png){: .imgright}
+
+Another interesting approach  to explanation is to use locality reasoning.
+The  [LIME explanation algorithm](REFS#riberio-2016) 
+ builds some model $$M_1$$ using examples near the
+example of interest (LIME does not specify which model is used). 
+Next, LIMES builds a local regression mode $$M_2$$ using the predictions from $$M_1$$. The coefficients of $$M_2$$
+are then informative as to what factors are most influential.
+For example, in  the diagram at right, the example of interest is marked with a red cross and the $$M_2$$ coefficients
+would reveal why this example is labeled (say) ref, not blue).
+
+
+For a discussion of other explanation algorithms, see  [Gosiekska and Biecek](REFS#gos-2019).
+
+#### Active Learning
+
+Once a system can explain itself, then most probably humans will want to change some part of it.
+Active learning is a general framework within which humans and AI can learn from each other, in
+the context of specific examples.
+
+- Active learners  incrementally build models using the minimum number of queries
+  to some oracle (e.g. some human). 
+     1. For example, if some as-yet-unlabelled examples fall near the decision
+  boundary between two classes, then  the label for that example is _uncertain_. 
+     2. One active learning stratefy is to
+  ask the oracle about the next most uncertain example, the  update the model using that new information.
+     3. Such learning strategies often dramatically descreses the number of examples
+       need to build a ground truth or comission a model.
+- Active learning is simpler when models can quickly update themselves.
+    - Examples of such fast incremental update algorithms include Naive Bayes and RRP and many others besides.
+- Sequential model-based optimization (SMBO) is an active learner that assumes it is fast to guess
+  a value for a new example (if we have a model) but slow to confirm that guess (by running some oracle).
+     - For example, when optimizing a data miner,
+  SMBO might explore random settings to the control parameters of that learner. 
+     - As it evaluates different
+  settings, it builds  a model predicting the effect of a particular setting.
+     -  The next setting it tries
+  might be the one that is guessed to [achieve the highest predicted  score](REFS#nair-2018).
+
+
+#### Multi-goal Pareto Reasoning
+
+One of the lessons of research into requirements engineering is that the stakeholders for software
+have many competing goals. 
+Simple AI tools know how to chase a single goals (e.g. a classifier might try to maximize the accuracy
+of its predictions).  Better AI tools now how to trade off between the multiple goals of competing stakeholders.
+
+One way to trade-off between competing goals are multi-goal Pareto reasoners. 
+Pareto frontiers were introduced in [Chapter 3](/about-tools#optimizers) in the section discussing
+how data miners use optimizers. Recall that, given many solutions floating in a space of multiple goals,
+the Pareto frontier are those solutions that are not demonstrably worse that anything else.
+
+There many ways to implement multi-goal reasoning and one of the simplest is to use contrast set learning
+and the [Zitler and Künnzli](REFS#zitler-2004) indicator measure "_I_":
+
+- In the expression `$$I(x,y) = \frac{1}{N}\sum_i^N \left(10^{w_i*(x_i'-y_i')/N}\right)$$`
+     -  $$x_i$$ and $$y_i$$ are the i-th goal of row $$x,y$$ 
+     -  $$x_i'$$ and $$y_i'$$ are those goals normalized 0..1 for min..max. 
+     - Each of the "_N_" goals is weighted $$w_i=-1,1$$ depending on whether or not we seek to minimize or maximze  it.
+- When comparing two rows,  row $$x$$ is better than row $$y$$ if we "lose more"
+  by going $$x$$ to $$y than if we go  $$y$$ to $$x$$; i.e.  `$$I(x,y) < I(y,x)$$`.
+- Row are sorted by how many times they are better than
+  (say) $$M=100$$ other rows (selected at random). 
+- Contrast set learning can then be applied
+  to discover what selects for the (say) 20% top scoring rows (while avoiding the rest).
+
+Note that, in practice, we have seen
+  this indicator measure [work well for up to 5 goals](REFS#sayyad-2013).
 
 ### Fairness
 
