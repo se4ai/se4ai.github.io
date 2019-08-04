@@ -10,14 +10,18 @@ that
 software engineers can weave
 through to a variety of goals (and which can include ethical goals). 
 This chapter offers specific examples of that process.
-First we offer  a working definition of "ethics". Second, we show how
-ceratin
+
+Out point will be that,
+in the 21st century, the wise software engineering
+knows how  different AI tools offer different services, and how some of those services
+can achieve certain ethical goals.
 
 
 ## Working Definitions of Ethics
 
+Before doing anything else, we need a list of potential ethical goals for AI tols.
 The  [Institute for Electronics and Electrical Engineers](/REFS#IEEEethics-2019) (IEEE)
-have   discussed general principles for implementing autonomous and intelligent systems (A/IS).
+has   discussed general principles for implementing autonomous and intelligent systems (A/IS).
 They propose that the design of such A/IS systems
 satisfy certain criteria:
 
@@ -30,8 +34,6 @@ satisfy certain criteria:
 6. _Accountability:_ A/IS shall be created and operated to provide
    an unambiguous rationale for all decisions made.
 7. _Awareness of Misuse:_ A/IS creators shall guard against all potential misuses and risks of A/IS in operation.
-8. _Competence:_ A/IS creators shall specify and operators shall adhere to the knowledge and
-   skill required for safe and effective operation.
 
 Other  organizations, like [Microsoft](/REFS.md#microai-2019)
 offer their own principles for AI:
@@ -47,25 +49,21 @@ Ethics is a
 rapidly evolving concept so it hardly surprising to say that mapping
 the stated ethical concerns of one organization (Microsoft) into
 another (IEEE) is not easy.  
-
 Nevertheless,
 the following table shows one way we might map together these two
 sets of ethical concerns. Note that:
 
-- "accountability" and "transparency"  appear in both lists. Clearly these
+- "accountability" and "transparency"  appear in both the IEEE and Microsoft lists. Clearly these
   are concerns shared by many people.
-- "Competence" is absent from the Microsoft list,
-   (perhaps because it deals with the skills of humans, not algorithms). 
 - Also missing from the Microsoft list is "effectiveness" but
   we would argue that what IEEE calls "effectiveness" can be expressed
   in terms of other Microsoft terms (see below).
-- Assessed in terms of the Microsoft terminally, "well-being" and "awareness of misuse"
+- Assessed in terms of the Microsoft terminology, the IEEE goals or "well-being" and "awareness of misuse"
   are synonyms since they both reply on "fairness and "reliability and safely".
 
 
 |                | Accountable|Transparent|Fairness |Rely+Safe|Inclusive|Private+Secure|
-|Competence      |            |           |    |         |         |              |
-|Accountability  |  x         |           |    |         |         |              |
+|Accountability  |  &#10004;         |           |    |         |         |              |
 |Transparency    |            |  x        |    |         |         |              |
 |Well-being<br>+ aware of misuse||         | x  |     x   |         |              |
 |Human-rights    |            |           | x   |  x       |  x       |              |
@@ -73,8 +71,8 @@ sets of ethical concerns. Note that:
 |Effectiveness   |      x      |           |    |   x      |         |     x         |
 {: border="1px"}
 
-The reader may dispute 
-our propose mappings, perhaps saying  that 
+The reader might dispute 
+this  mapping, perhaps saying  that 
 we have missed,
 or missed out, or misrepresented, some vital ethical concern.  This  would be 
 a good thing since that would mean you are now engaging in discussions about
@@ -93,48 +91,109 @@ In any case, what the above table does demonstrate is that:
  
 ## From Ethics to Algorithms
 
-The above table maps between ethical concerns  from different organizations. The 
-rest of this chapter discusses how different algorithm choices enable these ethical goals.
+The above table maps between ethical concerns  from different organizations. 
+The 
+rest of this chapter discusses how different algorithm choices enable these ethical goals.  
+The following algorithms will be mentioned briefly (and for full details, see later in this book):
+
+- Classifiers like Naive Bayes and KNN (kth-nearest neighbor);
+- Neural net methods like deep learning;
+- Optimizers like sequential model-based optimization;
+- Hyperparameter optimizers (again, like sequential model-based optimization);
+- Meta-learning schemes like active learning or ensemble learning
+- Certification envelope technology such as prototype discovery and anomaly detection
+- Repair algorithms, which can include contrast set learners;
+- Clustering algorithms, and hierarchical clustering.
 
 ### Effectiveness
 
 It is unethical to deliver an AI tool that is performing poorly,
-particularly when there are som amny ways to make an AI tool perform better.
+particularly when there are so many ways to make an AI tool perform better.
 As discussed in our chapter on [Baselines](about-basleines), no AI tool works
-best for all problems so new problems require some experimentation
-and thing. The faster the algorithm,
+best for all problems. Hence, we exploring new
+problems, there must be a _commissioning_ process
+where different AI tools
+are explored and/or adjusted to the local problem:
+
+- AI tools come with defaults from their control settings. Those defaults may be wildly  inappropriate for new problem[^wild].
+For examples of this of this, see Section 2 of [Nair et al.](REFS#nair-2018). 
+Hyperparameter optimizers are tools for automatically finding tunings that can greatly improve effectiveness.
+For examples of this, see [Fu et al.](REFS#fu-2016) and [Agrawal et al.](REFS#agrawal-2018a).
+
+The faster the algorithm,
 the easier it is to fiddle with. So measured in terms of
-_comissioning effort_,
- we prefer linear time methods (e.g.  Naive Bayes[^nb])
-to very slow algorithms (e.g. nearest neighbor algorithms that scale very poorly to large 
+_commissioning effort_,
+ we prefer linear time methods (e.g.  Naive Bayes)
+to very slow algorithms (e.g. KNN,  that scale very poorly to large 
 data sets).
 
-[^nbn]: 
-Comissioning  effort has to tbe traded off  
+- Naive Bayes classifiers keep different statistics on rows of different classes. When new data arrives, such a classier can be quickly updated, just by adding to the stats of the class of that new row.
+- On the other hand, KNN  algorithms make conclusions by interpolating between the k nearest neighbors. In practice, this is very slow since finding the Kth-nearest neighbors requires a full pass over all the training data for each new test instance.
+
+That said, commissioning   effort cannot be the only way we assess
+an AI tool.  For high dimensional image data, deep learning] has
+proved to be very effective.
+
+- Deep learners are n-layered neural networks were layer "i" find
+new features hat layer "i+1" uses to make new conclusions.
+
+Training such
+learners can be a very slow process, so tuning and comparing with other learners may be impractical. 
+In this book we made no case that deep learning (or any other AI tool) is inherently
+better or worse. Rather, our goal is to  map the trade-offs
+associated with  AI tool such that the best one can be selected from the next problem.
+
+During commissioning, there is usually an audit process where some "ground truth" is established against which we 
+(a) train the AI tool(s) or (b) evaluate the performance of  the tool(s). In many domains, creating that
+ground truth requires an incremental exploration of many examples. For that process, active learning is very useful.
+
+- Active learners check their conclusions with an oracle while striving to asking that oracle the minimum number
+  of questions.
 
 
+One an AI tools survives the commissioning process, it must be  
 
-yyyyy (since 
+### Inclusiveness
 
- _comissioning_ is required 
+ee Hu'18 and anything that does human-in-the-loop reaasoning
 
+see explanation work [Feather'02]  [Menzies'07] [Gay'12] [Matheer'16]
 
-Fristly, with regst
+active learning
 
-Well being & Awareness of Misue    
-- Fairness : 
-    - See [Charaborty, 2019](REFS#chakrabory-2019).
-- Relaibility & safety: 
+### Fairness
+
+- See [Charaborty, 2019](REFS#chakrabory-2019).
+
+### Privacy and Security
+
+privacy.centralized. target fr hackers. ditsibuted with transitions: dat tehft during transitions. why send alld ata
+prorotype generation.
+
+### Reliability  and Safety
     - via multi-goal reasoning (so you known how reliabilty you are satisfying the goals of different users of the ssytems),
     - see [Sayyad'13](REFS#sayyad-2013)
     - via certification envelope (see Peters13]
-- Also helped by transparency
+
+### Transparency
+
 Transparencey: 
+
     -transparent makes users of a  system aware ot the use and misue of that ssytem
     - see explanation work [Feather'02]  [Menzies'07] [Gay'12] [Matheer'16]
 
-Accountability:
+
+### Accountability
+
 - enabled by trasnparency and relaiblity abd safety
+
+
+### Well-being and Awareness of Misuse
+Well being & Awareness of Misue    
+- Fairness : 
+- Relaibility & safety: 
+- Also helped by transparency
+
 
 Human rights
 - enabled y Fairness

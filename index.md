@@ -40,6 +40,8 @@ we want within a very large space of possibilities.
 That is, once we tell AI that we want our systems to achieve ethical goals then:
 
 - <em> AI tools lets us be more ethical than ever before.</em>
+- But only if we first accept the merits
+  and methods of an ethical approach.
 
 So we suggest to you that when you start a new AI project:
 
