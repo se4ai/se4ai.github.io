@@ -96,6 +96,7 @@ The
 rest of this chapter discusses how different algorithm choices enable these ethical goals.  
 The following algorithms will be mentioned briefly (and for full details, see later in this book):
 
+- Data pre-processors like feature selection;
 - Classifiers like Naive Bayes and KNN (kth-nearest neighbor);
 - Neural net methods like deep learning;
 - Optimizers like sequential model-based optimization;
@@ -108,14 +109,28 @@ The following algorithms will be mentioned briefly (and for full details, see la
 ### Effectiveness
 
 It is unethical to deliver an AI tool that is performing poorly,
-particularly when there are so many ways to make an AI tool perform better.
-As discussed in our chapter on [Baselines](about-basleines), no AI tool works
-best for all problems. Hence, we exploring new
-problems, there must be a _commissioning_ process
-where different AI tools
-are explored and/or adjusted to the local problem:
+particularly when there are so many ways to make an AI tool perform
+better.  As discussed in our chapter on [Baselines](about-basleines),
+no AI tool works best for all problems. Hence, we exploring new
+problems, there must be a _commissioning_ process where different
+AI tools are explored and/or adjusted to the local problem:
 
-- AI tools come with defaults from their control settings. Those defaults may be wildly  inappropriate for new problem[^wild].
+- It is unethical to deliver an AI tool that is performing poorly,
+:w
+particularly when there are so many ways to make an AI tool perform
+better.  As discussed in our chapter on [Baselines](about-basleines),
+no AI tool works best for all problems. Hence, we exploring new
+problems, there must be a _commissioning_ process where different
+AI tools are explored and/or adjusted to the local problem:
+
+It is unethical to deliver an AI tool that is performing poorly,
+particularly when there are so many ways to make an AI tool perform
+better.  As discussed in our chapter on [Baselines](about-basleines),
+no AI tool works best for all problems. Hence, we exploring new
+problems, there must be a _commissioning_ process where different
+AI tools are explored and/or adjusted to the local problem:
+
+- AI tools come with defaults from their control settings. Those defaults may be wildly  inappropriate for new problem.
 For examples of this of this, see Section 2 of [Nair et al.](REFS#nair-2018). 
 Hyperparameter optimizers are tools for automatically finding tunings that can greatly improve effectiveness.
 For examples of this, see [Fu et al.](REFS#fu-2016) and [Agrawal et al.](REFS#agrawal-2018a).
@@ -147,7 +162,10 @@ During commissioning, there is usually an audit process where some "ground truth
 (a) train the AI tool(s) or (b) evaluate the performance of  the tool(s). In many domains, creating that
 ground truth requires an incremental exploration of many examples. For that process, active learning is very useful.
 
-- Active learners check their conclusions with an oracle while striving to asking that oracle the minimum number
+- Active learners incrementally build models using the minimum number of queries
+  to some oracle (e.g. some human). For example, if some as-yet-unlabelled examples fall near the decision
+  boundary between two classes, then  the label for that example is _uncertain_. An active learner might
+  seek always ask the oracle about the next most uncertain example.  models with some oracle (e.g. a human). check their conclusions with an oracle while striving to asking that oracle the minimum number
   of questions.
 
 
