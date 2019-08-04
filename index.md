@@ -3,7 +3,6 @@ title: " 1.Preface"
 layout: default
 ---
 
-![](/img/discuss.jpg){: .imgright}
 
 
 This book is about using better software engineering to build better AI software. 
@@ -15,6 +14,8 @@ This book is about using better software engineering to build better AI software
  books. So what makes this book so different?
 
 ## Ethically-aligned Design
+
+![](/img/discuss.jpg){: .imgright}
 
 Firstly,   by "better" AI software, 
 we mean "ethically-aligned".
