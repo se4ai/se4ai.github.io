@@ -267,7 +267,7 @@ and the [Zitler and Künnzli](REFS#zitler-2004) indicator measure "_I_":
      -  $$x_i'$$ and $$y_i'$$ are those goals normalized 0..1 for min..max. 
      - Each of the "_N_" goals is weighted $$w_i=-1,1$$ depending on whether or not we seek to minimize or maximze  it.
 - When comparing two rows,  row $$x$$ is better than row $$y$$ if we "lose more"
-  by going $$x$$ to $$y than if we go  $$y$$ to $$x$$; i.e.  `$$I(x,y) < I(y,x)$$`.
+  going $$x$$ to $$y$$ than going  $$y$$ to $$x$$; i.e.  `$$I(x,y) < I(y,x)$$`.
 - Row are sorted by how many times they are better than
   (say) $$M=100$$ other rows (selected at random). 
 - Contrast set learning can then be applied
