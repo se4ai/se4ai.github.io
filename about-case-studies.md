@@ -138,7 +138,6 @@ In any case, what the above table does demonstrate is that:
 The above table maps between ethical concerns  from different organizations.
 The rest of this chapter discusses how different algorithm choices enable these
 ethical goals.  
-These algorithms will be mentioned in brief (and for more details, see later in this book).
 
 ### Effectiveness
 
@@ -295,10 +294,13 @@ have many competing goals.
 Simple AI tools know how to chase a single goals (e.g. a classifier might try to maximize the accuracy
 of its predictions).  Better AI tools now how to trade off between the multiple goals of competing stakeholders.
 
+![](/img/pareto1.png){: .imgright}
+
 One way to trade-off between competing goals are multi-goal Pareto reasoners. 
 Pareto frontiers were introduced in [Chapter 3](/about-tools#optimizers) in the section discussing
 how data miners use optimizers. Recall that, given many solutions floating in a space of multiple goals,
-the Pareto frontier are those solutions that are not demonstrably worse that anything else.
+the Pareto frontier are those solutions that are not demonstrably worse that anything else. In the figure at right,
+if we wish to maximize both the quantities, then "_K,N_" are not on the frontier but "A,B,C,D,E,F,G,H" are.
 
 There many ways to implement multi-goal reasoning including genetic algorithms
 and sequential model-based optimization. But  one of the simplest is to use contrast set learning
