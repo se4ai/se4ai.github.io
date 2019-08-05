@@ -32,6 +32,11 @@ ICSE SEIP.
 
 ## B
 
+### Bellemy 2019
+
+R. K. E. Bellamy et al., "Think Your Artificial Intelligence Software Is Fair? Think Again," in IEEE Software, vol. 36, no. 4, pp. 76-80, July-Aug. 2019. 
+
+
 ### Benton 2019
 
 William Benton. 2019.  
